@@ -1,7 +1,9 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Navbar = () =>{
-
+const Navbar = () => {
+    return (
+        <>Testing123</>
+    );
 }
 
 export default Navbar;
