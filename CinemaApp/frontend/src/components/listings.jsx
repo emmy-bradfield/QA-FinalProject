@@ -1,32 +1,33 @@
 import { Link, Outlet } from 'react-router-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BeautyBeefImg from '../assets/beauty-and-beef.jpg';
 import MoonstersImg from '../assets/moo-nsters-inc.png';
+import DairyMovie from '../assets/dairy-movie.png';
+import Cowsablanca from '../assets/cowsablanca.png';;
 
 const Listings = () => {
     return (
-        <>
-            <h1> What To Watch </h1>
+        <div className="center">
+            <h1> What's On </h1>
             <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/listings/beautybeef"><img src={BeautyBeefImg} /></Link>
-                    </li>
-                    <li>
-                        <Link to="/listings/moonstersinc"><img src={MoonstersImg} /></Link>
-                    </li>
-                    <li>
-                        <Link to ="/listings/dairymovie">placeholder</Link>
-                    </li>
-                    <li>
-                        <Link to ="/listings/cowsablanca">placeholder</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Outlet />
+                <nav className="navbar poster-nav">
+                    <ul className="navbar">
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/beautybeef"><img className="poster-image" src={BeautyBeefImg} /></Link>
+                        </li>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/moonstersinc"><img className="poster-image" src={MoonstersImg} /></Link>
+                        </li>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/dairymovie"><img className="poster-image" src={DairyMovie}/></Link>
+                        </li>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/cowsablanca"><img className="poster-image" src={Cowsablanca} /></Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Outlet />
+            </div>
         </div>
-        </>
     );
 };
 
