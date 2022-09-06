@@ -55,6 +55,18 @@
   margin: 1em;
 }
 
+.page-text{
+  width: 40vw;
+  height: fit-content;
+  padding:2em;
+  background-color: rgba(0, 0, 0, 0.486);
+  color: white;
+}
+
+.light-text{
+  color: lightgrey !important;
+}
+
 .center {
   display: inline-flex;
   justify-content: center;
@@ -64,6 +76,11 @@
   width: 100%;
 }
 
+.margin-center{
+  margin-left:auto;
+  margin-right: auto;
+}
+
 .slide-left {
   display: inline-flex;
   justify-content: left;
@@ -71,7 +88,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
-  width: 100%;
 }
 
 .movie-details {
@@ -79,6 +95,21 @@
   text-align: left;
   list-style: none;
   align-items: center;
+}
+
+.classy-link{
+  color: white;
+  text-decoration: none;
+}
+
+a{
+  color: lightgrey;
+  text-decoration: inherit;
+}
+
+a:hover{
+  color: lightgrey;
+  text-decoration: inherit;
 }
 
 .no-bullet {
@@ -99,6 +130,10 @@
 
 .in5 {
   margin-left: 5em;
+}
+
+.left-text{
+  text-align: left;
 }
 
 
@@ -140,4 +175,3 @@ input {
 .opening-text {
   margin: 4em;
   text-align: center;
-}
