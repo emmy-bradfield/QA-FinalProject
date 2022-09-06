@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -13,7 +13,10 @@ const Navbar = () => {
                             <Link to="/listings">Listings</Link>
                         </li>
                         <li>
-                          <Link to="/openings">Opening times</Link>
+                            <Link to="/openings">Opening times</Link>
+                        </li>
+                        <li>
+                            <Link to="/new-releases">New Releases</Link>
                         </li>
                         <li>
                             <Link to="/payment">Payment</Link>
@@ -23,8 +26,7 @@ const Navbar = () => {
                 <Outlet />
             </div>
         </>
-
-    );
+    )
 }
 
 export default Navbar;
