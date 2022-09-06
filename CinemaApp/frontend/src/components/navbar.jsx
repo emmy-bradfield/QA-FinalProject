@@ -14,7 +14,7 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link to="/openings">Opening times</Link>
-                      
+                        </li>
                     </ul>
                 </nav>
                 <Outlet />
