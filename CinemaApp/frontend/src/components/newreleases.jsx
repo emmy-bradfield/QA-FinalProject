@@ -1,3 +1,5 @@
+import {Link, Outlet} from 'react-router-dom';
+
 const NewReleases = () => {
     return (
         <div className="center">
@@ -6,16 +8,16 @@ const NewReleases = () => {
                 <nav className="navbar poster-nav">
                     <ul className="navbar">
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases">placeholder</Link>
+                            <Link to="/new-releases/terrordairy">placeholder</Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases">placeholder</Link>
+                            <Link to="/new-releases/moonions">placeholder</Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases">placeholder</Link>
+                            <Link to="/new-releases/calftime">placeholder</Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases">placeholder</Link>
+                            <Link to="/new-releases/thecows">placeholder</Link>
                         </li>
                     </ul>
                 </nav>
