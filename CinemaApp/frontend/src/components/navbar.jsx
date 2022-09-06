@@ -1,8 +1,27 @@
+import { Link, Outlet } from 'react-router-dom';
 
-import {Link} from 'react-router-dom';
+const Navbar = () => {
+    return (
+        <>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/listings">Listings</Link>
+                        </li>
+                        <li>
+                          <Link to="/openings">Opening times</Link>
+                      
+                    </ul>
+                </nav>
+                <Outlet />
+            </div>
+        </>
 
-const Navbar = () =>{
-
+    );
 }
 
 export default Navbar;
