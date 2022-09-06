@@ -7,7 +7,7 @@ app.use(cors());
 
 const mongoose = require("mongoose");
 const paymentRoute = require("./routes/paymentRoute.js");
-app.use("/PAYMENTS",paymentRoute);
+app.use("/payments",paymentRoute);
 const router = express.Router();
 
 mongoose.connect('mongodb://localhost:27017/cinema_payments',{useNewUrlParser : true},

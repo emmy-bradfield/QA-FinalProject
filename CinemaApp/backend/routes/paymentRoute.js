@@ -33,7 +33,7 @@ paymentRouter.route('/post').post((req, res) => {
     });
   
     newPayment.save()
-    .then(() => res.json('Exercise updated!'))
+    .then(() => res.json('Payment Added!'))
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
