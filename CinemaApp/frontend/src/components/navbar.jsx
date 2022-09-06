@@ -18,6 +18,9 @@ const Navbar = () => {
                         <li>
                             <Link to="/new-releases">New Releases</Link>
                         </li>
+                        <li>
+                            <Link to="/payment">Payment</Link>
+                        </li>
                     </ul>
                 </nav>
                 <Outlet />
