@@ -7,9 +7,9 @@ import Cowsablanca from '../assets/cowsablanca.png';;
 const Listings = () => {
     return (
         <div className="center">
-            <h1> What's On </h1>
-            <div>
-                <nav className="navbar poster-nav">
+            <h1 className="light-text"> What's On </h1>
+            <div className="center">
+                <nav className="navbar poster-nav center">
                     <ul className="navbar">
                         <li className="nav-item nav-link">
                             <Link to="/listings/beautybeef"><img className="poster-image" src={BeautyBeefImg} /></Link>

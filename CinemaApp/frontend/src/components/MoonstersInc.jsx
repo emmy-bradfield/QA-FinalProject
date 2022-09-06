@@ -7,7 +7,7 @@ const MoonsterInc = () => {
             <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
                 <img className="page-image" src={MoonstersImg} />
-                <div className="movie-details drop5">
+                <div className="movie-details drop5 page-text">
                     <h1> Moonsters Inc </h1>
                     <ul>
                         <li className="no-bullet">

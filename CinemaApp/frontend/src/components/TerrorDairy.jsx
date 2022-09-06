@@ -1,13 +1,13 @@
 import {Link} from 'react-router-dom';
-
+import TerrorDairyImg from '../assets/terrordairy.png';
 
 const TerrorDairy = () =>{
     return(
         <div>
             <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                {/* <img className="page-image" src={DairyMovieImg} /> */}
-                <div className="movie-details drop5">
+                <img className="page-image" src={TerrorDairyImg} />
+                <div className="movie-details drop5 page-text">
                     <h1> Terror on the Dairy </h1>
                     <ul>
                         <li className="no-bullet">

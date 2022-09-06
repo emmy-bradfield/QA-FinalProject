@@ -1,13 +1,13 @@
 import {Link} from 'react-router-dom';
-
+import TheCowsImg from '../assets/thecows.png';
 
 const TheCows = () =>{
     return(
         <div>
             <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                {/* <img className="page-image" src={DairyMovieImg} /> */}
-                <div className="movie-details drop5">
+                <img className="page-image" src={TheCowsImg} />
+                <div className="movie-details drop5 page-text">
                     <h1> The Cows </h1>
                     <ul>
                         <li className="no-bullet">

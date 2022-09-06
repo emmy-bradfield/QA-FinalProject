@@ -4,10 +4,10 @@ import BeautyBeefImg from '../assets/beauty-and-beef.jpg';
 const BeautyBeast = () => {
     return (
         <div>
-            <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
+            <Link to="/listings"><i className="fa-solid fa-chevron-left in5 classy-link"></i> Back</Link>
             <div className="slide-left">
                 <img className="page-image" src={BeautyBeefImg} />
-                <div className="movie-details drop5">
+                <div className="movie-details drop5 page-text">
                     <h1> Beauty and the Beef </h1>
                     <ul>
                         <li className="no-bullet">

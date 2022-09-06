@@ -5,7 +5,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(https://images.pexels.com/photos/8263326/pexels-photo-8263326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-size: cover;
-  max-width:90vw;
+  max-width:99vw;
+  padding-bottom: 2em;
 }
 
 
@@ -13,7 +14,7 @@ body {
   font-size: 100px;
   color: whitesmoke;
   text-align: center;
-  padding-top: 170px;
+  padding-top: 1em;
   padding-bottom: 20px;
   
 }

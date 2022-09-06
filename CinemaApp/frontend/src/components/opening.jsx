@@ -1,6 +1,6 @@
 const Opening = () => {
   return (
-    <>
+    <div className="light-text">
       <h1 className="center opening-title">Opening times</h1>
 
       <p className="opening-text">
@@ -34,7 +34,7 @@ const Opening = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Opening;

@@ -1,13 +1,13 @@
 import {Link} from 'react-router-dom';
-
+import MoonionsImg from '../assets/moonions.png';
 
 const Moonions = () =>{
     return(
         <div>
-            <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
+            <Link to="/new-releases"><p className="classy-link"><i className="fa-solid fa-chevron-left in5"/>Back</p></Link>
             <div className="slide-left">
-                {/* <img className="page-image" src={DairyMovieImg} /> */}
-                <div className="movie-details drop5">
+                <img className="page-image" src={MoonionsImg} />
+                <div className="movie-details drop5 page-text">
                     <h1> The Moonions: The Rise of Gru </h1>
                     <ul>
                         <li className="no-bullet">
