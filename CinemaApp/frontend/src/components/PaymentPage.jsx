@@ -20,8 +20,6 @@ class PaymentPage extends Component {
         }
     }
 
-    payment = []
-
     onChangeFirstName(e) {
         this.setState({
             firstName: e.target.value
@@ -59,20 +57,25 @@ class PaymentPage extends Component {
         e.preventDefault();
     }
 
-    addPayment() {
-        const payment = [{
-            fName: this.state.firstName,
-            lName: this.state.lastName,
-            cNumber: this.state.cardNumber,
-            expiryDate: this.state.expDate,
-            CVC: this.state.cvc
-        }]
-        console.log(payment);
-        console.log("Hi");
-    }
-
-
     render() {
+        const firstName = this.state.firstName;
+        const lastName = this.state.lastName;
+        const cardNumber = this.state.cardNumber;
+        const expDate = this.state.expDate;
+        const cvc = this.state.cvc;
+
+        const payment = {
+            fname: firstName,
+            lname: lastName,
+            card: cardNumber,
+            exp: expDate,
+            security: cvc
+        }
+
+        const paymentCollected = () => {
+            window.alert(JSON.stringify(payment))
+        }
+
         return (
             <>
                 <div id="payment_form">
@@ -82,15 +85,15 @@ class PaymentPage extends Component {
                             <ul className="hidePoint">
                                 <li>
                                     <label>Card Number</label>
-                                    <input type="text" value={this.state.cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
+                                    <input type="text" value={cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
                                 </li>
                                 <li>
                                     <label>Expiry Date</label>
-                                    <input type="text" value={this.state.expDate} onChange={this.onChangeExpDate} id="expirty_date" placeholder="1804 - 18th April"></input>
+                                    <input type="text" value={expDate} onChange={this.onChangeExpDate} id="expirty_date" placeholder="1804 - 18th April"></input>
                                 </li>
                                 <li>
                                     <label>CVC</label>
-                                    <input type="text" value={this.state.cvc} onChange={this.onChangeCvc} id="cvc" placeholder="739"></input>
+                                    <input type="text" value={cvc} onChange={this.onChangeCvc} id="cvc" placeholder="739"></input>
                                 </li>
                             </ul>
                         </div>
@@ -99,17 +102,17 @@ class PaymentPage extends Component {
                             <ul className="hidePoint">
                                 <li>
                                     <label>First Name</label>
-                                    <input type="text" value={this.state.firstName} onChange={this.onChangeFirstName} id="first_name" placeholder="John"></input>
+                                    <input type="text" value={firstName} onChange={this.onChangeFirstName} id="first_name" placeholder="John"></input>
                                 </li>
                                 <li>
                                     <label>Last Name</label>
-                                    <input type="text" value={this.state.lastName} onChange={this.onChangeLastName} id="last_name" placeholder="Doe"></input>
+                                    <input type="text" value={lastName} onChange={this.onChangeLastName} id="last_name" placeholder="Doe"></input>
                                 </li>
                                 <li>
                                     <label>Click here to pay!</label>
                                 </li>
                                 <div>
-                                    <button type="submit" id='payBtn' onClick={this.addPayment}>Submit</button>
+                                    <button type="submit" id='payBtn' onClick={paymentCollected}>Submit</button>
                                 </div>
                             </ul>
                         </div>
