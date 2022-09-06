@@ -14,7 +14,10 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link to="/openings">Opening times</Link>
-                      
+                        </li>
+                        <li>
+                            <Link to="/payment">Payment</Link>
+                        </li>
                     </ul>
                 </nav>
                 <Outlet />

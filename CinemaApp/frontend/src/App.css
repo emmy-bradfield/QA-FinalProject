@@ -100,3 +100,28 @@
 .in5{
   margin-left: 5em;
 }
+
+/* Payment Page */
+
+#payment_form {
+  border: solid;
+  display:inline-flex;
+  width: 80%;
+}
+#left_col {
+  border: solid;
+  width: 50%;
+  padding: 1%;
+}
+#right_col {
+  border: solid;
+  width: 50%;
+  padding: 1%;
+}
+.hidePoint {
+  list-style-type: none;
+}
+input {
+  display: flex;
+  justify-self: center;
+}

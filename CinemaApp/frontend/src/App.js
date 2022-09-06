@@ -8,6 +8,7 @@ import MoonstersInc from "./components/MoonstersInc.jsx";
 import DairyMovie from "./components/DairyMovie.jsx";
 import Cowsablanca from "./components/Cows-ablanca.jsx";
 import Opening from "./components/opening";
+import PaymentPage from "./components/PaymentPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/listings/dairymovie" element={<DairyMovie />} />
             <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
             <Route path="/openings" elemnet={<Opening />} />
+            <Route path="/payment" element={<PaymentPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
