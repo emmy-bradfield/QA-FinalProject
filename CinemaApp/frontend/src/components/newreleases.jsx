@@ -1,3 +1,5 @@
+import { Link, Outlet } from "react-router-dom";
+
 const NewReleases = () => {
     return (
         <div className="center">
