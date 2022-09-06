@@ -8,10 +8,13 @@ const paymentModel = new Schema({
     firstName : String,
     lastName : String,
     cardNumber : Number,
+    expiryDate : Number,
+    cvc : Number,
     datePaid : {
         type: Date,
         default: Date.now()
-    }
+    },
+    price : Number
 });
 
 const Payment = model('Payment', paymentModel);
