@@ -37,25 +37,25 @@
   }
 }
 
-.poster-nav{
+.poster-nav {
   display: inline-flex;
   justify-content: space-evenly;
   flex-direction: row;
 }
 
-.page-image{
+.page-image {
   width: 40vw;
   height: 120vh;
   margin: 1em;
 }
 
-.poster-image{
+.poster-image {
   width: 20vw;
   height: 60vh;
   margin: 1em;
 }
 
-.center{
+.center {
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
@@ -64,7 +64,7 @@
   width: 100%;
 }
 
-.slide-left{
+.slide-left {
   display: inline-flex;
   justify-content: left;
   margin-left: 5em;
@@ -74,32 +74,33 @@
   width: 100%;
 }
 
-.movie-details{
+.movie-details {
   margin-left: 3em;
   text-align: left;
   list-style: none;
   align-items: center;
 }
 
-.no-bullet{
+.no-bullet {
   list-style: none;
 }
 
-.drop3{
+.drop3 {
   margin-top: 3em;
 }
 
-.drop5{
+.drop5 {
   margin-top: 5em;
 }
 
-.in3{
+.in3 {
   margin-left: 3em;
 }
 
-.in5{
+.in5 {
   margin-left: 5em;
 }
+
 
 /* Payment Page */
 
@@ -125,3 +126,19 @@ input {
   display: flex;
   justify-self: center;
 }
+
+/* Opening times page */
+.times {
+  display: flex;
+  justify-content: center;
+}
+
+.opening-title {
+  margin-bottom: 1em;
+}
+
+.opening-text {
+  margin: 4em;
+  text-align: center;
+}
+

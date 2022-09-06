@@ -22,8 +22,8 @@ function App() {
             <Route path="/listings/moonstersinc" element={<MoonstersInc />} />
             <Route path="/listings/dairymovie" element={<DairyMovie />} />
             <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
-            <Route path="/openings" elemnet={<Opening />} />
             <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/openings" element={<Opening />} />
           </Route>
         </Routes>
       </BrowserRouter>
