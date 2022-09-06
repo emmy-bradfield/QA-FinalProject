@@ -4,21 +4,21 @@ const Navbar = () => {
     return (
         <>
             <div>
-                <nav>
+                <nav className='nav'>
                     <ul>
-                        <li>
+                        <li className='navi nav-list'>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
+                        <li className='navi nav-list'>
                             <Link to="/listings">Listings</Link>
                         </li>
-                        <li>
+                        <li className='navi nav-list'>
                             <Link to="/openings">Opening times</Link>
                         </li>
-                        <li>
+                        <li className='navi nav-list'>
                             <Link to="/new-releases">New Releases</Link>
                         </li>
-                        <li>
+                        <li className='navi nav-list'>
                             <Link to="/payment">Payment</Link>
                         </li>
                     </ul>

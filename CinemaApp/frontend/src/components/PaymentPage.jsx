@@ -10,6 +10,8 @@ class PaymentPage extends Component {
         this.onChangeCardNumber = this.onChangeCardNumber.bind(this);
         this.onChangeExpDate = this.onChangeExpDate.bind(this);
         this.onChangeCvc = this.onChangeCvc.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
 
         this.state = {
             firstName: '',
@@ -20,7 +22,6 @@ class PaymentPage extends Component {
         }
     }
 
-    payment = []
 
     onChangeFirstName(e) {
         this.setState({
@@ -31,7 +32,7 @@ class PaymentPage extends Component {
         this.setState({
             lastName: e.target.value
         });
-        console.log(this.state);
+        console.log(this.state.cardNumber);
 
     }
     onChangeCardNumber(e) {
@@ -57,26 +58,22 @@ class PaymentPage extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-    }
-
-    addPayment() {
-        const payment = [{
-            fName: this.state.firstName,
-            lName: this.state.lastName,
-            cNumber: this.state.cardNumber,
-            expiryDate: this.state.expDate,
-            CVC: this.state.cvc
-        }]
+        const payment = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            cardNumber: this.state.cardNumber,
+            expDate: this.state.expDate,
+            cvc: this.state.cvc
+        }
         console.log(payment);
-        console.log("Hi");
+        window.alert(JSON.stringify(payment));
     }
-
 
     render() {
         return (
             <>
-                <div id="payment_form">
-                    <form onSubmit={this.onSubmit}>
+                <div>
+                    <form  id="payment_form" onSubmit={this.onSubmit}>
                         <div id="left_col">
                             <h3>Payment Information</h3>
                             <ul className="hidePoint">
@@ -109,7 +106,7 @@ class PaymentPage extends Component {
                                     <label>Click here to pay!</label>
                                 </li>
                                 <div>
-                                    <button type="submit" id='payBtn' onClick={this.addPayment}>Submit</button>
+                                    <input type="submit" onClick={this.onSubmit} value="Create User" className="btn btn-primary" />
                                 </div>
                             </ul>
                         </div>
