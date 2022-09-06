@@ -5,26 +5,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(https://images.pexels.com/photos/8263326/pexels-photo-8263326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-size: cover;
-  max-width: 99vw;
   padding-bottom: 2em;
 }
 
+.main-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
 .title {
   font-size: 6.25em;
   color: whitesmoke;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 1%;
   padding-bottom: 20px;
-
+  width:100%;
 }
 
 .text {
   font-size: 1.875em;
   color: whitesmoke;
   text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
+  width:60%;
 }
 
 .card-img {
