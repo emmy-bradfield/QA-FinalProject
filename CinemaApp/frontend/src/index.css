@@ -5,21 +5,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(https://images.pexels.com/photos/8263326/pexels-photo-8263326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-size: cover;
-  max-width:99vw;
+  max-width: 99vw;
   padding-bottom: 2em;
 }
 
 
-.title{
+.title {
   font-size: 6.25em;
   color: whitesmoke;
   text-align: center;
   padding-top: 1em;
   padding-bottom: 20px;
-  
+
 }
 
-.text{
+.text {
   font-size: 1.875em;
   color: whitesmoke;
   text-align: center;
@@ -27,7 +27,7 @@ body {
   margin-right: 20%;
 }
 
-.card-img{
+.card-img {
   width: 12.5em;
   height: 14.375em;
   border-radius: 0.625em;
@@ -39,28 +39,45 @@ body {
   text-shadow: 0.125em;
   display: inline-block;
 }
-.col{
- display: flex;
- justify-content: center;
- padding-top: 1.25em;
+
+.card-img:hover {
+  width: 12.5em;
+  height: 14.375em;
+  border-radius: 0.625em;
+  padding: 0.9375em 1.5625em;
+  box-sizing: border-box;
+  margin: 0.3125em 0.9375em;
+  background-size: cover;
+  color: whitesmoke;
+  text-shadow: 0.125em;
+  display: inline-block;
+  transition: transform;
+  transform: translateY(-0.6250em);
 }
-.card1{
+
+.col {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.25em;
+}
+
+.card1 {
   background-image: url(https://cdn.pixabay.com/photo/2021/08/24/10/22/empty-seats-6570233_960_720.jpg);
 }
 
-.card2{
+.card2 {
   background-image: url(https://cdn.pixabay.com/photo/2020/06/20/04/33/space-5319624_960_720.jpg);
 }
 
-.card3{
+.card3 {
   background-image: url(https://cdn.pixabay.com/photo/2016/11/22/23/19/constellations-1851128_960_720.jpg);
 }
 
-.card4{
+.card4 {
   background-image: url(https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014619_960_720.jpg);
 }
 
-hr{
+hr {
   color: whitesmoke;
   margin-left: 30%;
   margin-right: 30%;
@@ -68,24 +85,24 @@ hr{
 }
 
 .nav {
-  background: none; 
+  background: none;
   padding: 2em;
 }
-.nav a{
+
+.nav a {
   color: whitesmoke;
   text-decoration: none;
   marker: none;
   font-size: 1.6em;
-  padding: 2em; 
+  padding: 2em;
 }
 
-.nav a:hover{
+.nav a:hover {
   color: #00b4b4;
   text-shadow: 1em;
 }
 
 
-li{
+.nav-list {
   display: inline;
 }
-
