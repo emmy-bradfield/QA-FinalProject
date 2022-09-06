@@ -4,17 +4,17 @@ const Navbar = () => {
     return (
         <>
             <div>
-                <nav>
+                <nav className='nav'>
                     <ul>
-                        <li>
+                        <li className='navi'>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
+                        <li className='navi'>
                             <Link to="/listings">Listings</Link>
                         </li>
-                        <li>
+                        <li className='navi'>
                           <Link to="/openings">Opening times</Link>
-                      
+                      </li>
                     </ul>
                 </nav>
                 <Outlet />
