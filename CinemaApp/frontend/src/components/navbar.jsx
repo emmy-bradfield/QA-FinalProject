@@ -13,12 +13,17 @@ const Navbar = () => {
                             <Link to="/listings">Listings</Link>
                         </li>
                         <li>
-                          <Link to="/openings">Opening times</Link>
+                            <Link to="/openings">Opening times</Link>
+                        </li>
+                        <li>
+                            <Link to="/new-releases">New Releases</Link>
                         </li>
                     </ul>
                 </nav>
                 <Outlet />
             </div>
         </>
+    )
+}
 
 export default Navbar;
