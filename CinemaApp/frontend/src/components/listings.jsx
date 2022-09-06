@@ -11,16 +11,16 @@ const Listings = () => {
             <div className="center">
                 <nav className="navbar poster-nav center">
                     <ul className="navbar">
-                        <li className="nav-item nav-link">
+                        <li className="nav-item nav-link card-img">
                             <Link to="/listings/beautybeef"><img className="poster-image" src={BeautyBeefImg} /></Link>
                         </li>
-                        <li className="nav-item nav-link">
+                        <li className="nav-item nav-link card-img">
                             <Link to="/listings/moonstersinc"><img className="poster-image" src={MoonstersImg} /></Link>
                         </li>
-                        <li className="nav-item nav-link">
+                        <li className="nav-item nav-link card-img">
                             <Link to="/listings/dairymovie"><img className="poster-image" src={DairyMovie}/></Link>
                         </li>
-                        <li className="nav-item nav-link">
+                        <li className="nav-item nav-link card-img">
                             <Link to="/listings/cowsablanca"><img className="poster-image" src={Cowsablanca} /></Link>
                         </li>
                     </ul>

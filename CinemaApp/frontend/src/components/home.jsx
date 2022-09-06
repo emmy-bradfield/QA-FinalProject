@@ -4,7 +4,7 @@ const Home = () => {
    return(
     <>
         <div className="main-text">
-            <div>
+            <div className="main-text">
                <h1 className="title">QA Cinemas</h1>
                <hr/>
                <p className="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis rerum quae sed cumque itaque nostrum velit non perferendis magni quibusdam neque beatae maiores quidem, repellendus et commodi inventore placeat nisi?</p>
