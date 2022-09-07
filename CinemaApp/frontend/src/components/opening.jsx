@@ -1,7 +1,10 @@
 const Opening = () => {
   return (
     <div className="light-text">
-      <h1 className="center opening-title">Opening times</h1>
+      <h1 className="center opening-title">
+        Opening times
+        <hr />
+      </h1>
 
       <p className="opening-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste

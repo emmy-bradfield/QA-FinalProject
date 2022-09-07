@@ -63,7 +63,7 @@
   width: fit-content;
 }
 
-.card-poster:hover{
+.card-poster:hover {
   height: fit-content;
   width: fit-content;
   transition: transform;
@@ -190,13 +190,13 @@ a:hover {
   text-align: left;
 }
 
-
 /* Payment Page */
 
 #payment_form {
   border: solid;
   display: inline-flex;
   width: 80%;
+}
 
 .main-nav {
   display: inline-flex;
@@ -227,14 +227,14 @@ a:hover {
   padding-right: 1em;
 }
 
-.minor-header{
+.minor-header {
   background-color: rgba(0, 0, 0, 0.452);
   padding-top: 1em;
   padding-bottom: 1em;
-  width:100%;
+  width: 100%;
 }
 
-.card-subtle{
+.card-subtle {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
@@ -266,7 +266,7 @@ a:hover {
   margin: 0.5em;
 }
 
-.card-inner-text{
+.card-inner-text {
   color: black;
   font-weight: bold;
   margin-top: 0.5em;
@@ -288,7 +288,6 @@ a:hover {
   /* border: solid; */
   color: whitesmoke;
   width: 80%;
-
 }
 
 .hidePoint {
@@ -308,10 +307,10 @@ input {
 
 #payBtn {
   display: flex;
-  margin-top:10%;
+  margin-top: 10%;
   justify-content: center;
 }
-button{
+button {
   color: whitesmoke;
   background-color: #099f9f;
   border: none;
@@ -319,16 +318,16 @@ button{
   width: 100%;
   padding: 3% 3.5% 3% 3.5%;
   margin: 6%;
-  border-radius:  0.5em;
+  border-radius: 0.5em;
   box-shadow: 1em;
   cursor: pointer;
-  font-family: 'Anek Telugu', sans-serif;
+  font-family: "Anek Telugu", sans-serif;
   text-align: center;
   transition: all 0.5s;
 }
 
-button:hover{
-background-color: #097777;
+button:hover {
+  background-color: #097777;
 }
 
 hr {
