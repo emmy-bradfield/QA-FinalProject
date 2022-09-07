@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(https://images.pexels.com/photos/8263326/pexels-photo-8263326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-size: contain;
+  background-size: cover;
   background-repeat: repeat;
   padding-bottom: 2em;
 }
