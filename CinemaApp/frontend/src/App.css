@@ -131,12 +131,28 @@ a:hover{
   list-style: none;
 }
 
+.drop1{
+  margin-top:1em;
+}
+
 .drop3 {
   margin-top: 3em;
 }
 
 .drop5 {
   margin-top: 5em;
+}
+
+.lift1{
+  margin-top: -1em;
+}
+
+.lift3{
+  margin-top: -3em;
+}
+
+.lift5{
+  margin-top: -5em;
 }
 
 .in3 {
@@ -149,6 +165,14 @@ a:hover{
 
 .left-text{
   text-align: left;
+}
+
+.main-nav{
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
 }
 
 

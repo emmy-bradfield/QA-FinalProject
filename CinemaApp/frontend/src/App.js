@@ -14,6 +14,10 @@ import TerrorDairy from "./components/TerrorDairy";
 import Moonions from "./components/Moonions";
 import Calftime from "./components/Calftime";
 import TheCows from "./components/thecows";
+import Information from "./components/information";
+import Screens from "./components/screens";
+import Directions from "./components/directions";
+import Nearby from "./components/nearby";
 
 
 function App() {
@@ -35,6 +39,11 @@ function App() {
             <Route path="/new-releases/calftime" element={<Calftime/>}/>
             <Route path="/new-releases/thecows" element={<TheCows/>}/>
             <Route path="/openings" element={<Opening />} />
+            <Route path="/information" element={<Information/>}>
+              <Route path="/information/screens" element={<Screens />}/>
+              <Route path="/information/directions" element={<Directions />}/>
+              <Route path="/information/nearby" element={<Nearby />}/>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
