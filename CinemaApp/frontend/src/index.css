@@ -136,4 +136,6 @@ hr {
   font-size: 4em;
 } */
 
-
+.nav-list {
+  display: inline;
+}

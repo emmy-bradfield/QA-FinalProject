@@ -41,7 +41,7 @@ paymentRouter.route('/post').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
-paymentRouter.route('/update/:id').post((req, res) => {
+paymentRouter.route('/update/:id').put((req, res) => {
     Payment.findById(req.params.id)
       .then(payment => {
         payment.bookingID = req.body.bookingID;
