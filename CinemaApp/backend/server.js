@@ -6,9 +6,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoose = require("mongoose");
-const paymentRoute = require("./routes/paymentRoute.js");
-const bookingRoute = require("./routes/BookingRoutes");
-app.use("/payments",paymentRoute);
+const bookingRoute = require("./routes/bookingRouter");
 app.use("/bookings", bookingRoute);
 const router = express.Router();
 
