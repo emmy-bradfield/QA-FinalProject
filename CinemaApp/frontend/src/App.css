@@ -37,25 +37,52 @@
   }
 }
 
-.poster-nav{
+.poster-nav {
   display: inline-flex;
   justify-content: space-evenly;
   flex-direction: row;
 }
 
-.page-image{
+.page-image {
   width: 40vw;
   height: 120vh;
   margin: 1em;
 }
 
-.poster-image{
+.poster-image {
   width: 20vw;
   height: 60vh;
   margin: 1em;
 }
 
-.center{
+.page-text{
+  width: 40vw;
+  height: fit-content;
+  padding:2em;
+  background-color: rgba(0, 0, 0, 0.486);
+  color: white;
+}
+
+.light-text{
+  color: lightgrey !important;
+}
+
+.stack{
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: inherit;
+}
+
+.slide{
+  display:inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
@@ -64,39 +91,103 @@
   width: 100%;
 }
 
-.slide-left{
+.margin-center{
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.slide-left {
   display: inline-flex;
   justify-content: left;
   margin-left: 5em;
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
-  width: 100%;
 }
 
-.movie-details{
+.movie-details {
   margin-left: 3em;
   text-align: left;
   list-style: none;
   align-items: center;
 }
 
-.no-bullet{
+.classy-link{
+  color: white;
+  text-decoration: none;
+}
+
+a{
+  color: lightgrey;
+  text-decoration: inherit;
+}
+
+a:hover{
+  color: lightgrey;
+  text-decoration: inherit;
+}
+
+.no-bullet {
   list-style: none;
 }
 
-.drop3{
+.drop3 {
   margin-top: 3em;
 }
 
-.drop5{
+.drop5 {
   margin-top: 5em;
 }
 
-.in3{
+.in3 {
   margin-left: 3em;
 }
 
-.in5{
+.in5 {
   margin-left: 5em;
+}
+
+.left-text{
+  text-align: left;
+}
+
+
+/* Payment Page */
+
+#payment_form {
+  border: solid;
+  display:inline-flex;
+  width: 80%;
+}
+#left_col {
+  border: solid;
+  width: 50%;
+  padding: 1%;
+}
+#right_col {
+  border: solid;
+  width: 50%;
+  padding: 1%;
+}
+.hidePoint {
+  list-style-type: none;
+}
+input {
+  display: flex;
+  justify-self: center;
+}
+
+/* Opening times page */
+.times {
+  display: flex;
+  justify-content: center;
+}
+
+.opening-title {
+  margin-bottom: 1em;
+}
+
+.opening-text {
+  margin: 4em;
+  text-align: center;
 }
