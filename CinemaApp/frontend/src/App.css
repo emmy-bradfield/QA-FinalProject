@@ -340,8 +340,13 @@ hr {
 /* Opening times page */
 .times {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: 1.5em;
+}
+
+.times ul {
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 .opening-title {
@@ -350,6 +355,7 @@ hr {
 
 .opening-text {
   margin: 0 4em 2em;
+  margin-top: 1em;
   text-align: center;
   font-size: 1.5em;
 }
@@ -358,4 +364,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.times-card {
+  width: 40%;
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius);
+  padding: 1em;
+  margin: auto;
+  --bs-card-bg: rgba(255, 255, 255, 0.555);
+  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+  --bs-card-border-width: 1px;
+  --bs-card-border-radius: 0.375rem;
+  --bs-card-border-color: var(--bs-border-color-translucent);
 }
