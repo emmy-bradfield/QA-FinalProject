@@ -156,7 +156,8 @@ a:hover{
 
 #payment_form {
   border: solid;
-  display:inline-flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 80%;
 }
 #left_col {
@@ -165,6 +166,8 @@ a:hover{
   padding: 1%;
 }
 #right_col {
+  display: flex;
+  flex-direction: column;
   border: solid;
   width: 50%;
   padding: 1%;

@@ -20,7 +20,7 @@ paymentRouter.route('/post').post((req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const cardNumber = Number(req.body.cardNumber);
-    const expiryDate = Number(req.body.expiryDate);
+    const expDate = Number(req.body.expDate);
     const cvc = Number(req.body.cvc);
     const datePaid = new Date();
     const price = Number(req.body.price);
@@ -30,7 +30,7 @@ paymentRouter.route('/post').post((req, res) => {
       firstName,
       lastName,
       cardNumber,
-      expiryDate,
+      expDate,
       cvc,
       datePaid,
       price
@@ -48,7 +48,7 @@ paymentRouter.route('/update/:id').post((req, res) => {
         payment.firstName = req.body.firstName;
         payment.lastName = req.body.lastName;
         payment.cardNumber = Number(req.body.cardNumber);
-        payment.expiryDate = Number(req.body.expiryDate);
+        payment.expDate = Number(req.body.expDate);
         payment.cvc = Number(req.body.cvc);
         payment.datePaid = new Date();
         payment.price = Number(req.body.price);
