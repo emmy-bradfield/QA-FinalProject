@@ -48,12 +48,26 @@
   width: 40vw;
   height: 120vh;
   margin: 1em;
+  border-radius: 10px;
 }
 
 .poster-image {
   width: 20vw;
-  height: 60vh;
+  height: 70vh;
   margin: 1em;
+  border-radius: 10px;
+}
+
+.card-poster {
+  height: fit-content;
+  width: fit-content;
+}
+
+.card-poster:hover{
+  height: fit-content;
+  width: fit-content;
+  transition: transform;
+  transform: translateY(-0.5em);
 }
 
 .page-text {
@@ -249,7 +263,6 @@ a:hover {
   font-weight: bold;
   margin-top: 0.5em;
 }
-
 
 /* Payment Page */
 
