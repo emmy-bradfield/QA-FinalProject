@@ -1,37 +1,31 @@
 const mongoose = require('mongoose');
 
-const {Schema,model} = mongoose;
+const {Schema, model} = mongoose;
 
 const bookingSchema = new Schema({
-    firstName: {
-        type: String,
-    },
-    lastName: {
-        type: String,
-    },
-    movie: {
-        type: String,
-        ref: "Movies",
-    },
-    day: {
-        type: String,
-        minlenght: "5",
-    },
-    time: {
-        type: String,
-    },
-    noOfTickets: [{
-        noOfAdult: Number,
-        noOfChild: Number,
-        noOfConcession: Number
-    }],
-    payment: [{
-        cardName: String,
-        cardNum: Number,
-        cardExp: String,
-        cardCVC: Number
-    }]
+    firstName: String,
+    lastName: String,
+    movie: String,
+    day: String,
+    time: String,
+    tickets: [
+        {
+            noOfAdult: String,
+            noOfChild: String,
+            noOfConcession: String
+        }
+    ],
+    payment: [
+        {
+            cardName: String,
+            cardNumber: String,
+            cardDate: String,
+            cardCVC: String
+        }
+    ]
 });
 
 const Booking = model('Booking', bookingSchema)
-module.exports = {"Booking": Booking};
+module.exports = {
+    "Booking": Booking
+};

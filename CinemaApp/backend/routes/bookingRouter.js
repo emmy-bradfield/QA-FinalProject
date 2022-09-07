@@ -3,20 +3,22 @@ const bookingRoute = express.Router();
 
 const {Booking} = require('../Models/bookingModel');
 
-//create movie using form
+// create movie using form
 bookingRoute.route('/post').post((req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const movie = req.body.movie;
     const day = req.body.day;
     const time = req.body.time;
-    const adult = req.body.noOfAdult;
-    const child = req.body.noOfChild;
-    const concession = req.noOfConcession;
+    const noOfAdult = req.body.noOfAdult;
+    const noOfChild = req.body.noOfChild;
+    const noOfConcession = req.body.noOfConcession;
     const cardName = req.body.cardName;
-    const cardNum = req.body.cardNum;
-    const cardExp = req.body.cardExp;
+    const cardNumber = req.body.cardNumber;
+    const cardDate = req.body.cardDate;
     const cardCVC = req.body.cardCVC;
+    const tickets = {noOfAdult, noOfChild, noOfConcession};
+    const payment = {cardName, cardNumber, cardDate, cardCVC};
 
     const newBooking = new Booking({
         firstName,
@@ -24,81 +26,67 @@ bookingRoute.route('/post').post((req, res) => {
         movie,
         day,
         time,
-        adult,
-        child,
-        concession,
-        cardName,
-        cardNum,
-        cardExp,
-        cardCVC
+        tickets,
+        payment
     });
 
-    newBooking.save()
-    .then(() => res.json("Booking Successful"))
-    .catch((err) => res.status(400).json('Error: ' + err))
+    newBooking.save().then(() => res.json("Booking Successful")).catch((err) => res.status(400).json('Error: ' + err))
 })
 
-// bookingRoute.post('/post'(req, res) => {
-//     try {
-//         const newBooking = new Booking(req.body);
-//         console.log(newBooking);
-//         newBooking.save();
-//         res.status(201).send(newBooking);
-//     } catch {
-//         res.status(404).send({ error: 'The request could not be completed' });
-//     }
-// });
 
-//get all bookings
+// get all bookings
 bookingRoute.get('/getAll', async (req, res) => {
     try {
-        const bookings = Booking.find()
-            .then(bookings => res.json(bookings));
-    } catch {
-        res.status(404).send({ error: 'No bookings available' });
-    }
-});
+            const bookings = Booking.find().then(bookings => res.json(bookings));
+        } catch {
+            res.status(404).send(
+                {error: 'No bookings available'}
+            );
+        }}
+);
 
 
-//update booking by id
+// update booking by id
 bookingRoute.put('/update/:id', async (req, res) => {
     try {
-        const booking =  Booking.findById(req.params.id)
-        // const newBooking = {
-        //     booking
-        // }
-       //Object.assign(booking, req.body)
+            const booking = Booking.findById(req.params.id)
+            // const newBooking = {
+            //     booking
+            // }
+            // Object.assign(booking, req.body).then(booking => booking.save().then(() => res.json("Booking updated")));
 
-         .then(booking => booking.save()
-         .then(()=> res.json("Booking updated")));
-        
-    } catch {
-        res.status(404).send({ error: 'The booking could not be updated' });
-    }
-});
+        } catch {
+            res.status(404).send(
+                {error: 'The booking could not be updated'}
+            );
+        }}
+);
 
-//delete booking
+// delete booking
 
 bookingRoute.delete('/delete/:id', async (req, res) => {
     try {
-        const booking = await Booking.findById(req.params.id);
-        await booking.deleteOne();
-        res.status(201).send(booking);
-    } catch {
-        res.status(404).send({ error: 'the booking could not be deleted' });
-    }
-});
+            const booking = await Booking.findById(req.params.id);
+            await booking.deleteOne();
+            res.status(201).send(booking);
+        } catch {
+            res.status(404).send(
+                {error: 'the booking could not be deleted'}
+            );
+        }}
+);
 
-//get booking by name
+// get booking by name
 bookingRoute.get('/getByName/:name', async (req, res) => {
     try {
 
-      const booking = Booking.findOne({"name" : req.params.name})
-        .then(booking => res.json(booking));
-    } catch {
-        res.status(404).send({ error: 'no bookings' });
-    }
-});
+            const booking = Booking.findOne({"name": req.params.name}).then(booking => res.json(booking));
+        } catch {
+            res.status(404).send(
+                {error: 'no bookings'}
+            );
+        }}
+);
 
 
 module.exports = bookingRoute;

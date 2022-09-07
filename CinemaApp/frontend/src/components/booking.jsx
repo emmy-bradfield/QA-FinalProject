@@ -27,20 +27,15 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
-            noOfTickets: {
-                noOfAdult: '',
-                noOfChild: '',
-                noOfConcession: ''
-            },
-            payment: {
-                cardName: '',
-                cardNumber: '',
-                cardDate: '',
-                cardCVC: ''
-            }
+            noOfAdult: '',
+            noOfChild: '',
+            noOfConcession: '',
+            cardName: '',
+            cardNumber: '',
+            cardDate: '',
+            cardCVC: ''
         }
     }
-
 
     onChangeFirstName(e) {
         this.setState({
@@ -51,107 +46,87 @@ class Bookings extends Component {
         this.setState({
             lastName: e.target.value
         });
-
     }
 
     onChangeMovie(e) {
         this.setState({
             movie: e.target.value
-        })
-        console.log(e.target.value);
+        });
     }
 
     onChangeDay(e) {
         this.setState({
             day: e.target.value
-        })
+        });
     }
 
     onChangeTime(e) {
         this.setState({
             time: e.target.value
-        })
+        });
     }
 
     onChangeAdult(e) {
         this.setState({
-            noOfTickets: {
-                noOfAdult: e.target.value
-            }
-        })
+            noOfAdult: e.target.value
+        });
     }
 
     onChangeChild(e) {
         this.setState({
-            noOfTickets: {
-                noOfChild: e.target.value
-            }
-        })
+            noOfChild: e.target.value
+        });
     }
 
     onChangeConcession(e) {
         this.setState({
-            noOfTickets: {
-                noOfConcession: e.target.value
-            }
-        })
+            noOfConcession: e.target.value
+        });
     }
 
     onChangeCardName(e) {
         this.setState({
-            payment: {
-                cardName: e.target.value
-            }
-        })
+            cardName: e.target.value
+        });
     }
 
     onChangeCardNumber(e) {
         this.setState({
-            payment: {
-                cardNumber: e.target.value
-            }
-        })
+            cardNumber: e.target.value
+        });
     }
 
     onChangeCardDate(e) {
         this.setState({
-            payment: {
-                cardDate: e.target.value
-            }
-        })
+            cardDate: e.target.value
+        });
     }
 
     onChangeCVC(e) {
         this.setState({
-            payment: {
-                cardCVC: e.target.value
-            }
-        })
+            cardCVC: e.target.value
+        });
     }
 
     onSubmit(e) {
         e.preventDefault();
-        const payment = {
+        const booking = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             movie: this.state.movie,
             day: this.state.day,
             time: this.state.time,
-            noOfTickets: [{
-                noOfAdult: this.state.noOfTickets.noOfAdult,
-                noOfChild: this.state.noOfTickets.noOfChild,
-                noOfConcession: this.state.noOfTickets.noOfConcession
-            }],
-            payment: [{
-                cardName: this.state.payment.cardName,
-                cardNumber: this.state.payment.cardNumber,
-                cardDate: this.state.payment.cardDate,
-                cardCVC: this.state.payment.cardCVC
-            }]
+            noOfAdult: this.state.noOfAdult,
+            noOfChild: this.state.noOfChild,
+            noOfConcession: this.state.noOfConcession,
+            cardName: this.state.cardName,
+            cardNumber: this.state.cardNumber,
+            cardDate: this.state.cardDate,
+            cardCVC: this.state.cardCVC
         }
-        window.alert(JSON.stringify(payment));
+        window.alert(JSON.stringify(booking));
 
-        axios.post('http://localhost:4000/bookings/post', payment)
+        axios.post('http://localhost:4000/bookings/post', booking)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -160,17 +135,13 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
-            noOfTickets: {
             noOfAdult: '',
             noOfChild: '',
-            noOfConcession: ''
-        },
-            payment: {
+            noOfConcession: '',
             cardName: '',
             cardNumber: '',
             cardDate: '',
             cardCVC: ''
-        }
         })
     }
 
@@ -214,11 +185,11 @@ class Bookings extends Component {
                             <li>
                                 <label> Tickets: </label> <br />
                                 <label>Adults {"(16+)"} </label>
-                                <input type="number" value={this.state.noOfAdult} onChange={this.onChangeAdult} />
+                                <input type="text" value={this.state.noOfAdult} onChange={this.onChangeAdult} />
                                 <label>Children </label>
-                                <input type="number" value={this.state.noOfChild} onChange={this.onChangeChild} />
+                                <input type="text" value={this.state.noOfChild} onChange={this.onChangeChild} />
                                 <label>Concessions </label>
-                                <input type="number" value={this.state.noOfConcession} onChange={this.onChangeConcession} />
+                                <input type="text" value={this.state.noOfConcession} onChange={this.onChangeConcession} />
                             </li>
                             <li>
                                 <label>Name on Card</label>
@@ -226,7 +197,7 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label>Card Number</label>
-                                <input type="number" value={this.state.cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
+                                <input type="text" value={this.state.cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
                             </li>
                             <li>
                                 <label>Expiry Date</label>
@@ -234,7 +205,7 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label>CVC</label>
-                                <input type="number" value={this.state.cardCVC} onChange={this.onChangeCVC} id="cvc" placeholder="739"></input>
+                                <input type="text" value={this.state.cardCVC} onChange={this.onChangeCVC} id="cvc" placeholder="739"></input>
                             </li>
                             <div id='payBtn'>
                                 <button type="submit" onClick={this.onSubmit}>Confirm Payment</button>
