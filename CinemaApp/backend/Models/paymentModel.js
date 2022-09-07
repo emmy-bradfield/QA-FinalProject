@@ -4,17 +4,17 @@ const mongoose = require('mongoose');
 const {Schema,model} = mongoose;
 
 const paymentModel = new Schema({
-    bookingID : Number,
+    // bookingID : Number,
     firstName : String,
     lastName : String,
-    cardNumber : Number,
-    expiryDate : Number,
-    cvc : Number,
-    datePaid : {
-        type: Date,
-        default: Date.now()
-    },
-    price : Number
+    cardNumber : String,
+    expDate : String,
+    cvc : String,
+    // datePaid : {
+    //     type: Date,
+    //     default: Date.now()
+    // },
+    // price : Number
 });
 
 const Payment = model('Payment', paymentModel);
