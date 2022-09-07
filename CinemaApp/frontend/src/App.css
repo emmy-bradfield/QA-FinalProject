@@ -190,6 +190,14 @@ a:hover {
   text-align: left;
 }
 
+
+/* Payment Page */
+
+#payment_form {
+  border: solid;
+  display: inline-flex;
+  width: 80%;
+
 .main-nav {
   display: inline-flex;
   justify-content: space-evenly;
@@ -334,6 +342,7 @@ hr {
 .times {
   display: flex;
   justify-content: center;
+  font-size: 1.5em;
 }
 
 .opening-title {
@@ -341,6 +350,13 @@ hr {
 }
 
 .opening-text {
-  margin: 4em;
+  margin: 0 4em 2em;
   text-align: center;
+  font-size: 1.5em;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
