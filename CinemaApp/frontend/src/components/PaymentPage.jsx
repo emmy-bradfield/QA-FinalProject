@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class PaymentPage extends Component {
 
@@ -46,7 +47,6 @@ class PaymentPage extends Component {
             expDate: e.target.value
         });
         console.log("EXP changed");
-
     }
     onChangeCvc(e) {
         this.setState({
@@ -67,6 +67,10 @@ class PaymentPage extends Component {
         }
         console.log(payment);
         window.alert(JSON.stringify(payment));
+
+        axios.post('http://localhost:4000/payments/post', payment)
+        .then(res => console.log(res.data));
+
     }
 
     render() {
@@ -83,7 +87,7 @@ class PaymentPage extends Component {
                                 </li>
                                 <li>
                                     <label>Expiry Date</label>
-                                    <input type="text" value={this.state.expDate} onChange={this.onChangeExpDate} id="expirty_date" placeholder="1804 - 18th April"></input>
+                                    <input type="text" value={this.state.expDate} onChange={this.onChangeExpDate} id="expiry_date" placeholder="1804 - 18th April"></input>
                                 </li>
                                 <li>
                                     <label>CVC</label>
