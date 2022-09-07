@@ -5,9 +5,9 @@ const Home = () => {
     <>
         <div className="main-text">
             <div className="main-text">
-               <h1 className="title">QA Cinemas</h1>
-               <hr/>
-               <p className="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis rerum quae sed cumque itaque nostrum velit non perferendis magni quibusdam neque beatae maiores quidem, repellendus et commodi inventore placeat nisi?</p>
+               <h1 className="title">QA Cinemas<hr/></h1>
+               
+               <p className="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo voluptas esse aut, tenetur ducimus aspernatur impedit enim exercitationem optio aliquid dignissimos. Magni voluptatibus quod veritatis! Quod ipsam dolor assumenda similique.</p>
             </div>
             <div className="col">
                 <div className="card-img card1">
@@ -20,7 +20,7 @@ const Home = () => {
                 </div>
                 <div className="card-img card3">
                     <h4>Explore</h4>
-                    <p>Discover riveting excitment</p>
+                    <p>Discover riveting stories</p>
                 </div>
                 <div className="card-img card4">
                     <h4>Experience</h4>
@@ -29,8 +29,6 @@ const Home = () => {
 
             </div>
         </div>
-    
-    
     </>
    )
 

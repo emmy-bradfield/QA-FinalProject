@@ -5,7 +5,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(https://images.pexels.com/photos/8263326/pexels-photo-8263326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-size: cover;
+  background-repeat: repeat;
   padding-bottom: 2em;
+  color: whitesmoke !important;
 }
 
 .main-text {
@@ -21,8 +23,7 @@ body {
   font-size: 6.25em;
   color: whitesmoke;
   text-align: center;
-  padding-top: 1%;
-  padding-bottom: 20px;
+  padding-bottom: 2%;
   width:100%;
 }
 
@@ -59,6 +60,7 @@ body {
   display: inline-block;
   transition: transform;
   transform: translateY(-0.6250em);
+  cursor: pointer;
 }
 
 .col {
@@ -91,8 +93,18 @@ hr {
 }
 
 .nav {
-  background: none;
-  padding: 2em;
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: #6c757d;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: space-evenly;
 }
 
 .nav a {
@@ -108,6 +120,21 @@ hr {
   text-shadow: 1em;
 }
 
+.navi{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: small;
+}
+
+/* .soon{
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 0.7em;
+  font-size: 4em;
+} */
 
 .nav-list {
   display: inline;

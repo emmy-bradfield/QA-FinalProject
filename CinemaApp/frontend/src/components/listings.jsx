@@ -11,17 +11,17 @@ const Listings = () => {
             <div className="center">
                 <nav className="navbar poster-nav center">
                     <ul className="navbar">
-                        <li className="nav-item nav-link card-img">
-                            <Link to="/listings/beautybeef"><img className="poster-image" src={BeautyBeefImg} /></Link>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/beautybeef"><div className="card-poster"><img className="poster-image" src={BeautyBeefImg}/></div></Link>
                         </li>
-                        <li className="nav-item nav-link card-img">
-                            <Link to="/listings/moonstersinc"><img className="poster-image" src={MoonstersImg} /></Link>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/moonstersinc"><div className="card-poster"><img className="poster-image" src={MoonstersImg}/></div></Link>
                         </li>
-                        <li className="nav-item nav-link card-img">
-                            <Link to="/listings/dairymovie"><img className="poster-image" src={DairyMovie}/></Link>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/dairymovie"><div className="card-poster"><img className="poster-image" src={DairyMovie}/></div></Link>
                         </li>
-                        <li className="nav-item nav-link card-img">
-                            <Link to="/listings/cowsablanca"><img className="poster-image" src={Cowsablanca} /></Link>
+                        <li className="nav-item nav-link">
+                            <Link to="/listings/cowsablanca"><div className="card-poster"><img className="poster-image" src={Cowsablanca}/></div></Link>
                         </li>
                     </ul>
                 </nav>

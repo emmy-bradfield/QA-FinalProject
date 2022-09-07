@@ -69,8 +69,7 @@ class PaymentPage extends Component {
         window.alert(JSON.stringify(payment));
 
         axios.post('http://localhost:4000/payments/post', payment)
-            .then(res => console.log(res.data));
-
+        .then(res => console.log(res.data));
     }
 
     render() {
@@ -108,7 +107,6 @@ class PaymentPage extends Component {
                                 <button type="submit" onClick={this.onSubmit}>Confirm Payment</button>
                             </div>
                         </ul>
-
                     </form>
                 </div>
             </>
