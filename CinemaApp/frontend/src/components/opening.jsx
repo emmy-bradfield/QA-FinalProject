@@ -2,7 +2,7 @@ const Opening = () => {
   return (
     <div className="light-text">
       <h1 className="center opening-title">Opening times</h1>
-      <hr />
+      <hr className="hr3" />
       <p className="opening-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste
         nesciunt natus nam? Officiis odio aspernatur aliquid mollitia omnis
