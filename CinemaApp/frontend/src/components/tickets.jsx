@@ -6,19 +6,19 @@ class Tickets extends Component {
 
     render() {
         return (
-            <>
-                <nav className='nav lift3'>
-                    <ul className="main-nav">
-                        <li className='navi'>
+            <div>
+                <nav>
+                    <ul className="main-nav slide spread">
+                        <li className='navi navi-xl'>
                             <Link to="/tickets/bookings">Book Tickets</Link>
                         </li>
-                        <li className='navi'>
+                        <li className='navi navi-xl'>
                             <Link to="/tickets/orders">My Orders</Link>
                         </li>
                     </ul>
                 </nav>
                 <Outlet />
-            </>
+            </div>
         )
     }
 }
