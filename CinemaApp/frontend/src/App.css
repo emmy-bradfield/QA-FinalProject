@@ -283,7 +283,7 @@ a:hover {
 #payment_form {
   display: flex;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   flex-direction: column;
   /* border: solid; */
   color: whitesmoke;
@@ -302,7 +302,8 @@ input {
 }
 
 .paymentHeading {
-  font-size: 3em;
+  font-size: 1.8em;
+  padding-top: 3%;
 }
 
 #payBtn {
@@ -330,11 +331,10 @@ button:hover {
   background-color: #097777;
 }
 
-hr {
+.hr2 {
   color: whitesmoke;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 /* Opening times page */
