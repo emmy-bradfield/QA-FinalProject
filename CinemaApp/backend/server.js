@@ -6,10 +6,10 @@ app.use(express.json());
 app.use(cors());
 
 const mongoose = require("mongoose");
-const paymentRoute = require("./routes/paymentRoute.js");
-const bookingRoute = require("./routes/BookingRoutes");
-app.use("/payments",paymentRoute);
+const bookingRoute = require("./routes/bookingRouter");
 app.use("/bookings", bookingRoute);
+const emailRoute = require("./routes/emailRouter")
+app.use("/emails", emailRoute);
 const router = express.Router();
 
 mongoose.connect('mongodb+srv://team-lemon:cheese.please1@qacinema.zx2mivg.mongodb.net/cinema',{useNewUrlParser : true},

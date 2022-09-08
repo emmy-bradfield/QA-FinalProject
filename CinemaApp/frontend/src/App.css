@@ -63,7 +63,7 @@
   width: fit-content;
 }
 
-.card-poster:hover{
+.card-poster:hover {
   height: fit-content;
   width: fit-content;
   transition: transform;
@@ -190,6 +190,34 @@ a:hover {
   text-align: left;
 }
 
+.form-text{
+  width: 95%;
+  text-align: left;
+  font-size: medium;
+  color: black;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.error-text{
+  width: 95%;
+  text-align: left;
+  font-size: medium;
+  color: rgb(160, 37, 0);
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 1em;
+  font-style: italic;
+}
+
+.form-control2{
+  height: fit-content;
+  padding: 0.2em;
+  margin-top: 0.1em;
+}
 
 /* Payment Page */
 
@@ -228,14 +256,22 @@ a:hover {
   padding-right: 1em;
 }
 
-.minor-header{
+.minor-header {
   background-color: rgba(0, 0, 0, 0.452);
   padding-top: 1em;
   padding-bottom: 1em;
-  width:100%;
+  width: 100%;
 }
 
-.card-subtle{
+.spread{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.card-subtle {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
@@ -267,7 +303,7 @@ a:hover {
   margin: 0.5em;
 }
 
-.card-inner-text{
+.card-inner-text {
   color: black;
   font-weight: bold;
   margin-top: 0.5em;
@@ -284,12 +320,11 @@ a:hover {
 #payment_form {
   display: flex;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   flex-direction: column;
   /* border: solid; */
   color: whitesmoke;
   width: 80%;
-
 }
 
 .hidePoint {
@@ -304,15 +339,16 @@ input {
 }
 
 .paymentHeading {
-  font-size: 3em;
+  font-size: 1.8em;
+  padding-top: 3%;
 }
 
 #payBtn {
   display: flex;
-  margin-top:10%;
+  margin-top: 10%;
   justify-content: center;
 }
-button{
+button {
   color: whitesmoke;
   background-color: #099f9f;
   border: none;
@@ -320,30 +356,92 @@ button{
   width: 100%;
   padding: 3% 3.5% 3% 3.5%;
   margin: 6%;
-  border-radius:  0.5em;
+  border-radius: 0.5em;
   box-shadow: 1em;
   cursor: pointer;
-  font-family: 'Anek Telugu', sans-serif;
+  font-family: "Anek Telugu", sans-serif;
   text-align: center;
   transition: all 0.5s;
 }
 
-button:hover{
-background-color: #097777;
+button:hover {
+  background-color: #097777;
 }
 
-hr {
+.hr2 {
   color: whitesmoke;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.embed-form{
+  width: 98vw;
+  height:fit-content;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.email-form{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.753);
+  text-align: left;
+  color: #000000;
+  font-weight: bold;
+}
+
+.message-txt{
+  min-height: 20vh !important;
+}
+
+.sub-component{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.568);
+  text-align: left;
+}
+
+.side-text{
+  max-width: 30vw;
+}
+
+.flush-list{
+  margin-left: -2em;
+}
+
+.wide-caption{
+  width: fit-content;
+  padding: 0.5em;
+  display: inline;
+  font-style: italic;
+  color: lightgrey;
 }
 
 /* Opening times page */
 .times {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: 1.5em;
+}
+
+.times ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  line-height: 2.2em;
+  font-size: 1.2em;
+  color: whitesmoke;
 }
 
 .opening-title {
@@ -352,6 +450,7 @@ hr {
 
 .opening-text {
   margin: 0 4em 2em;
+  margin-top: 1em;
   text-align: center;
   font-size: 1.5em;
 }
@@ -360,4 +459,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.times-card {
+  width: 40%;
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+
+  border-radius: var(--bs-card-border-radius);
+  padding: 1em;
+  margin: auto;
+  background-color: rgba(36, 36, 36, 0.24);
+  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+
+  --bs-card-border-radius: 0.375rem;
+}
+
+.hr3 {
+  margin-left: 20%;
+  margin-right: 20%;
 }

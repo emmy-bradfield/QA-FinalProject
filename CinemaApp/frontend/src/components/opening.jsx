@@ -2,14 +2,14 @@ const Opening = () => {
   return (
     <div className="light-text">
       <h1 className="center opening-title">Opening times</h1>
-
+      <hr className="hr3" />
       <p className="opening-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste
         nesciunt natus nam? Officiis odio aspernatur aliquid mollitia omnis
         sequi?
       </p>
 
-      <div className="times">
+      <div className="times times-card card-inner-text">
         <div>
           <ul className="no-bullet">
             <li>Monday</li>
