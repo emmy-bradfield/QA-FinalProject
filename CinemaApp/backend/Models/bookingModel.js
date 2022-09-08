@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const {Schema, model} = mongoose;
 
 const bookingSchema = new Schema({
+    _id: String,
     firstName: String,
     lastName: String,
     movie: String,
@@ -11,6 +12,7 @@ const bookingSchema = new Schema({
     price: String,
     tickets: [
         {
+            _id: String,
             noOfAdult: String,
             noOfChild: String,
             noOfConcession: String
@@ -18,11 +20,27 @@ const bookingSchema = new Schema({
     ],
     payment: [
         {
-            cardName: String,
-            cardNumber: String,
-            cardDate: String,
-            cardCVC: String,
-            dateTime: String
+            _id: String,
+            cardName: {
+                type: String,
+                default: null
+            },
+            cardNumber: {
+                type: String,
+                default: null
+            },
+            cardDate: {
+                type: String,
+                default: null
+            },
+            cardCVC: {
+                type: String,
+                default: null
+            },
+            dateTime: {
+                type: String,
+                default: null
+            },
         }
     ]
 });

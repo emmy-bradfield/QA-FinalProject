@@ -22,7 +22,7 @@ const Navbar = () => {
                             <Link to="/information"> What to Expect</Link>
                         </li>
                         <li className='navi'>
-                            <Link to="/bookings">Bookings</Link>
+                            <Link to="/tickets">Tickets</Link>
                         </li>
                         <li className="navi">
                             <Link to="/contact">Contact</Link>

@@ -20,10 +20,25 @@ bookingRoute.route('/post').post((req, res) => {
     const cardDate = req.body.cardDate;
     const cardCVC = req.body.cardCVC;
     const dateTime = req.body.dateTime;
-    const tickets = {noOfAdult, noOfChild, noOfConcession};
-    const payment = {cardName, cardNumber, cardDate, cardCVC, dateTime};
+
+    const _id = (lastName.substring(0, 4).toUpperCase() + String(Math.floor(Math.random() * 9999) + 1000) + movie.substring(0, 2).toUpperCase())
+    const tickets = {
+        _id,
+        noOfAdult,
+        noOfChild,
+        noOfConcession
+    };
+    const payment = {
+        _id,
+        cardName,
+        cardNumber,
+        cardDate,
+        cardCVC,
+        dateTime
+    };
 
     const newBooking = new Booking({
+        _id,
         firstName,
         lastName,
         movie,
@@ -34,57 +49,70 @@ bookingRoute.route('/post').post((req, res) => {
         payment
     });
 
-    newBooking.save().then(() => res.json("Booking Successful")).catch((err) => res.status(400).json('Error: ' + err))
+    newBooking.save().then(() => res.json(newBooking._id)).catch((err) => res.status(400).json('Error: ' + err))
 })
 
 
-// get all bookings
-bookingRoute.get('/getAll', async (req, res) => {
-    try {
-            const bookings = Booking.find().then(bookings => res.json(bookings));
-        } catch {
-            res.status(404).send(
-                {error: 'No bookings available'}
-            );
-        }}
-);
+bookingRoute.route('/getAll').get((req, res) => {
+    Booking.find().then(bookings => res.json(bookings)).catch((err) => res.status(400).json('Error: ' + err))
+})
 
 
-// update booking by id
-bookingRoute.put('/update/:id', async (req, res) => {
-    try {
-            const booking = Booking.findById(req.params.id)
-        } catch {
-            res.status(404).send(
-                {error: 'The booking could not be updated'}
-            );
-        }}
-);
+bookingRoute.route('/get/:_id').get((req, res) => {
+    Booking.findById({"_id": req.params._id}).then(booking => res.json(booking)).catch((err) => res.status(400).json('Error: ' + err))
+})
 
-// delete booking
 
-bookingRoute.delete('/delete/:id', async (req, res) => {
-    try {
-            const booking = await Booking.findById(req.params.id);
-            await booking.deleteOne();
-            res.status(201).send(booking);
-        } catch {
-            res.status(404).send(
-                {error: 'the booking could not be deleted'}
-            );
-        }}
-);
+bookingRoute.route('/update/:_id').post((req, res) => {
+    const updatedBooking = {
+        firstName,
+        lastName,
+        movie,
+        day,
+        time,
+        tickets,
+        price,
+        paymentDetails
+    };
+    Booking.findByIdAndUpdate(req.params._id, {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        movie: req.body.movie,
+        day: req.body.day,
+        time: req.body.time,
+        tickets: ticketDetails,
+        price: req.body.price,
+        payment: paymentDetails
+    }, function (err, results) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("Booking Updated: ", result)
+        }
+    })
+});
 
-// get booking by name
-bookingRoute.get('/getByName/:name', async (req, res) => {
-    try {
-            const booking = Booking.findOne({"name": req.params.name}).then(booking => res.json(booking));
-        } catch {
-            res.status(404).send(
-                {error: 'no bookings'}
-            );
-        }}
-);
+bookingRoute.route('/checkout/:_id').post((req, res) => {
+    const paymentDetails = {
+        cardName: req.body.cardName,
+        cardNumber: req.body.cardNumber,
+        cardDate: req.body.cardDate,
+        cardCVC: req.body.cardCVC,
+        dateTime: req.body.dateTime
+    }
+    Booking.findByIdAndUpdate(req.params._id, {
+        payment: paymentDetails
+    }, function (err, result) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("Updated Booking: ", result)
+        }
+    })
+})
 
+bookingRoute.route('/delete/:_id').delete((req, res) => {
+    Booking.findByIdAndDelete(req.params._id).then(() => res.json("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
+})
 
 module.exports = bookingRoute;

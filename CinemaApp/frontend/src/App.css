@@ -114,6 +114,15 @@
   align-items: center;
 }
 
+.center2 {
+  display: inline-flex;
+  flex-direction: row;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
 .margin-center {
   margin-left: auto;
   margin-right: auto;
@@ -201,6 +210,17 @@ a:hover {
   line-height: 1em;
 }
 
+.form-text2{
+  width: fit-content;
+  text-align: left;
+  font-size: medium;
+  color: whitesmoke;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
 .error-text{
   width: 95%;
   text-align: left;
@@ -217,6 +237,61 @@ a:hover {
   height: fit-content;
   padding: 0.2em;
   margin-top: 0.1em;
+}
+
+.form-control3{
+  height: 2em;
+  padding: 0.2em;
+  margin-top: 0.1em;
+  width: 25vw;
+  margin-left: 0.5em;
+  margin-right: 1em;
+}
+
+.form-control4{
+  height: 2em;
+  padding: 0.2em;
+  margin-top: 0.1em;
+  width: 10vw;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  text-align: center;
+}
+
+.form-control5{
+  height: 2em;
+  padding: 0.2em;
+  margin: 0;
+  width: 25vw;
+}
+
+.btn-control {
+  height: fit-content;
+  padding-top: 0.5em;
+  margin-top: 0.1em;
+  width: 20vw;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  line-height: 1em;
+  padding-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-body{
+  color: black;
+  font-weight: bold;
+  list-style: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+
+.cleanup{
+  padding:0;
 }
 
 /* Payment Page */
@@ -327,6 +402,23 @@ a:hover {
   width: 80%;
 }
 
+#payment_form2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  flex-direction: column;
+  border: 2px solid grey;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  padding: 2em;
+  padding-bottom: 0;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 5px 10px 20px 5px grey inset;
+  margin-bottom: 3em;
+}
+
 .hidePoint {
   list-style-type: none;
 }
@@ -427,6 +519,43 @@ button:hover {
   display: inline;
   font-style: italic;
   color: lightgrey;
+}
+
+.navi-xl{
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: #282c34;
+  padding: 1em;
+  border-radius: 40px;
+  box-shadow: 5px 10px 20px 5px grey inset;
+}
+
+.navi-xl:hover{
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: #282c34;
+  padding: 1em;
+  border-radius: 40px;
+  box-shadow: 5px 10px 20px 5px rgb(173, 173, 173) inset;
+}
+
+.navi-xl:active{
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: #282c34;
+  padding: 1em;
+  border-radius: 40px;
+  box-shadow: 5px 10px 20px 5px rgb(15, 14, 14) inset;
+}
+
+.btn-box{
+  width:fit-content;
+  height: fit-content;
+  padding-bottom: 0.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  padding-top: 0.4em;
+  margin-left: 0.2em;
 }
 
 /* Opening times page */
