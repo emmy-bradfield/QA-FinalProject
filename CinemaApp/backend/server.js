@@ -6,11 +6,11 @@ app.use(express.json());
 app.use(cors());
 
 const mongoose = require("mongoose");
-const paymentRoute = require("./routes/paymentRoute.js");
-app.use("/payments",paymentRoute);
+const bookingRoute = require("./routes/bookingRouter");
+app.use("/bookings", bookingRoute);
 const router = express.Router();
 
-mongoose.connect('mongodb://localhost:27017/cinema_payments',{useNewUrlParser : true},
+mongoose.connect('mongodb+srv://team-lemon:cheese.please1@qacinema.zx2mivg.mongodb.net/cinema',{useNewUrlParser : true},
 (error) => {
     if (error) {
         console.log("Can't connect to MongoDB");
