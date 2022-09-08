@@ -24,6 +24,9 @@ const Navbar = () => {
                         <li className='navi'>
                             <Link to="/bookings">Bookings</Link>
                         </li>
+                        <li className="navi">
+                            <Link to="/contact">Contact</Link>
+                        </li>
                     </ul>
                 </nav>
                 <Outlet />

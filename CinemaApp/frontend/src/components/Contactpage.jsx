@@ -1,6 +1,6 @@
 import React from "react";
 
-import EmailForm from "./weird/EmailForm";
+import EmailForm from "./Emailform";
 
 const ContactPage = () => {
     return (
