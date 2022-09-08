@@ -190,6 +190,23 @@ a:hover {
   text-align: left;
 }
 
+.form-text{
+  width: 95%;
+  text-align: left;
+  font-size: medium;
+  color: black;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.form-control2{
+  height: fit-content;
+  padding: 0.2em;
+  margin-top: 0.1em;
+}
+
 /* Payment Page */
 
 #payment_form {
@@ -232,6 +249,14 @@ a:hover {
   padding-top: 1em;
   padding-bottom: 1em;
   width: 100%;
+}
+
+.spread{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .card-subtle {
@@ -283,7 +308,7 @@ a:hover {
 #payment_form {
   display: flex;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   flex-direction: column;
   /* border: solid; */
   color: whitesmoke;
@@ -302,7 +327,8 @@ input {
 }
 
 .paymentHeading {
-  font-size: 3em;
+  font-size: 1.8em;
+  padding-top: 3%;
 }
 
 #payBtn {
@@ -330,10 +356,65 @@ button:hover {
   background-color: #097777;
 }
 
-hr {
+.hr2 {
   color: whitesmoke;
-  margin: 0;
-  padding: 0;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.embed-form{
+  width: 98vw;
+  height:fit-content;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.email-form{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.753);
+  text-align: left;
+  color: #000000;
+  font-weight: bold;
+}
+
+.message-txt{
+  min-height: 20vh !important;
+}
+
+.sub-component{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.568);
+  text-align: left;
+}
+
+.side-text{
+  max-width: 30vw;
+}
+
+.flush-list{
+  margin-left: -2em;
+}
+
+.wide-caption{
+  width: fit-content;
+  padding: 0.5em;
+  display: inline;
+  font-style: italic;
+  color: lightgrey;
 }
 
 /* Opening times page */

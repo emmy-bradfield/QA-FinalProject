@@ -132,7 +132,7 @@ class Bookings extends Component {
             cardCVC: this.state.cardCVC,
             dateTime: new Date()
         }
-        if (((this.state.noOfAdult)+(this.state.noOfChild)+(this.state.noOfConcession))> 10) {
+        if ((Number(this.state.noOfAdult)+Number(this.state.noOfChild)+Number(this.state.noOfConcession))> 10) {
             window.alert("That is over our 10-ticket limit")
             return;
         } else {
@@ -193,21 +193,61 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label> Screening </label>
-                                <input type="text" value={this.state.day} onChange={this.onChangeDay} />
-                                <input type="text" value={this.state.time} onChange={this.onChangeTime} />
+                                <input type="text" value={this.state.day} onChange={this.onChangeDay} placeholder="Date" />
+                                <input type="text" value={this.state.time} onChange={this.onChangeTime} placeholder="Time"/>
                             </li>
                             <li>
                                 <label> Tickets: </label> <br />
                                 <label>Adults {"(16+)"} </label>
-                                <input type="text" value={this.state.noOfAdult} onChange={this.onChangeAdult} />
+                                <select className="form-control" onChange={this.onChangeAdult}>
+                                    <option selected disabled hidden>Number of Adults</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                    
+                                </select>
                                 <label>Children </label>
-                                <input type="text" value={this.state.noOfChild} onChange={this.onChangeChild} />
+                                <select className="form-control" onChange={this.onChangeChild}>
+                                    <option selected disabled hidden>Number of Children</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
                                 <label>Concessions </label>
-                                <input type="text" value={this.state.noOfConcession} onChange={this.onChangeConcession} />
+                                <select className="form-control" onChange={this.onChangeConcession}>
+                                    <option selected disabled hidden>Number of Concessions</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
                             </li>
                             <li>
                                 <label>Name on Card</label>
-                                <input type="text" value={this.state.cardName} onChange={this.onChangeCardName} id="card_number"></input>
+                                <input type="text" value={this.state.cardName} onChange={this.onChangeCardName} id="card_number" placeholder='John M Doe'></input>
                             </li>
                             <li>
                                 <label>Card Number</label>
@@ -215,7 +255,7 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label>Expiry Date</label>
-                                <input type="text" value={this.state.cardDate} onChange={this.onChangeCardDate} id="expiry_date" placeholder="1804 - 18th April"></input>
+                                <input type="text" value={this.state.cardDate} onChange={this.onChangeCardDate} id="expiry_date" placeholder="0627 - June 2027"></input>
                             </li>
                             <li>
                                 <label>CVC</label>
