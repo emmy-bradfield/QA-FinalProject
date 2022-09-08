@@ -193,8 +193,61 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label> Screening </label>
-                                <input type="text" value={this.state.day} onChange={this.onChangeDay} placeholder="Date" />
-                                <input type="text" value={this.state.time} onChange={this.onChangeTime} placeholder="Time"/>
+                               
+                                <select className="form-control" onChange={this.onChangeDay}>
+                                    <option selected disabled hidden>Select Date</option>
+                                    <option>19/09/2022</option>
+                                    <option>20/09/2022</option>
+                                    <option>21/09/2022</option>
+                                    <option>22/09/2022</option>
+                                    <option>23/09/2022</option>
+                                    <option>24/09/2022</option>
+                                    <option>25/09/2022</option>
+                                    <option>26/09/2022</option>
+                                    <option>27/09/2022</option>
+                                    <option>28/09/2022</option>
+                                    <option>29/09/2022</option>
+                                    <option>30/09/2022</option>
+                                    <option>01/10/2022</option>
+                                    <option>02/10/2022</option>
+                                </select>
+
+                              
+                                <select className="form-control" onChange={this.onChangeTime}>
+                                    <option selected disabled hidden>Select Time</option>
+                                    <option>11:00</option>
+                                    <option>11:30</option>
+                                    <option>12:00</option>
+                                    <option>12:30</option>
+                                    <option>13:00</option>
+                                    <option>13:30</option>
+                                    <option>14:00</option>
+                                    <option>14:30</option>
+                                    <option>15:00</option>
+                                    <option>15:30</option>
+                                    <option>16:00</option>
+                                    <option>16:30</option>
+                                    <option>17:00</option>
+                                    <option>17:30</option>
+                                    <option>18:00</option>
+                                    <option>18:30</option>
+                                    <option>19:00</option>
+                                    <option>19:30</option>
+                                    <option>20:00</option>
+                                    <option>20:30</option>
+                                    <option>21:00</option>
+                                    <option>21:30</option>
+                                    <option>22:00</option>
+                                    <option>22:30</option>
+                                    <option>23:00</option>
+                                    <option>23:30</option>
+                                    <option>00:00</option>
+                                    <option>00:30</option>
+                                    <option>01:00</option>
+                                    <option>01:30</option>
+                               
+                                </select>
+
                             </li>
                             <li>
                                 <label> Tickets: </label> <br />
