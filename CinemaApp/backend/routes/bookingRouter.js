@@ -10,6 +10,7 @@ bookingRoute.route('/post').post((req, res) => {
     const movie = req.body.movie;
     const day = req.body.day;
     const time = req.body.time;
+    const price = req.body.price;
     const noOfAdult = req.body.noOfAdult;
     const noOfChild = req.body.noOfChild;
     const noOfConcession = req.body.noOfConcession;
@@ -17,8 +18,9 @@ bookingRoute.route('/post').post((req, res) => {
     const cardNumber = req.body.cardNumber;
     const cardDate = req.body.cardDate;
     const cardCVC = req.body.cardCVC;
+    const dateTime = req.body.dateTime;
     const tickets = {noOfAdult, noOfChild, noOfConcession};
-    const payment = {cardName, cardNumber, cardDate, cardCVC};
+    const payment = {cardName, cardNumber, cardDate, cardCVC, dateTime};
 
     const newBooking = new Booking({
         firstName,
@@ -26,6 +28,7 @@ bookingRoute.route('/post').post((req, res) => {
         movie,
         day,
         time,
+        price,
         tickets,
         payment
     });

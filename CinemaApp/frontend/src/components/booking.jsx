@@ -27,13 +27,15 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
+            price: '',
             noOfAdult: '',
             noOfChild: '',
             noOfConcession: '',
             cardName: '',
             cardNumber: '',
             cardDate: '',
-            cardCVC: ''
+            cardCVC: '',
+            dateTime: ''
         }
     }
 
@@ -116,18 +118,28 @@ class Bookings extends Component {
             movie: this.state.movie,
             day: this.state.day,
             time: this.state.time,
+            price: (
+                (this.state.noOfAdult*10)+
+                (this.state.noOfChild*5)+
+                (this.state.noOfConcession*6)
+            ),
             noOfAdult: this.state.noOfAdult,
             noOfChild: this.state.noOfChild,
             noOfConcession: this.state.noOfConcession,
             cardName: this.state.cardName,
             cardNumber: this.state.cardNumber,
             cardDate: this.state.cardDate,
-            cardCVC: this.state.cardCVC
+            cardCVC: this.state.cardCVC,
+            dateTime: new Date()
         }
-        window.alert(JSON.stringify(booking));
-
-        axios.post('http://localhost:4000/bookings/post', booking)
+        if (((this.state.noOfAdult)+(this.state.noOfChild)+(this.state.noOfConcession))> 10) {
+            window.alert("That is over our 10-ticket limit")
+            return;
+        } else {
+            axios.post('http://localhost:4000/bookings/post', booking)
             .then(res => console.log(res.data));
+            window.alert(JSON.stringify(booking));
+        }
 
         this.setState({
             firstName: '',
@@ -135,13 +147,15 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
+            price: '',
             noOfAdult: '',
             noOfChild: '',
             noOfConcession: '',
             cardName: '',
             cardNumber: '',
             cardDate: '',
-            cardCVC: ''
+            cardCVC: '',
+            dateTime: ''
         })
     }
 
