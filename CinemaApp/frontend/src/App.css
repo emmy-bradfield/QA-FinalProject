@@ -201,6 +201,18 @@ a:hover {
   line-height: 1em;
 }
 
+.error-text{
+  width: 95%;
+  text-align: left;
+  font-size: medium;
+  color: rgb(160, 37, 0);
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 1em;
+  font-style: italic;
+}
+
 .form-control2{
   height: fit-content;
   padding: 0.2em;
