@@ -1,7 +1,7 @@
 const express = require('express');
 const bookingRoute = express.Router();
 
-const {Booking} = require('../Models/bookingModel');
+const {Booking} = require('../models/bookingModel');
 
 // create movie using form
 bookingRoute.route('/post').post((req, res) => {
