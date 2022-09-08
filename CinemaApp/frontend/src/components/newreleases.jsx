@@ -12,16 +12,16 @@ const NewReleases = () => {
                 <nav className="navbar poster-nav">
                     <ul className="navbar">
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases/terrordairy"><img className="poster-image" src={TerrorDairyImg}/></Link>
+                            <Link to="/new-releases/terrordairy"><div className="card-poster"><img className="poster-image" src={TerrorDairyImg}/></div></Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases/moonions"><img className="poster-image" src={MoonionsImg} /></Link>
+                            <Link to="/new-releases/moonions"><div className="card-poster"><img className="poster-image" src={MoonionsImg}/></div></Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases/calftime"><img className="poster-image" src={CalftimeImg}/></Link>
+                            <Link to="/new-releases/calftime"><div className="card-poster"><img className="poster-image" src={CalftimeImg}/></div></Link>
                         </li>
                         <li className="nav-item nav-link">
-                            <Link to="/new-releases/thecows"><img className="poster-image" src={TheCowsImg}/></Link>
+                            <Link to="/new-releases/thecows"><div className="card-poster"><img className="poster-image" src={TheCowsImg}/></div></Link>
                         </li>
                     </ul>
                 </nav>

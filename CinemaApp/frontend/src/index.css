@@ -7,6 +7,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   padding-bottom: 2em;
+  color: whitesmoke !important;
 }
 
 .main-text {
@@ -27,10 +28,9 @@ body {
 
 }
 
-hr{
-  width: 60% !important;
-  margin-left:auto;
-  margin-right: auto;
+.hr1{
+  margin-left:20%;
+  margin-right: 20%;
 }
 
 .text {
@@ -92,8 +92,18 @@ hr{
 }
 
 .nav {
-  background: none;
-  padding: 2em;
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: #6c757d;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: space-evenly;
 }
 
 .nav a {
@@ -109,9 +119,12 @@ hr{
   text-shadow: 1em;
 }
 
-
-.nav-list {
-  display: inline;
+.navi{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: small;
 }
 
 /* .soon{
@@ -122,4 +135,6 @@ hr{
   font-size: 4em;
 } */
 
-
+.nav-list {
+  display: inline;
+}

@@ -11,7 +11,7 @@ const Opening = () => {
 
       <div className="times">
         <div>
-          <ul>
+          <ul className="no-bullet">
             <li>Monday</li>
             <li>Tuesday</li>
             <li>Wednesday</li>

@@ -70,50 +70,43 @@ class PaymentPage extends Component {
 
         axios.post('http://localhost:4000/payments/post', payment)
         .then(res => console.log(res.data));
-
     }
 
     render() {
         return (
             <>
-                <div>
-                    <form  id="payment_form" onSubmit={this.onSubmit}>
-                        <div id="left_col">
-                            <h3>Payment Information</h3>
-                            <ul className="hidePoint">
-                                <li>
-                                    <label>Card Number</label>
-                                    <input type="text" value={this.state.cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
-                                </li>
-                                <li>
-                                    <label>Expiry Date</label>
-                                    <input type="text" value={this.state.expDate} onChange={this.onChangeExpDate} id="expiry_date" placeholder="1804 - 18th April"></input>
-                                </li>
-                                <li>
-                                    <label>CVC</label>
-                                    <input type="text" value={this.state.cvc} onChange={this.onChangeCvc} id="cvc" placeholder="739"></input>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="right_col">
-                            <h3>Billing Information</h3>
-                            <ul className="hidePoint">
-                                <li>
-                                    <label>First Name</label>
-                                    <input type="text" value={this.state.firstName} onChange={this.onChangeFirstName} id="first_name" placeholder="John"></input>
-                                </li>
-                                <li>
-                                    <label>Last Name</label>
-                                    <input type="text" value={this.state.lastName} onChange={this.onChangeLastName} id="last_name" placeholder="Doe"></input>
-                                </li>
-                                <li>
-                                    <label>Click here to pay!</label>
-                                </li>
-                                <div>
-                                    <input type="submit" onClick={this.onSubmit} value="Create User" className="btn btn-primary" />
-                                </div>
-                            </ul>
-                        </div>
+                <div id='forms'>
+                    <form id="payment_form" onSubmit={this.onSubmit}>
+
+                        <h1 className='paymentHeading'>Enter your details:</h1>
+                        <ul className="hidePoint">
+                        <div> 
+                        <hr className='hr2'></hr>
+                        </div>   
+                            <li>
+                                <label>Card Number</label>
+                                <input type="text" value={this.state.cardNumber} onChange={this.onChangeCardNumber} id="card_number" placeholder="1111-2222-3333-4444"></input>
+                            </li>
+                            <li>
+                                <label>Expiry Date</label>
+                                <input type="text" value={this.state.expDate} onChange={this.onChangeExpDate} id="expiry_date" placeholder="1804 - 18th April"></input>
+                            </li>
+                            <li>
+                                <label>CVC</label>
+                                <input type="text" value={this.state.cvc} onChange={this.onChangeCvc} id="cvc" placeholder="739"></input>
+                            </li>
+                            <li>
+                                <label>First Name</label>
+                                <input type="text" value={this.state.firstName} onChange={this.onChangeFirstName} id="first_name" placeholder="John"></input>
+                            </li>
+                            <li>
+                                <label>Last Name</label>
+                                <input type="text" value={this.state.lastName} onChange={this.onChangeLastName} id="last_name" placeholder="Doe"></input>
+                            </li>
+                            <div id='payBtn'>
+                                <button type="submit" onClick={this.onSubmit}>Confirm Payment</button>
+                            </div>
+                        </ul>
                     </form>
                 </div>
             </>
