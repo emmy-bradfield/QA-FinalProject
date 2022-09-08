@@ -27,15 +27,13 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
-            price: '',
             noOfAdult: '',
             noOfChild: '',
             noOfConcession: '',
             cardName: '',
             cardNumber: '',
             cardDate: '',
-            cardCVC: '',
-            dateTime: ''
+            cardCVC: ''
         }
     }
 
@@ -118,28 +116,18 @@ class Bookings extends Component {
             movie: this.state.movie,
             day: this.state.day,
             time: this.state.time,
-            price: (
-                (this.state.noOfAdult*10)+
-                (this.state.noOfChild*5)+
-                (this.state.noOfConcession*6)
-            ),
             noOfAdult: this.state.noOfAdult,
             noOfChild: this.state.noOfChild,
             noOfConcession: this.state.noOfConcession,
             cardName: this.state.cardName,
             cardNumber: this.state.cardNumber,
             cardDate: this.state.cardDate,
-            cardCVC: this.state.cardCVC,
-            dateTime: new Date()
+            cardCVC: this.state.cardCVC
         }
-        if ((Number(this.state.noOfAdult)+Number(this.state.noOfChild)+Number(this.state.noOfConcession))> 10) {
-            window.alert("That is over our 10-ticket limit")
-            return;
-        } else {
-            axios.post('http://localhost:4000/bookings/post', booking)
+        window.alert(JSON.stringify(booking));
+
+        axios.post('http://localhost:4000/bookings/post', booking)
             .then(res => console.log(res.data));
-            window.alert(JSON.stringify(booking));
-        }
 
         this.setState({
             firstName: '',
@@ -147,15 +135,13 @@ class Bookings extends Component {
             movie: '',
             day: '',
             time: '',
-            price: '',
             noOfAdult: '',
             noOfChild: '',
             noOfConcession: '',
             cardName: '',
             cardNumber: '',
             cardDate: '',
-            cardCVC: '',
-            dateTime: ''
+            cardCVC: ''
         })
     }
 
@@ -193,67 +179,16 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label> Screening </label>
-                               
-                                <select className="form-control" onChange={this.onChangeDay}>
-                                    <option selected disabled hidden>Select Date</option>
-                                    <option>19/09/2022</option>
-                                    <option>20/09/2022</option>
-                                    <option>21/09/2022</option>
-                                    <option>22/09/2022</option>
-                                    <option>23/09/2022</option>
-                                    <option>24/09/2022</option>
-                                    <option>25/09/2022</option>
-                                    <option>26/09/2022</option>
-                                    <option>27/09/2022</option>
-                                    <option>28/09/2022</option>
-                                    <option>29/09/2022</option>
-                                    <option>30/09/2022</option>
-                                    <option>01/10/2022</option>
-                                    <option>02/10/2022</option>
-                                </select>
+                                <select className="form-control" onChange={this.onChangeDay} />
 
-                              
-                                <select className="form-control" onChange={this.onChangeTime}>
-                                    <option selected disabled hidden>Select Time</option>
-                                    <option>11:00</option>
-                                    <option>11:30</option>
-                                    <option>12:00</option>
-                                    <option>12:30</option>
-                                    <option>13:00</option>
-                                    <option>13:30</option>
-                                    <option>14:00</option>
-                                    <option>14:30</option>
-                                    <option>15:00</option>
-                                    <option>15:30</option>
-                                    <option>16:00</option>
-                                    <option>16:30</option>
-                                    <option>17:00</option>
-                                    <option>17:30</option>
-                                    <option>18:00</option>
-                                    <option>18:30</option>
-                                    <option>19:00</option>
-                                    <option>19:30</option>
-                                    <option>20:00</option>
-                                    <option>20:30</option>
-                                    <option>21:00</option>
-                                    <option>21:30</option>
-                                    <option>22:00</option>
-                                    <option>22:30</option>
-                                    <option>23:00</option>
-                                    <option>23:30</option>
-                                    <option>00:00</option>
-                                    <option>00:30</option>
-                                    <option>01:00</option>
-                                    <option>01:30</option>
-                               
-                                </select>
-
+                                <input type="text" value={this.state.day} onChange={this.onChangeDay} />
+                                <input type="text" value={this.state.time} onChange={this.onChangeTime} />
                             </li>
                             <li>
                                 <label> Tickets: </label> <br />
                                 <label>Adults {"(16+)"} </label>
                                 <select className="form-control" onChange={this.onChangeAdult}>
-                                    <option selected disabled hidden>Number of Adults</option>
+                                <option selected disabled hidden>Number of Adults</option>
                                     <option>0</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -262,15 +197,15 @@ class Bookings extends Component {
                                     <option>5</option>
                                     <option>6</option>
                                     <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                    
                                 </select>
-                                <label>Children </label>
+
+                                {/* <label>Adults {"(16+)"} </label>
+                                <input type="text" value={this.state.noOfAdult} onChange={this.onChangeAdult} /> */}
+                                
+                                <label>Children</label>
                                 <select className="form-control" onChange={this.onChangeChild}>
-                                    <option selected disabled hidden>Number of Children</option>
-                                    <option>0</option>
+                                <option selected disabled hidden>Number of Children</option>
+                                <option>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -278,13 +213,13 @@ class Bookings extends Component {
                                     <option>5</option>
                                     <option>6</option>
                                     <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
                                 </select>
-                                <label>Concessions </label>
+
+                                {/* <label>Children </label>
+                                <input type="text" value={this.state.noOfChild} onChange={this.onChangeChild} /> */}
+                                 <label>Concessions </label>
                                 <select className="form-control" onChange={this.onChangeConcession}>
-                                    <option selected disabled hidden>Number of Concessions</option>
+                                <option selected disabled hidden>Number of Concessions</option>
                                     <option>0</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -293,14 +228,14 @@ class Bookings extends Component {
                                     <option>5</option>
                                     <option>6</option>
                                     <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
                                 </select>
+
+                                {/* <label>Concessions </label>
+                                <input type="text" value={this.state.noOfConcession} onChange={this.onChangeConcession} /> */}
                             </li>
                             <li>
                                 <label>Name on Card</label>
-                                <input type="text" value={this.state.cardName} onChange={this.onChangeCardName} id="card_number" placeholder='John M Doe'></input>
+                                <input type="text" value={this.state.cardName} onChange={this.onChangeCardName} id="card_number"></input>
                             </li>
                             <li>
                                 <label>Card Number</label>
@@ -308,7 +243,7 @@ class Bookings extends Component {
                             </li>
                             <li>
                                 <label>Expiry Date</label>
-                                <input type="text" value={this.state.cardDate} onChange={this.onChangeCardDate} id="expiry_date" placeholder="0627 - June 2027"></input>
+                                <input type="text" value={this.state.cardDate} onChange={this.onChangeCardDate} id="expiry_date" placeholder="1804 - 18th April"></input>
                             </li>
                             <li>
                                 <label>CVC</label>
