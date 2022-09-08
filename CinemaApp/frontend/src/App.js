@@ -18,6 +18,7 @@ import Screens from "./components/screens";
 import Directions from "./components/directions";
 import Nearby from "./components/nearby";
 import Bookings from "./components/booking";
+import ContactPage from './components/Contactpage.jsx';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               <Route path="/information/directions" element={<Directions />}/>
               <Route path="/information/nearby" element={<Nearby />}/>
             </Route>
+            <Route path="/contact" element={<ContactPage />}/>
           </Route>
         </Routes>
       </BrowserRouter>
