@@ -25,6 +25,12 @@ body {
   text-align: center;
   padding-bottom: 2%;
   width:100%;
+
+}
+
+.hr1{
+  margin-left:20%;
+  margin-right: 20%;
 }
 
 .text {
@@ -83,13 +89,6 @@ body {
 
 .card4 {
   background-image: url(https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014619_960_720.jpg);
-}
-
-hr {
-  color: whitesmoke;
-  margin-left: 30%;
-  margin-right: 30%;
-
 }
 
 .nav {
