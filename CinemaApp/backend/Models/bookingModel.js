@@ -8,6 +8,7 @@ const bookingSchema = new Schema({
     movie: String,
     day: String,
     time: String,
+    price: String,
     tickets: [
         {
             noOfAdult: String,
@@ -20,7 +21,8 @@ const bookingSchema = new Schema({
             cardName: String,
             cardNumber: String,
             cardDate: String,
-            cardCVC: String
+            cardCVC: String,
+            dateTime: String
         }
     ]
 });
