@@ -53,11 +53,6 @@ bookingRoute.get('/getAll', async (req, res) => {
 bookingRoute.put('/update/:id', async (req, res) => {
     try {
             const booking = Booking.findById(req.params.id)
-            // const newBooking = {
-            //     booking
-            // }
-            // Object.assign(booking, req.body).then(booking => booking.save().then(() => res.json("Booking updated")));
-
         } catch {
             res.status(404).send(
                 {error: 'The booking could not be updated'}
@@ -82,7 +77,6 @@ bookingRoute.delete('/delete/:id', async (req, res) => {
 // get booking by name
 bookingRoute.get('/getByName/:name', async (req, res) => {
     try {
-
             const booking = Booking.findOne({"name": req.params.name}).then(booking => res.json(booking));
         } catch {
             res.status(404).send(
