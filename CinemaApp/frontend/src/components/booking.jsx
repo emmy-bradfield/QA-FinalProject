@@ -15,6 +15,7 @@ class Bookings extends Component {
         this.onChangeChild = this.onChangeChild.bind(this);
         this.onChangeConcession = this.onChangeConcession.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.checkTickets = this.checkTickets.bind(this);
 
 
         this.state = {
@@ -27,7 +28,8 @@ class Bookings extends Component {
             noOfAdult: 0,
             noOfChild: 0,
             noOfConcession: 0,
-            dateTime: ''
+            dateTime: '',
+            valid: ''
         }
     }
 
@@ -78,8 +80,225 @@ class Bookings extends Component {
         });
     }
 
+    checkTickets = (e) => {
+        axios.get('http://localhost:4000/bookings/getAll')
+            .then(res => {
+                let movieArray = [
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    [
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
+                    ]
+                ]
+
+                let bookingArray = res.data;
+                let thisMovie = e.movie;
+                let movieArrayPos = 0;
+                let thisDay = e.day;
+                let dayArrayPos = 0;
+                let thisTime = e.time;
+                let timeArrayPos = 0;
+
+                bookingArray.forEach(e => {
+                    Object.keys(e).forEach(key => {
+                        let totalTerrorTickets = 0;
+                        let totalBeautyTickets = 0;
+                        let totalMoonstersTickets = 0;
+                        let totalDairyTickets = 0;
+                        let totalCowsablancaTickets = 0;
+                        let totalMoonionsTickets = 0;
+                        let totalCalftimeTickets = 0;
+                        let totalCowsTickets = 0;
+
+
+                        switch (thisMovie) {
+                            case "Beauty and the Beef":
+                                movieArrayPos = 0;
+                                break;
+                            case "Moonsters Inc":
+                                movieArrayPos = 1;
+                                break;
+                            case "Dairy Movie":
+                                movieArrayPos = 2;
+                                break;
+                            case "Cowsablanca":
+                                movieArrayPos = 3;
+                                break;
+                            case "Terror on the Dairy":
+                                movieArrayPos = 4;
+                                break;
+                            case "The Moonions: Rise of Gru":
+                                movieArrayPos = 5;
+                                break;
+                            case "Calftime":
+                                movieArrayPos = 6;
+                                break;
+                            case "The Cows":
+                                movieArrayPos = 7;
+                                break;
+                        }
+                        switch (thisDay) {
+                            case "10-Sep":
+                                dayArrayPos = 0;
+                                break;
+                            case "11-Sep":
+                                dayArrayPos = 1;
+                                break;
+                            case "12-Sep":
+                                dayArrayPos = 2;
+                                break;
+                            case "13-Sep":
+                                dayArrayPos = 3;
+                                break;
+                            case "14-Sep":
+                                dayArrayPos = 4;
+                                break;
+                            case "15-Sep":
+                                dayArrayPos = 5;
+                                break;
+                            case "16-Sep":
+                                dayArrayPos = 6;
+                                break;
+                            case "17-Sep":
+                                dayArrayPos = 7;
+                                break;
+                            case "18-Sep":
+                                dayArrayPos = 8;
+                                break;
+                            case "19-Sep":
+                                dayArrayPos = 9;
+                                break;
+                            case "20-Sep":
+                                dayArrayPos = 10;
+                                break;
+                        }
+                        switch (thisTime) {
+                            case "12:00":
+                                timeArrayPos = 0;
+                                break;
+                            case "14:00":
+                                timeArrayPos = 1;
+                                break;
+                            case "17:00":
+                                timeArrayPos = 2;
+                                break;
+                            case "19:00":
+                                timeArrayPos = 3;
+                                break;
+                            case "20:30":
+                                timeArrayPos = 4;
+                                break;
+                            case "22:00":
+                                timeArrayPos = 5;
+                                break;
+                            case "23:45":
+                                timeArrayPos = 6;
+                                break;
+                        }
+                        if (key === "tickets") {
+                            let ticketKey = e[key];
+                            Object.keys(ticketKey).forEach(key => {
+                                if (e.movie === "Terror on the Dairy") {
+                                    totalTerrorTickets += Number(ticketKey[key].noOfAdult);
+                                    totalTerrorTickets += Number(ticketKey[key].noOfChild);
+                                    totalTerrorTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalTerrorTickets;
+                                }
+                                if (e.movie === "Beauty and the Beef") {
+                                    totalBeautyTickets += Number(ticketKey[key].noOfAdult);
+                                    totalBeautyTickets += Number(ticketKey[key].noOfChild);
+                                    totalBeautyTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalBeautyTickets;
+                                }
+                                if (e.movie === "Moonsters Inc") {
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfAdult);
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfChild);
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalMoonstersTickets;
+                                }
+                                if (e.movie === "Dairy Movie") {
+                                    totalDairyTickets += Number(ticketKey[key].noOfAdult);
+                                    totalDairyTickets += Number(ticketKey[key].noOfChild);
+                                    totalDairyTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalDairyTickets;
+                                }
+                                if (e.movie === "Cowsablanca") {
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfChild);
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalCowsablancaTickets;
+                                }
+                                if (e.movie === "The Moonions: The Rise of Gru") {
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfAdult);
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfChild);
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalMoonionsTickets;
+                                }
+                                if (e.movie === "Calftime") {
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfChild);
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalCalftimeTickets;
+                                }
+                                if (e.movie === "The Cows") {
+                                    totalCowsTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCowsTickets += Number(ticketKey[key].noOfChild);
+                                    totalCowsTickets += Number(ticketKey[key].noOfConcession);
+                                    (movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) += totalCowsTickets;
+                                }
+                            })
+                        }
+                    }
+                    )
+                })
+                if ((movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) > 100) {
+                    this.setState({ valid: false });
+                } else {
+                    this.setState({ valid: true });
+                    console.log("there are tickets available")
+                }
+            })
+            .catch((err) => console.log(err));
+    }
+
     onSubmit(e) {
         e.preventDefault();
+        console.log("default prevented")
         const booking = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -95,6 +314,7 @@ class Bookings extends Component {
             noOfChild: this.state.noOfChild,
             noOfConcession: this.state.noOfConcession
         }
+        console.log("booking: ", booking)
         localStorage.setItem("day", this.state.day);
         localStorage.setItem("time", this.state.time);
         if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 10) {
@@ -102,99 +322,19 @@ class Bookings extends Component {
             return;
         } else {
             axios.post('http://localhost:4000/bookings/post', booking)
-                .then(res => localStorage.setItem("REF", res.data));
-            axios.get('http://localhost:4000/bookings/getAll')
+                .then(this.checkTickets(e))
                 .then(res => {
-                    let totalBeautyTickets = 0;
-                    let totalMoonstersTickets = 0;
-                    let totalDairyTickets = 0;
-                    let totalCowsablancaTickets = 0;
-                    let totalTerrorTickets = 0;
-                    let totalMoonionsTickets = 0;
-                    let totalCalftimeTickets = 0;
-                    let totalCowsTickets = 0;
-                    let totalAdultTickets = 0;
-                    let totalChildTickets = 0;
-                    let totalConcessionTickets = 0;
-
-                    let bookingArray = res.data;
-                    bookingArray.forEach(e => {
-                        Object.keys(e).forEach(key => {
-                            if (key === "tickets") {
-                                let ticketKey = e[key];
-                                Object.keys(ticketKey).forEach(key => {
-                                    if (e.movie === "Terror on the Dairy") {
-                                        totalTerrorTickets += Number(ticketKey[key].noOfAdult);
-                                        totalTerrorTickets += Number(ticketKey[key].noOfChild);
-                                        totalTerrorTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "Beauty and the Beef") {
-                                        totalBeautyTickets += Number(ticketKey[key].noOfAdult);
-                                        totalBeautyTickets += Number(ticketKey[key].noOfChild);
-                                        totalBeautyTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "Moonsters Inc") {
-                                        totalMoonstersTickets += Number(ticketKey[key].noOfAdult);
-                                        totalMoonstersTickets += Number(ticketKey[key].noOfChild);
-                                        totalMoonstersTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "Dairy Movie") {
-                                        totalDairyTickets += Number(ticketKey[key].noOfAdult);
-                                        totalDairyTickets += Number(ticketKey[key].noOfChild);
-                                        totalDairyTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "Cowsablanca") {
-                                        totalCowsablancaTickets += Number(ticketKey[key].noOfAdult);
-                                        totalCowsablancaTickets += Number(ticketKey[key].noOfChild);
-                                        totalCowsablancaTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "The Moonions: Rise of Gru") {
-                                        totalMoonionsTickets += Number(ticketKey[key].noOfAdult);
-                                        totalMoonionsTickets += Number(ticketKey[key].noOfChild);
-                                        totalMoonionsTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "Calftime") {
-                                        totalCalftimeTickets += Number(ticketKey[key].noOfAdult);
-                                        totalCalftimeTickets += Number(ticketKey[key].noOfChild);
-                                        totalCalftimeTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                    if (e.movie === "The Cows") {
-                                        totalCowsTickets += Number(ticketKey[key].noOfAdult);
-                                        totalCowsTickets += Number(ticketKey[key].noOfChild);
-                                        totalCowsTickets += Number(ticketKey[key].noOfConcession);
-                                    }
-                                })
-                            }
-                        }
-                        )
-                    })
-                    console.log(`Beauty and the Beef: ${totalBeautyTickets}`)
-                    console.log(`Moonsters Inc: ${totalMoonstersTickets}`)
-                    console.log(`Dairy Movie: ${totalDairyTickets}`)
-                    console.log(`Cowsablanca: ${totalCowsablancaTickets}`)
-                    console.log(`Terror on the Dairy: ${totalDairyTickets}`)
-                    console.log(`The Moonions: ${totalMoonionsTickets}`)
-                    console.log(`Calftime: ${totalCalftimeTickets}`)
-                    console.log(`The Cows: ${totalCowsTickets}`)
+                    localStorage.setItem("REF", res.data._id);
+                    if (this.state.valid === true) {
+                        window.location.replace("/authorise-payment")
+                    } else {
+                        axios.delete(`http://localhost:4000/bookings/delete/${res.data._id}`);
+                        window.alert("Sorry - this screening has sold out")
+                    }
                 })
-                .catch((err) => console.log(err))
-            this.setState({
-                firstName: '',
-                lastName: '',
-                movie: '',
-                day: '',
-                time: '',
-                price: '',
-                noOfAdult: 0,
-                noOfChild: 0,
-                noOfConcession: 0,
-                dateTime: ''
-            })
-
-            window.location.replace("/authorise-booking-payment")
         }
-
     }
+
     render() {
         return (
             <main className="center">
@@ -318,7 +458,7 @@ class Bookings extends Component {
                             <br />
                             <hr />
                         </ul >
-                        <button type="submit" onClick={this.onSubmit} className="btn btn-dark btn-control"> <h3>Buy Now</h3></button>
+                        <button type="submit" className="btn btn-dark btn-control"> <h3>Buy Now</h3></button>
                     </form >
                 </div >
             </main >
