@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { Component, useEffect } from 'react';
+import { Component } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 function Buttons() {
     if (localStorage.getItem("results") === "true") {
         return (
             <>
-            <button className="btn btn-primary btn-box">Edit</button>
-            <button className="btn btn-primary btn-box">Delete</button>
+                <Link to="/tickets/orders/edit"><button className="btn btn-primary btn-box">Edit</button></Link>
             </>
         )
     } else {
@@ -49,6 +49,12 @@ class Orders extends Component {
         axios.get(`http://localhost:4000/bookings/get/${this.state.reference}`)
             .then(console.log("get request succesfully made"))
             .then(res => {
+                localStorage.setItem("reference", this.state.reference);
+                localStorage.setItem("forename", res.data.firstName);
+                localStorage.setItem("surname", res.data.lastName);
+                localStorage.setItem("movie", res.data.movie);
+                localStorage.setItem("date", res.data.day);
+                localStorage.setItem("time", res.data.time);
                 localStorage.setItem("customer", res.data.firstName + " " + res.data.lastName);
                 localStorage.setItem("booking", res.data.movie + " on " + res.data.day + " at " + res.data.time);
                 const stringTickets = JSON.stringify(res.data.tickets);
@@ -61,13 +67,16 @@ class Orders extends Component {
                     adultTick = String(parseTickets[0]['noOfAdult'] + " x adult tickets")
                 }
                 console.log(adultTick);
-                if (parseTickets.noOfChild > 0) {
-                    childTick = String(parseTickets.noOfChild + " x child tickets")
+                if (parseTickets[0]['noOfChild'] > 0) {
+                    childTick = String(parseTickets[0]['noOfChild'] + " x child tickets")
                 }
                 console.log(childTick);
-                if (parseTickets.noOfConcession > 0) {
-                    concessionTick = String(parseTickets.noOfConcession + " x concession tickets")
+                if (parseTickets[0]['noOfConcession'] > 0) {
+                    concessionTick = String(parseTickets[0]['noOfConcession'] + " x concession tickets")
                 }
+                localStorage.setItem("adult2", parseTickets[0]['noOfAdult']);
+                localStorage.setItem("child2", parseTickets[0]['noOfChild']);
+                localStorage.setItem("concession2", parseTickets[0]['noOfConcession']);
                 console.log(concessionTick);
                 const transformedTickets = String(adultTick + childTick + concessionTick)
                 console.log(transformedTickets);
@@ -94,31 +103,34 @@ class Orders extends Component {
 
     render() {
         return (
-            <main className="center stack" >
-                <hr />
-                <h2> My Orders </h2>
-                <em>Enter your booking reference number into the box below to view, amend, and cancel your
-                    ticket order
-                </em>
-                <form className="slide center2" onSubmit={this.onSubmit}>
-                    <input type="text" className="form-control form-control5" value={this.reference} onChange={this.onChangeReference} />
-                    <button type="submit" className='btn btn-dark btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
-                </form>
+            <main className="center2 slide spread" >
+                <div className="stack center">
+                    <hr />
+                    <h2> My Orders </h2>
+                    <form className="slide center2" onSubmit={this.onSubmit}>
+                        <input type="text" className="form-control form-control5" value={this.reference} onChange={this.onChangeReference} />
+                        <button type="submit" className='btn btn-dark btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
+                    </form>
 
-                <div className="card">
-                    <div className="card-body stack">
-                        <ul className="no-bullet cleanup">
-                            <li><em>Enter your booking reference into the search bar above to view your order</em></li>
-                            <hr/>
-                            <li>{localStorage.getItem("customer")}</li>
-                            <li>{localStorage.getItem("booking")}</li>
-                            <li>{localStorage.getItem("tickets")}</li>
-                            <li>{localStorage.getItem("cost")}</li>
-                            <div className="slide">
-                                <Buttons results={localStorage.getItem("results")} />
-                            </div>
-                        </ul>
+                    <div className="card">
+                        <div className="card-body stack">
+                            <ul className="no-bullet cleanup">
+                                <li><em>Enter your booking reference to view your order</em></li>
+                                <hr />
+                                <li>{localStorage.getItem("customer")}</li>
+                                <li>{localStorage.getItem("booking")}</li>
+                                <li>{localStorage.getItem("tickets")}</li>
+                                <li>{localStorage.getItem("cost")}</li>
+                                <div className="slide">
+                                    <Buttons results={localStorage.getItem("results")} />
+                                </div>
+                            </ul>
+                        </div>
                     </div>
+                    <br />
+                </div>
+                <div className="center2 stack">
+                    <Outlet />
                 </div>
             </main>
         )

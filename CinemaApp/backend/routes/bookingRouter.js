@@ -66,30 +66,18 @@ bookingRoute.route('/get/:_id').get((req, res) => {
 
 
 bookingRoute.route('/update/:_id').post((req, res) => {
-    const updatedBooking = {
-        firstName,
-        lastName,
-        movie,
-        day,
-        time,
-        tickets,
-        price,
-        paymentDetails
+    const ticketDetails = {
+        noOfAdult: req.body.noOfAdult,
+        noOfChild: req.body.noOfChild,
+        noOfConcession: req.body.noOfConcession
     };
     Booking.findByIdAndUpdate(req.params._id, {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        movie: req.body.movie,
-        day: req.body.day,
-        time: req.body.time,
-        tickets: ticketDetails,
-        price: req.body.price,
-        payment: paymentDetails
-    }, function (err, results) {
+        tickets: ticketDetails
+    }, function (err, result) {
         if (err) {
             console.log(err)
         } else {
-            console.log("Booking Updated: ", result)
+            console.log("Updated Booking: ", result);
         }
     })
 });
