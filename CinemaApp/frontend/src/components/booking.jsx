@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 import Payment from "./payment";
-import { systemProps } from '@chakra-ui/react';
 
 class Bookings extends Component {
 
