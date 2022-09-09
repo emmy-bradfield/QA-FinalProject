@@ -28,6 +28,7 @@ import Payment from "./components/payment";
 import Orders from './components/orders.jsx';
 
 import ContactPage from './components/Contactpage.jsx';
+import SoldOut from "./components/SoldOut";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="/tickets" element={<Tickets/>}>
               <Route path="/tickets/bookings" element={<Bookings />}/>
               <Route path="/tickets/orders" element={<Orders />} />
+              <Route path="/tickets/SoldOut" element={<SoldOut />} />
             </Route>
             <Route path="/new-releases" element={<NewReleases/>}/>
             <Route path="/new-releases/terrordairy" element={<TerrorDairy/>}/>

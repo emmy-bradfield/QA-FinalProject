@@ -608,3 +608,10 @@ body {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+/* Sold Out Page */
+
+#sold_out {
+  display: flex;
+  justify-content: center;
+}

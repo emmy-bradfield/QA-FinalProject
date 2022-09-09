@@ -107,6 +107,14 @@ class Payment extends Component {
                 ]
 
                 let bookingArray = res.data;
+
+                let thisMovie = e.movie;
+                let movieArrayPos = 0;
+                let thisDay = e.day;
+                let dayArrayPos = 0;
+                let thisTime = e.time;
+                let timeArrayPos = 0;
+
                 bookingArray.forEach(e => {
                     Object.keys(e).forEach(key => {
                         let totalTerrorTickets = 0;
@@ -118,12 +126,6 @@ class Payment extends Component {
                         let totalCalftimeTickets = 0;
                         let totalCowsTickets = 0;
 
-                        let thisMovie = e.movie;
-                        let movieArrayPos = 0;
-                        let thisDay = e.day;
-                        let dayArrayPos = 0;
-                        let thisTime = e.time;
-                        let timeArrayPos = 0;
 
                         switch(thisMovie) {
                             case "Beauty and the Beef":
@@ -265,6 +267,14 @@ class Payment extends Component {
                     }
                     )
                 })
+                if ((movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) > 100) {
+                    window.location.replace('/tickets/SoldOut')
+                    axios.delete(`http://localhost:4000/bookings/delete/${this.state._id}`)
+                    .then(console.log("Record deleted as we haven't got enough tickets left."))
+                    .catch((err) => console.log(err));
+                } else {
+                    console.log("you're good")
+                }
                 console.table(movieArray)
             })
             .catch((err) => console.log(err));
