@@ -77,7 +77,7 @@ bookingRoute.route('/update/:_id').post((req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log("Updated Booking: ", result);
+            console.log("Updated Booking: " + result);
         }
     })
 });
