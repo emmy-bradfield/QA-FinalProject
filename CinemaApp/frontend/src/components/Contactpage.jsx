@@ -42,7 +42,7 @@ const ContactPage = () => {
                         <div className="slide spread">
                             <div>
                                 <img src={CinemaShot} alt="external photograph of the cinema" />
-                                <caption className="wide-caption">QA Cinemas Feb-2022</caption>
+                                <em className="wide-caption">QA Cinemas Feb-2022</em>
                             </div>
                             <br />
                             <div className="in3 center drop3">
