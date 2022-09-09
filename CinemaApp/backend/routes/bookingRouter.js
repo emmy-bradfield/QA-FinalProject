@@ -96,13 +96,13 @@ bookingRoute.route('/checkout/:_id').post((req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log("Updated Booking: ", result)
+            console.log("Updated Booking: " + result)
         }
     })
 })
 
 bookingRoute.route('/delete/:_id').delete((req, res) => {
-    Booking.findByIdAndDelete(req.params._id).then(() => res.json("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
+    Booking.findByIdAndDelete(req.params._id).then(() => console.log("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
 })
 
 module.exports = bookingRoute;
