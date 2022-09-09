@@ -12,7 +12,7 @@ class Tickets extends Component {
                         <li className='navi navi-xl'>
                             <Link to="/tickets/bookings">Book Tickets</Link>
                         </li>
-                        <li className='navi navi-xl'>
+                        <li className='navi navi-xl out3'>
                             <Link to="/tickets/orders">My Orders</Link>
                         </li>
                     </ul>

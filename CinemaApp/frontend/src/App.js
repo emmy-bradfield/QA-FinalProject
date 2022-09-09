@@ -26,6 +26,8 @@ import Tickets from './components/tickets.jsx';
 import Bookings from "./components/booking";
 import Payment from "./components/payment";
 import Orders from './components/orders.jsx';
+import OrderEdit from './components/orderEdit.jsx';
+import SolidOut from './components/SoldOut.jsx';
 
 import ContactPage from './components/Contactpage.jsx';
 import SoldOut from "./components/SoldOut";
@@ -45,7 +47,9 @@ function App() {
             <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
             <Route path="/tickets" element={<Tickets/>}>
               <Route path="/tickets/bookings" element={<Bookings />}/>
-              <Route path="/tickets/orders" element={<Orders />} />
+              <Route path="/tickets/orders" element={<Orders />}>
+                <Route path="/tickets/orders/edit" element={<OrderEdit />}/>
+              </Route>
               <Route path="/tickets/SoldOut" element={<SoldOut />} />
             </Route>
             <Route path="/new-releases" element={<NewReleases/>}/>
