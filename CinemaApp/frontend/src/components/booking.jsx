@@ -97,6 +97,8 @@ class Bookings extends Component {
             noOfChild: this.state.noOfChild,
             noOfConcession: this.state.noOfConcession
         }
+        localStorage.setItem("day", this.state.day);
+        localStorage.setItem("time", this.state.time);
         if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 10) {
             window.alert("That is over our 10-ticket limit")
             return;
