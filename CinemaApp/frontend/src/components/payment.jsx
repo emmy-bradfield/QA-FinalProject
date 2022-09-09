@@ -59,7 +59,6 @@ class Payment extends Component {
 
         axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
             .then(res => console.log(res.data));
-
             axios.get('http://localhost:4000/bookings/getAll')
             .then(res => {
 
