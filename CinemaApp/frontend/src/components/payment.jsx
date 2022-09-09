@@ -25,25 +25,21 @@ class Payment extends Component {
         this.setState({
             cardName: e.target.value
         })
-        console.log(this.state.cardName)
     }
     onChangeCardNumber(e) {
         this.setState({
             cardNumber: e.target.value
         })
-        console.log(this.state.cardNumber)
     }
     onChangeCardDate(e) {
         this.setState({
             cardDate: e.target.value
         })
-        console.log(this.state.cardDate)
     }
     onChangeCVC(e) {
         this.setState({
             cardCVC: e.target.value
         })
-        console.log(this.state.cardCVC)
     }
 
     onSubmit(e) {
@@ -53,8 +49,6 @@ class Payment extends Component {
             .then(res => console.log(res.data))
             .then(res => console.log(res))
 
-        console.log(this.state)
-
         const bookingPaid = {
             cardName: this.state.cardName,
             cardNumber: this.state.cardNumber,
@@ -63,10 +57,85 @@ class Payment extends Component {
             dateTime: new Date()
         }
 
-        console.log(bookingPaid)
-
         axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
             .then(res => console.log(res.data));
+
+            axios.get('http://localhost:4000/bookings/getAll')
+            .then(res => {
+                let totalBeautyTickets = 0;
+                let totalMoonstersTickets = 0;
+                let totalDairyTickets = 0;
+                let totalCowsablancaTickets = 0;
+                let totalTerrorTickets = 0;
+                let totalMoonionsTickets = 0;
+                let totalCalftimeTickets = 0;
+                let totalCowsTickets = 0;
+                let totalAdultTickets = 0;
+                let totalChildTickets = 0;
+                let totalConcessionTickets = 0;
+
+                let bookingArray = res.data;
+                bookingArray.forEach(e => {
+                    Object.keys(e).forEach(key => {
+                        if (key === "tickets") {
+                            let ticketKey = e[key];
+                            Object.keys(ticketKey).forEach(key => {
+                                if (e.movie == "Terror on the Dairy") {
+                                    totalTerrorTickets += Number(ticketKey[key].noOfAdult);
+                                    totalTerrorTickets += Number(ticketKey[key].noOfChild);
+                                    totalTerrorTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "Beauty and the Beef") {
+                                    totalBeautyTickets += Number(ticketKey[key].noOfAdult);
+                                    totalBeautyTickets += Number(ticketKey[key].noOfChild);
+                                    totalBeautyTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "Moonsters Inc") {
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfAdult);
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfChild);
+                                    totalMoonstersTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "Dairy Movie") {
+                                    totalDairyTickets += Number(ticketKey[key].noOfAdult);
+                                    totalDairyTickets += Number(ticketKey[key].noOfChild);
+                                    totalDairyTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "Cowsablanca") {
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfChild);
+                                    totalCowsablancaTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "The Moonions: Rise of Gru") {
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfAdult);
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfChild);
+                                    totalMoonionsTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "Calftime") {
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfChild);
+                                    totalCalftimeTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                                if (e.movie == "The Cows") {
+                                    totalCowsTickets += Number(ticketKey[key].noOfAdult);
+                                    totalCowsTickets += Number(ticketKey[key].noOfChild);
+                                    totalCowsTickets += Number(ticketKey[key].noOfConcession);
+                                }
+                            })
+                        }
+                    }
+                    )
+                })
+                console.log(this.state.day);
+                console.log(`Beauty and the Beef: ${totalBeautyTickets}`);
+                console.log(`Moonsters Inc: ${totalMoonstersTickets}`);
+                console.log(`Dairy Movie: ${totalDairyTickets}`);
+                console.log(`Cowsablanca: ${totalCowsablancaTickets}`);
+                console.log(`Terror on the Dairy: ${totalTerrorTickets}`);
+                console.log(`The Moonions: ${totalMoonionsTickets}`);
+                console.log(`Calftime: ${totalCalftimeTickets}`);
+                console.log(`The Cows: ${totalCowsTickets}`);
+            })
+            .catch((err) => console.log(err));
 
         this.setState({
             firstName: '',
