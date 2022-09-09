@@ -1,6 +1,21 @@
 import axios from 'axios';
 import { Component, useEffect } from 'react';
 
+function Buttons() {
+    if (localStorage.getItem("results") === "true") {
+        return (
+            <>
+            <button className="btn btn-primary btn-box">Edit</button>
+            <button className="btn btn-primary btn-box">Delete</button>
+            </>
+        )
+    } else {
+        return (
+            <></>
+        )
+    }
+}
+
 class Orders extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +32,7 @@ class Orders extends Component {
             date: '',
             tickets: [{}],
             price: '',
-            order: {}
+            results: false
         }
     }
 
@@ -68,8 +83,13 @@ class Orders extends Component {
                 } else {
                     localStorage.setItem("cost", "transaction has not been processed - check again later")
                 };
+                localStorage.setItem("results", true);
                 window.location.reload()
-            });
+            })
+            .catch((err) => {
+                localStorage.clear()
+                window.location.reload()
+            })
     };
 
     render() {
@@ -86,12 +106,17 @@ class Orders extends Component {
                 </form>
 
                 <div className="card">
-                    <div className="card-body">
+                    <div className="card-body stack">
                         <ul className="no-bullet cleanup">
+                            <li><em>Enter your booking reference into the search bar above to view your order</em></li>
+                            <hr/>
                             <li>{localStorage.getItem("customer")}</li>
                             <li>{localStorage.getItem("booking")}</li>
                             <li>{localStorage.getItem("tickets")}</li>
                             <li>{localStorage.getItem("cost")}</li>
+                            <div className="slide">
+                                <Buttons results={localStorage.getItem("results")} />
+                            </div>
                         </ul>
                     </div>
                 </div>

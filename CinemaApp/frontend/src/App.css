@@ -280,6 +280,10 @@ a:hover {
   align-content: center;
 }
 
+.card{
+  background-color: rgba(245, 245, 245, 0.267);
+}
+
 .card-body{
   color: black;
   font-weight: bold;
@@ -288,6 +292,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   font-size: larger;
+  background-color: inherit;
 }
 
 .cleanup{
