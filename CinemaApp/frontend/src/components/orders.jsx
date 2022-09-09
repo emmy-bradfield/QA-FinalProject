@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Component } from 'react';
+import { Component, useEffect } from 'react';
 
 class Orders extends Component {
     constructor(props) {
@@ -16,7 +16,8 @@ class Orders extends Component {
             time: '',
             date: '',
             tickets: [{}],
-            price: ''
+            price: '',
+            order: {}
         }
     }
 
@@ -30,26 +31,50 @@ class Orders extends Component {
     onSubmit(e) {
         e.preventDefault();
         console.log("onSubmit started");
-
         axios.get(`http://localhost:4000/bookings/get/${this.state.reference}`)
             .then(console.log("get request succesfully made"))
             .then(res => {
-                console.log(res.data);
-                this.setState({
-                    forename: res.data.firstName,
-                    surname: res.data.lastName,
-                    movie: res.data.movie,
-                    time: " at " + res.data.time,
-                    date: " on " + res.data.day,
-                    price: "Cost: £" + res.data.price
-                })
-            })
-
-    }
+                localStorage.setItem("customer", res.data.firstName + " " + res.data.lastName);
+                localStorage.setItem("booking", res.data.movie + " on " + res.data.day + " at " + res.data.time);
+                const stringTickets = JSON.stringify(res.data.tickets);
+                const parseTickets = JSON.parse(stringTickets);
+                console.log(parseTickets);
+                let adultTick = '';
+                let childTick = '';
+                let concessionTick = '';
+                if (parseTickets[0]['noOfAdult'] > 0) {
+                    adultTick = String(parseTickets[0]['noOfAdult'] + " x adult tickets")
+                }
+                console.log(adultTick);
+                if (parseTickets.noOfChild > 0) {
+                    childTick = String(parseTickets.noOfChild + " x child tickets")
+                }
+                console.log(childTick);
+                if (parseTickets.noOfConcession > 0) {
+                    concessionTick = String(parseTickets.noOfConcession + " x concession tickets")
+                }
+                console.log(concessionTick);
+                const transformedTickets = String(adultTick + childTick + concessionTick)
+                console.log(transformedTickets);
+                localStorage.setItem("tickets", transformedTickets);
+                const stringPayments = JSON.stringify(res.data.payment);
+                const parsePayments = JSON.parse(stringPayments);
+                console.log(parsePayments);
+                if (parsePayments[0]['dateTime'] !== null) {
+                    const datePaid = String(parsePayments[0]['dateTime'].substring(8, 10) + "/" + parsePayments[0]['dateTime'].substring(5, 7) + "/" + parsePayments[0]['dateTime'].substring(2, 4));
+                    console.log(datePaid);
+                    localStorage.setItem("cost", "Total = £" + res.data.price + " purchased on " + datePaid);
+                    console.log(res.data)
+                } else {
+                    localStorage.setItem("cost", "transaction has not been processed - check again later")
+                };
+                window.location.reload()
+            });
+    };
 
     render() {
         return (
-            <main className="center stack">
+            <main className="center stack" >
                 <hr />
                 <h2> My Orders </h2>
                 <em>Enter your booking reference number into the box below to view, amend, and cancel your
@@ -63,14 +88,10 @@ class Orders extends Component {
                 <div className="card">
                     <div className="card-body">
                         <ul className="no-bullet cleanup">
-                            <li>{this.state.forename} {this.state.surname}</li>
-                            <li>{this.state.movie} {this.state.time} {this.state.date}</li>
-                            <ul>
-                                <li>{this.state.adult}</li>
-                                <li>{this.state.child}</li>
-                                <li>{this.state.concession}</li>
-                            </ul>
-                            <li>{this.state.price}</li>
+                            <li>{localStorage.getItem("customer")}</li>
+                            <li>{localStorage.getItem("booking")}</li>
+                            <li>{localStorage.getItem("tickets")}</li>
+                            <li>{localStorage.getItem("cost")}</li>
                         </ul>
                     </div>
                 </div>
