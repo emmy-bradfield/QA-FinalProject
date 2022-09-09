@@ -101,7 +101,6 @@ class Bookings extends Component {
         } else {
             axios.post('http://localhost:4000/bookings/post', booking)
                 .then(res => localStorage.setItem("REF", res.data));
-
             axios.get('http://localhost:4000/bookings/getAll')
                 .then(res => {
                     let totalBeautyTickets = 0;
@@ -177,7 +176,6 @@ class Bookings extends Component {
                     console.log(`The Cows: ${totalCowsTickets}`)
                 })
                 .catch((err) => console.log(err))
-
             this.setState({
                 firstName: '',
                 lastName: '',
