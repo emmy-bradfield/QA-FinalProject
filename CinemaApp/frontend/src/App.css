@@ -97,6 +97,21 @@
   align-items: center;
 }
 
+.slide2 {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.small-in{
+  width: 5em !important;
+}
+
+.tiny-in{
+  width: 2em !important;
+}
+
 .slide-top {
   display: inline-flex;
   flex-direction: row;
@@ -195,8 +210,20 @@ a:hover {
   margin-left: 5em;
 }
 
+.out3{
+  margin-left: -3em;
+}
+
+.out5{
+  margin-left: -5em;
+}
+
 .left-text {
   text-align: left;
+}
+
+.spread2{
+  width: fit-content !important;
 }
 
 .form-text{
@@ -248,6 +275,53 @@ a:hover {
   margin-right: 1em;
 }
 
+.append-page{
+  width: 60vw;
+  border-radius: 20px;
+}
+
+.right-align{
+  width: 100%;
+  display: inline-flex;
+  justify-content: right;
+}
+
+.btn-delete{
+  color: rgb(153, 23, 23);
+  font-weight: bold;
+  margin-top: -4em;
+  margin-bottom: -3em;
+}
+
+.btn-delete:hover{
+  color: rgb(153, 23, 23);
+  font-weight: bold;
+  border: 1px solid rgb(153, 23, 23);
+  margin-top: -4em;
+  margin-bottom: -3em;
+}
+
+.btn-delete:active{
+  color: rgb(153, 23, 23);
+  font-weight: bold !important;
+  margin-top: -4em;
+  margin-bottom: -3em;
+}
+
+.btn-delete:focus{
+  color: rgb(153, 23, 23);
+  font-weight: bold !important;
+  margin-top: -4em;
+  margin-bottom: -3em;
+}
+
+.left-align {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
 .form-control4{
   height: 2em;
   padding: 0.2em;
@@ -280,6 +354,10 @@ a:hover {
   align-content: center;
 }
 
+.card{
+  background-color: rgba(245, 245, 245, 0.267);
+}
+
 .card-body{
   color: black;
   font-weight: bold;
@@ -288,6 +366,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   font-size: larger;
+  background-color: inherit;
 }
 
 .cleanup{
@@ -611,4 +690,11 @@ body {
 
 #footer li{
  align-content: center;
+}
+
+/* Sold Out Page */
+
+#sold_out {
+  display: flex;
+  justify-content: center;
 }

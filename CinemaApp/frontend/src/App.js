@@ -18,8 +18,18 @@ import Screens from "./components/screens";
 import Directions from "./components/directions";
 import Nearby from "./components/nearby";
 import Bookings from "./components/booking";
+
 import ContactPage from './components/Contactpage.jsx';
 import Footer from "./components/Footer";
+
+import Payment from "./components/payment";
+import Orders from './components/orders.jsx';
+import OrderEdit from './components/orderEdit.jsx';
+import SolidOut from './components/SoldOut.jsx';
+
+import ContactPage from './components/Contactpage.jsx';
+import SoldOut from "./components/SoldOut";
+
 
 
 function App() {
@@ -35,6 +45,13 @@ function App() {
             <Route path="/listings/dairymovie" element={<DairyMovie />} />
             <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
             <Route path="/bookings" element={<Bookings />} />
+            <Route path="/tickets" element={<Tickets/>}>
+              <Route path="/tickets/bookings" element={<Bookings />}/>
+              <Route path="/tickets/orders" element={<Orders />}>
+                <Route path="/tickets/orders/edit" element={<OrderEdit />}/>
+              </Route>
+              <Route path="/tickets/SoldOut" element={<SoldOut />} />
+            </Route>
             <Route path="/new-releases" element={<NewReleases/>}/>
             <Route path="/new-releases/terrordairy" element={<TerrorDairy/>}/>
             <Route path="/new-releases/moonions" element={<Moonions/>}/>
