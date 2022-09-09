@@ -1,4 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
+import logoImg from '../assets/logo.png';
+
 
 const Navbar = () => {
     return (
@@ -6,6 +8,9 @@ const Navbar = () => {
             <div>
                 <nav className='nav'>
                     <ul className="main-nav">
+                    <li className='navi'>
+                        <img className="logo" src={logoImg}/>    
+                        </li>
                         <li className='navi'>
                             <Link to="/">Home</Link>
                         </li>
@@ -22,7 +27,7 @@ const Navbar = () => {
                             <Link to="/information"> What to Expect</Link>
                         </li>
                         <li className='navi'>
-                            <Link to="/bookings">Bookings</Link>
+                            <Link to="/tickets">Tickets</Link>
                         </li>
                         <li className="navi">
                             <Link to="/contact">Contact</Link>
