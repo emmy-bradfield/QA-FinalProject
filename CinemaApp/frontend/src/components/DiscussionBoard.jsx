@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-class DiscussionBoard extends Component {
+class discussionBoard extends Component {
     constructor(props) {
         super(props);
 
@@ -80,7 +80,6 @@ class DiscussionBoard extends Component {
         return (
             <>
                 <div id='forum_messages'>
-                    <h1>yo</h1>
                     <ul>
                         {this.postArray.map((post) => (
                             <>
@@ -114,4 +113,4 @@ class DiscussionBoard extends Component {
     }
 }
 
-export default DiscussionBoard;
+export default discussionBoard;
