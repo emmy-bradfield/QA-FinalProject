@@ -300,10 +300,6 @@ class Bookings extends Component {
                         day.forEach(time => {
                             if ((time + Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 100) {
                                 if (this.state.movie == checkMovieArray[movieArrayPos] && this.state.day == checkDateArray[dayArrayPos] && this.state.time == checkTimeArray[timeArrayPos]){
-                                    console.log(`These Match! ${e.movie}`);
-                                    console.log(`movie: ${movie} day: ${day} time: ${time}`)
-                                    console.log(`movie ${movieArrayPos} day ${dayArrayPos} time ${timeArrayPos}`)
-                                    console.log(`arraypos ${checkMovieArray[movieArrayPos]}`)
                                     this.setState({ valid: "false" });
                                 } else {
                                     console.log(`These dont match! ${e.movie}`);
@@ -320,7 +316,6 @@ class Bookings extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log("default prevented")
         const booking = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -336,7 +331,6 @@ class Bookings extends Component {
             noOfChild: this.state.noOfChild,
             noOfConcession: this.state.noOfConcession
         }
-        console.log("booking: ", booking)
         localStorage.setItem("day", this.state.day);
         localStorage.setItem("time", this.state.time);
         if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 10) {
@@ -351,7 +345,7 @@ class Bookings extends Component {
                         window.location.replace("/authorise-payment")
                     } else {
                         axios.delete(`http://localhost:4000/bookings/delete/${res.data._id}`);
-                        window.alert("Sorry - this screening has sold out")
+                        window.location.replace("/SoldOut")
                     }
                 })
         }
