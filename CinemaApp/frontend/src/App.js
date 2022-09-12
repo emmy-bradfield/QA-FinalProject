@@ -30,6 +30,7 @@ import OrderEdit from './components/orderEdit.jsx';
 
 import ContactPage from './components/Contactpage.jsx';
 import SoldOut from "./components/SoldOut";
+import DiscussionBoard from "./components/DiscussionBoard";
 
 
 
@@ -60,6 +61,7 @@ function App() {
             <Route path="/new-releases/calftime" element={<Calftime/>}/>
             <Route path="/new-releases/thecows" element={<TheCows/>}/>
             <Route path="/openings" element={<Opening />} />
+            <Route path="/discuss" element={<DiscussionBoard />} />            
             <Route path="/information" element={<Information/>}>
               <Route path="/information/screens" element={<Screens />}/>
               <Route path="/information/directions" element={<Directions />}/>
