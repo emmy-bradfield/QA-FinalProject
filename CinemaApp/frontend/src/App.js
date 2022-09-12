@@ -30,6 +30,7 @@ import OrderEdit from './components/orderEdit.jsx';
 
 import ContactPage from './components/Contactpage.jsx';
 import SoldOut from "./components/SoldOut";
+import AboutUs from "./components/AboutUs";
 
 
 
@@ -66,6 +67,9 @@ function App() {
               <Route path="/information/nearby" element={<Nearby />}/>
             </Route>
             <Route path="/contact" element={<ContactPage />}/>
+          </Route>
+          <Route>
+            <Route path="/aboutus" element={<AboutUs />}/>
           </Route>
         </Routes>
       </BrowserRouter>
