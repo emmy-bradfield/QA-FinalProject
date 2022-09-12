@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/home.jsx";
 import Navbar from "./components/navbar.jsx";
+import Footer from './components/Footer.jsx';
 
 import Listings from "./components/listings.jsx";
 import BeautyBeast from "./components/BeautyBeef.jsx";
@@ -10,7 +11,6 @@ import DairyMovie from "./components/DairyMovie.jsx";
 import Cowsablanca from "./components/Cows-ablanca.jsx";
 
 import Opening from "./components/opening";
-
 import NewReleases from "./components/newreleases";
 import TerrorDairy from "./components/TerrorDairy";
 import Moonions from "./components/Moonions";
@@ -26,8 +26,11 @@ import Tickets from './components/tickets.jsx';
 import Bookings from "./components/booking";
 import Payment from "./components/payment";
 import Orders from './components/orders.jsx';
+import OrderEdit from './components/orderEdit.jsx';
 
 import ContactPage from './components/Contactpage.jsx';
+import SoldOut from "./components/SoldOut";
+
 
 
 function App() {
@@ -42,9 +45,14 @@ function App() {
             <Route path="/listings/moonstersinc" element={<MoonstersInc />} />
             <Route path="/listings/dairymovie" element={<DairyMovie />} />
             <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
+            <Route path="/bookings" element={<Bookings />} />
+            <Route path ="/authorise-payment" element={<Payment />}/>
             <Route path="/tickets" element={<Tickets/>}>
               <Route path="/tickets/bookings" element={<Bookings />}/>
-              <Route path="/tickets/orders" element={<Orders />} />
+              <Route path="/tickets/orders" element={<Orders />}>
+                <Route path="/tickets/orders/edit" element={<OrderEdit />}/>
+              </Route>
+              <Route path="/tickets/SoldOut" element={<SoldOut />} />
             </Route>
             <Route path="/new-releases" element={<NewReleases/>}/>
             <Route path="/new-releases/terrordairy" element={<TerrorDairy/>}/>
@@ -58,10 +66,10 @@ function App() {
               <Route path="/information/nearby" element={<Nearby />}/>
             </Route>
             <Route path="/contact" element={<ContactPage />}/>
-            <Route path="/authorise-booking-payment" element={<Payment />}/>
           </Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
