@@ -688,6 +688,10 @@ body {
   margin-right: 20%;
 }
 
+#footer li{
+ align-content: center;
+}
+
 /* Sold Out Page */
 
 #sold_out {

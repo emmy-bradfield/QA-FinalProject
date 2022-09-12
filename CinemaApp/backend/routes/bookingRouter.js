@@ -49,7 +49,7 @@ bookingRoute.route('/post').post((req, res) => {
         payment
     });
 
-    newBooking.save().then(() => res.json(newBooking._id)).catch((err) => res.status(400).json('Error: ' + err))
+    newBooking.save().then(() => res.json(newBooking)).catch((err) => res.status(400).json('Error: ' + err))
 })
 
 

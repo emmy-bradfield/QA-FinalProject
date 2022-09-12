@@ -12,14 +12,10 @@ const emailRoute = require("./routes/emailRouter")
 app.use("/emails", emailRoute);
 const router = express.Router();
 
-mongoose.connect('mongodb+srv://team-lemon:cheese.please1@qacinema.zx2mivg.mongodb.net/cinema',{useNewUrlParser : true},
-(error) => {
-    if (error) {
-        console.log("Can't connect to MongoDB");
-    } else {
-        console.log("Connected to database");
-    }
-});
+mongoose
+     .connect("mongodb+srv://team-lemon:cheese.please1@qacinema.zx2mivg.mongodb.net/cinema", {useNewUrlParser: true})
+     .then(() => console.log("MongoDB has been connected"))
+     .catch((err) => console.log(err));
 
 const connection = mongoose.connection;
 
