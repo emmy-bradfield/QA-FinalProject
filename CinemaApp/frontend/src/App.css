@@ -832,3 +832,40 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* Forum Page */
+#forum_entry {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  max-height: 30em;
+}
+#forum_form {
+  display: flex;
+  width: 100%;
+}
+#entry_left_col {
+  display: flex;
+  width: 100%;
+}
+#entry_left_col label {
+  margin-right: 3%;
+  margin-left:1%;
+  width: fit-content;
+}
+#entry_right_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#entry_right_col label {
+  margin-right: 3%;
+  margin-left:1%;
+  width: fit-content;
+}
+#entry_right_col button {
+  margin: 2%;
+}
