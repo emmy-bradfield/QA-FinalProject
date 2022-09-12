@@ -65,6 +65,102 @@
   font-size: medium;
 }
 
+.search-bar{
+  border: 0 !important;
+  color: whitesmoke !important;
+  padding-left: 1em !important;
+  background-color: #00000075;
+  border-radius: 0 !important;
+  border-bottom: 1px solid whitesmoke !important;
+  width: 30vw !important;
+  margin-right: 0 !important;
+}
+
+.search-bar::placeholder{
+  color: lightgrey;
+}
+
+.search-bar:focus{
+  border: 0 !important;
+  border-bottom: 1px solid whitesmoke !important;
+  background-color: inherit !important;
+  box-shadow: none !important;
+  color: whitesmoke !important;
+  padding-left: 1em !important;
+  border-radius: 0 !important;
+  width: 30vw !important;
+  margin-right: 0 !important;
+}
+
+.search-bar:focus::placeholder{
+  color:#00000000 !important;
+}
+
+.fa-magnifying-glass{
+  font-size: medium;
+  margin-left: 0 !important;
+  padding:0 !important;
+  padding-left: 1em !important;
+  border-left: 1px solid whitesmoke;
+}
+
+.sub-list{
+  font-size: medium;
+  margin: 0;
+  padding-left: 1em;
+  float: left;
+  width: fit-content;
+}
+
+.fa-star{
+  color: goldenrod;
+  font-size: small;
+}
+
+.lil-spread {
+  width: 25vw;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.center-list{
+  margin:0;
+  padding:0.35em;
+  text-align: left;
+}
+
+.icon-btn{
+  width: fit-content;
+  height:fit-content;
+  background-color: inherit !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.shrink-padding{
+  padding: 0.2em !important;
+}
+
+.btn-toggle{
+  margin: 1em;
+}
+
+.btn-toggle-div{
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.button-caption{
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -0.3em;
+  margin-right: 0.5em;
+}
+
 .poster-nav {
   display: inline-flex;
   justify-content: space-evenly;

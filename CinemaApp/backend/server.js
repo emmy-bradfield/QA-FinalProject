@@ -10,7 +10,7 @@ const bookingRoute = require("./routes/bookingRouter");
 app.use("/bookings", bookingRoute);
 const emailRoute = require("./routes/emailRouter")
 app.use("/emails", emailRoute);
-const router = express.Router();
+const movieRoute = require("./routes/movieRouter");
 
 mongoose
      .connect("mongodb+srv://team-lemon:cheese.please1@qacinema.zx2mivg.mongodb.net/cinema", {useNewUrlParser: true})

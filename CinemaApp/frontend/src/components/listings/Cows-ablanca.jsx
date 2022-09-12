@@ -1,28 +1,27 @@
 import {Link} from 'react-router-dom';
-import BeautyBeefImg from '../assets/beauty-and-beef.jpg';
+import CowsablancaImg from '../../assets/cowsablanca.png';
 
-const BeautyBeast = () => {
-    return (
+const Cowsablanca = () =>{
+    return(
         <div>
-            <Link to="/listings"><i className="fa-solid fa-chevron-left in5 classy-link"></i> Back</Link>
+            <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                <img className="page-image" src={BeautyBeefImg} />
+                <img className="page-image" src={CowsablancaImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> Beauty and the Beef </h1>
+                    <h1> Cowsablanca </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
                             <ul>
-                                <li><h5>Emoo Watson</h5></li>
-                                <li><h5>Daisy the Cow</h5></li>
+                                <li><h5>My Mother</h5></li>
+                                <li><h5>Dame Judy Dench</h5></li>
                                 <li><h5>Billy Bull</h5></li>
-                                <li><h5>...and many more!</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
                             <h3> Director: </h3>
                             <ul>
-                                <li><h5>Michael King</h5></li>
+                                <li><h5>Ibraheem Latif</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
@@ -37,7 +36,7 @@ const BeautyBeast = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default BeautyBeast;
+export default Cowsablanca;
