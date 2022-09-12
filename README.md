@@ -7,9 +7,18 @@ A MERN stack web application developed for QA Cinemas to showcase their listings
 ---
 ## Getting Started
 ### Pre-requisites
+
+* Version Control System: Git
+* Source Code Management: GitHub
+* Kanban Board: Jira
+* Full-Stack Development Technologies: MERN stack
+* Database Management System: Locally or cloud hosted instance of MongoDB
+* Back-End Programming Language: Node
+* API Development Platform: Express
+* Front-End Development Framework: React
+* Unit Testing: Mocha, Chai
 * Node Package Manager (npm)
-* React JS
-* Express
+
 
 ---
 ## Installing
@@ -17,7 +26,23 @@ Fork the repo to your account, and then clone to your local machine using
 ```
 git remote add origin <url>
 ```
+Install the needed node packages using node package manager
+```bash
+  npm install
+```
+
 Rest of steps for installation
+
+Running the API
+
+
+Simply use the following command:
+
+```bash
+  npm start
+```
+![image](https://user-images.githubusercontent.com/108027107/189646275-0d218dd9-3431-45d0-ac52-4e5e4f4b86bd.png)
+
 
 ---
 ## Running the Tests
