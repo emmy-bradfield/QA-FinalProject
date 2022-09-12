@@ -1,0 +1,74 @@
+[
+{
+    "_id": "Beauty and the Beef",
+    "name": "Beauty and the Beef",
+    "director": "name here",
+    "page": "/listings/beautybeef",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "Moo-nster Inc",
+    "name": "Moo-nster Inc",
+    "director": "name here",
+    "page": "/listings/moonstersinc",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "Dairy Movie",
+    "name": "Dairy Movie",
+    "director": "name here",
+    "page": "/listings/dairymovie",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "Cows-ablanca",
+    "name": "Cows-ablanca",
+    "director": "name here",
+    "page": "/listings/cowsablanca",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "Terror on the Dairy",
+    "name": "Terror on the Dairy",
+    "director": "name here",
+    "page": "/new-releases/terrordairy",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "The Moo-nions: Rise of Gru",
+    "name": "The Moo-nions: Rise of Gru",
+    "director": "name here",
+    "page": "/new-releases/moonions",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "Calftime",
+    "name": "Calftime",
+    "director": "name here",
+    "page": "/new-releases/calftime",
+    "rating": 0,
+    "reviews": 0
+  },
+
+  {
+    "_id": "The Cows",
+    "name": "The Cows",
+    "director": "name here",
+    "page": "/new-releases/thecows",
+    "rating": 0,
+    "reviews": 0
+  }
+
+]

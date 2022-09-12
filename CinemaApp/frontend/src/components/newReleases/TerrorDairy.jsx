@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom';
-import MoonionsImg from '../assets/moonions.png';
+import TerrorDairyImg from '../../assets/movie-posters/terrordairy.png';
 
-const Moonions = () =>{
+const TerrorDairy = () =>{
     return(
         <div>
-            <Link to="/new-releases"><p className="classy-link"><i className="fa-solid fa-chevron-left in5"/>Back</p></Link>
+            <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                <img className="page-image" src={MoonionsImg} />
+                <img className="page-image" src={TerrorDairyImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> The Moonions: The Rise of Gru </h1>
+                    <h1> Terror on the Dairy </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
@@ -39,4 +39,4 @@ const Moonions = () =>{
     );
 };
 
-export default Moonions;
+export default TerrorDairy;
