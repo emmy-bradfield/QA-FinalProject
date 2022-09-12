@@ -1,8 +1,8 @@
 import {Link, Outlet} from 'react-router-dom';
-import TerrorDairyImg from '../assets/terrordairy.png';
-import MoonionsImg from '../assets/moonions.png';
-import CalftimeImg from '../assets/calftime.png';
-import TheCowsImg from '../assets/thecows.png';
+import TerrorDairyImg from '../../assets/movie-posters/terrordairy.png';
+import MoonionsImg from '../../assets/movie-posters/moonions.png';
+import CalftimeImg from '../../assets/movie-posters/calftime.png';
+import TheCowsImg from '../../assets/movie-posters/thecows.png';
 
 const NewReleases = () => {
     return (

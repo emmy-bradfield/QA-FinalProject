@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import MoonstersImg from '../../assets/moo-nsters-inc.png';
+import MoonstersImg from '../../assets/movie-posters/moo-nsters-inc.png';
 
 const MoonsterInc = () => {
     return (

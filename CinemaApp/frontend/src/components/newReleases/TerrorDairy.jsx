@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import TerrorDairyImg from '../../assets/terrordairy.png';
+import TerrorDairyImg from '../../assets/movie-posters/terrordairy.png';
 
 const TerrorDairy = () =>{
     return(

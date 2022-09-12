@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import CowsablancaImg from '../../assets/cowsablanca.png';
+import CowsablancaImg from '../../assets/movie-posters/cowsablanca.png';
 
 const Cowsablanca = () =>{
     return(

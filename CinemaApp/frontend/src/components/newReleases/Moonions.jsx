@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import MoonionsImg from '../../assets/moonions.png';
+import MoonionsImg from '../../assets/movie-posters/moonions.png';
 
 const Moonions = () =>{
     return(

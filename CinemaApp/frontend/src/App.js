@@ -1,35 +1,36 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
-import Home from "./components/home.jsx";
+
 import Navbar from "./components/navbar.jsx";
+import Home from "./components/home.jsx";
 import Footer from './components/Footer.jsx';
 
-import Listings from "./components/listings.jsx";
-import BeautyBeast from "./components/listings/BeautyBeef.jsx";
-import MoonstersInc from "./components/listings/MoonstersInc.jsx";
-import DairyMovie from "./components/listings/DairyMovie.jsx";
-import Cowsablanca from "./components/listings/Cows-ablanca.jsx";
+import Listings from "./components/listings";
+import BeautyBeast from "./components/listings/beautyBeef.jsx";
+import MoonstersInc from "./components/listings/moonstersInc.jsx";
+import DairyMovie from "./components/listings/dairyMovie.jsx";
+import Cowsablanca from "./components/listings/cowsablanca.jsx";
 
-import Opening from "./components/opening";
-import NewReleases from "./components/newreleases";
-import TerrorDairy from "./components/newReleases/TerrorDairy";
-import Moonions from "./components/newReleases/Moonions";
-import Calftime from "./components/newReleases/Calftime";
-import TheCows from "./components/newReleases/thecows";
+import NewReleases from "./components/newReleases";
+import TerrorDairy from "./components/newReleases/terrorDairy";
+import Moonions from "./components/newReleases/moonions";
+import Calftime from "./components/newReleases/calftime";
+import TheCows from "./components/newReleases/theCows";
 
 import Information from "./components/information";
-import Screens from "./components/screens";
-import Directions from "./components/directions";
-import Nearby from "./components/nearby";
+import Screens from "./components/information/screens";
+import Directions from "./components/information/directions";
+import Nearby from "./components/information/nearby";
+import Opening from "./components/information/opening";
 
-import Tickets from './components/tickets.jsx';
-import Bookings from "./components/booking";
-import Payment from "./components/payment";
-import Orders from './components/orders.jsx';
-import OrderEdit from './components/orderEdit.jsx';
-import SoldOut from "./components/SoldOut";
+import Tickets from './components/tickets';
+import Bookings from "./components/tickets/booking";
+import Payment from "./components/tickets/payment";
+import Orders from './components/tickets/orders.jsx';
+import OrderEdit from './components/tickets/orderEdit.jsx';
+import SoldOut from "./components/tickets/soldOut";
+import ContactPage from './components/information/contact.jsx';
 
-import ContactPage from './components/Contactpage.jsx';
 import Moovies from './components/moovies.jsx'
 
 

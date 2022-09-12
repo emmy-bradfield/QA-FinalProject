@@ -1,8 +1,8 @@
 import { Link, Outlet } from 'react-router-dom';
-import BeautyBeefImg from '../assets/beauty-and-beef.jpg';
-import MoonstersImg from '../assets/moo-nsters-inc.png';
-import DairyMovie from '../assets/dairy-movie.png';
-import Cowsablanca from '../assets/cowsablanca.png';;
+import BeautyBeefImg from '../../assets/movie-posters/beauty-and-beef.jpg';
+import MoonstersImg from '../../assets/movie-posters/moo-nsters-inc.png';
+import DairyMovie from '../../assets/movie-posters/dairy-movie.png';
+import Cowsablanca from '../../assets/movie-posters/cowsablanca.png';;
 
 const Listings = () => {
     return (

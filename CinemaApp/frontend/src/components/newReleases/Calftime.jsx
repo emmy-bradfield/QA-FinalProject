@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import CalftimeImg from '../../assets/calftime.png';
+import CalftimeImg from '../../assets/movie-posters/calftime.png';
 
 const Calftime = () =>{
     return(

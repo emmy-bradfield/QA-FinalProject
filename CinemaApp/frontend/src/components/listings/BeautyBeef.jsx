@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import BeautyBeefImg from '../../assets/beauty-and-beef.jpg';
+import BeautyBeefImg from '../../assets/movie-posters/beauty-and-beef.jpg';
 
 const BeautyBeast = () => {
     return (

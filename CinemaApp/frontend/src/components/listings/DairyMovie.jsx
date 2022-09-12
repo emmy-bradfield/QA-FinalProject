@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import DairyMovieImg from '../../assets/dairy-movie.png';
+import DairyMovieImg from '../../assets/movie-posters/dairy-movie.png';
 
 const DairyMovie = () =>{
     return(
