@@ -2,21 +2,20 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import Home from "./components/home.jsx";
 import Navbar from "./components/navbar.jsx";
-import MovieList from "./components/movielist";
 import Footer from './components/Footer.jsx';
 
 import Listings from "./components/listings.jsx";
-import BeautyBeast from "./components/BeautyBeef.jsx";
-import MoonstersInc from "./components/MoonstersInc.jsx";
-import DairyMovie from "./components/DairyMovie.jsx";
-import Cowsablanca from "./components/Cows-ablanca.jsx";
+import BeautyBeast from "./components/listings/BeautyBeef.jsx";
+import MoonstersInc from "./components/listings/MoonstersInc.jsx";
+import DairyMovie from "./components/listings/DairyMovie.jsx";
+import Cowsablanca from "./components/listings/Cows-ablanca.jsx";
 
 import Opening from "./components/opening";
 import NewReleases from "./components/newreleases";
-import TerrorDairy from "./components/TerrorDairy";
-import Moonions from "./components/Moonions";
-import Calftime from "./components/Calftime";
-import TheCows from "./components/thecows";
+import TerrorDairy from "./components/newReleases/TerrorDairy";
+import Moonions from "./components/newReleases/Moonions";
+import Calftime from "./components/newReleases/Calftime";
+import TheCows from "./components/newReleases/thecows";
 
 import Information from "./components/information";
 import Screens from "./components/screens";
@@ -28,9 +27,11 @@ import Bookings from "./components/booking";
 import Payment from "./components/payment";
 import Orders from './components/orders.jsx';
 import OrderEdit from './components/orderEdit.jsx';
+import SoldOut from "./components/SoldOut";
 
 import ContactPage from './components/Contactpage.jsx';
-import SoldOut from "./components/SoldOut";
+import Moovies from './components/moovies.jsx'
+
 
 
 function App() {
@@ -52,8 +53,7 @@ function App() {
                             element={<DairyMovie/>}/>
                         <Route path="/listings/cowsablanca"
                             element={<Cowsablanca/>}/>
-                        <Route path="/moovies"
-                            element={<MovieList/>}/>
+                        <Route path='/moovies' element={<Moovies />}/>
                         <Route path="/bookings"
                             element={<Bookings/>}/>
                         <Route path="/authorise-payment"

@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import logoImg from '../assets/logo.png';
-import Search from './search.jsx';
 
 const Navbar = () => {
     return (
@@ -33,7 +32,7 @@ const Navbar = () => {
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li className="navi">
-                            <Search />
+                            <Link to="/moovies"><button className="btn btn-primary btn-box">Search</button> </Link>
                         </li>
                     </ul>
                 </nav>

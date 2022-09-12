@@ -66,10 +66,14 @@
 }
 
 .search-bar{
-  padding: 0.5em !important;
-  padding-top: 0.8em !important;
-  margin-right: 0 !important;
   border: 0 !important;
+  color: whitesmoke !important;
+  padding-left: 1em !important;
+  background-color: #00000075;
+  border-radius: 0 !important;
+  border-bottom: 1px solid whitesmoke !important;
+  width: 30vw !important;
+  margin-right: 0 !important;
 }
 
 .search-bar::placeholder{
@@ -77,12 +81,15 @@
 }
 
 .search-bar:focus{
-  padding: 0.5em !important;
-  padding-top: 0.8em !important;
   border: 0 !important;
-  margin-right: 0 !important;
+  border-bottom: 1px solid whitesmoke !important;
   background-color: inherit !important;
   box-shadow: none !important;
+  color: whitesmoke !important;
+  padding-left: 1em !important;
+  border-radius: 0 !important;
+  width: 30vw !important;
+  margin-right: 0 !important;
 }
 
 .search-bar:focus::placeholder{
@@ -97,24 +104,61 @@
   border-left: 1px solid whitesmoke;
 }
 
-.search-div {
+.sub-list{
+  font-size: medium;
+  margin: 0;
+  padding-left: 1em;
+  float: left;
   width: fit-content;
+}
+
+.fa-star{
+  color: goldenrod;
+  font-size: small;
+}
+
+.lil-spread {
+  width: 25vw;
   display: inline-flex;
   flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: nowrap;
-  border: 1px solid lightgrey;
+}
+.center-list{
+  margin:0;
+  padding:0.35em;
+  text-align: left;
+}
+
+.icon-btn{
+  width: fit-content;
+  height:fit-content;
+  background-color: inherit !important;
+  border: 0;
   box-shadow: none;
-  border-radius: 20px !important;
-  margin-right: 2em !important;
-  padding-right: 1em;
-  background-color: rgba(39, 39, 39, 0.425) !important;
 }
 
 .shrink-padding{
   padding: 0.2em !important;
+}
+
+.btn-toggle{
+  margin: 1em;
+}
+
+.btn-toggle-div{
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.button-caption{
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -0.3em;
+  margin-right: 0.5em;
 }
 
 .poster-nav {

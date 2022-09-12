@@ -1,27 +1,27 @@
 import {Link} from 'react-router-dom';
-import CowsablancaImg from '../assets/cowsablanca.png';
+import CalftimeImg from '../../assets/calftime.png';
 
-const Cowsablanca = () =>{
+const Calftime = () =>{
     return(
         <div>
-            <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
+            <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                <img className="page-image" src={CowsablancaImg} />
+                <img className="page-image" src={CalftimeImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> Cowsablanca </h1>
+                    <h1> Calftime </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
                             <ul>
-                                <li><h5>My Mother</h5></li>
-                                <li><h5>Dame Judy Dench</h5></li>
-                                <li><h5>Billy Bull</h5></li>
+                                <li><h5>Daisy</h5></li>
+                                <li><h5>Betty</h5></li>
+                                <li><h5>John Cena</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
                             <h3> Director: </h3>
                             <ul>
-                                <li><h5>Ibraheem Latif</h5></li>
+                                <li><h5>Madeha Rawshon</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
@@ -39,4 +39,4 @@ const Cowsablanca = () =>{
     );
 };
 
-export default Cowsablanca;
+export default Calftime;
