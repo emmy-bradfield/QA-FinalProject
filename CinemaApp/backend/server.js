@@ -10,6 +10,8 @@ const bookingRoute = require("./routes/bookingRouter");
 app.use("/bookings", bookingRoute);
 const emailRoute = require("./routes/emailRouter")
 app.use("/emails", emailRoute);
+const movieRoute = require("./routes/movieRouter");
+app.use("/movies", movieRoute);
 const router = express.Router();
 
 mongoose
