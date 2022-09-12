@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom';
-import TerrorDairyImg from '../assets/terrordairy.png';
+import DairyMovieImg from '../../assets/movie-posters/dairy-movie.png';
 
-const TerrorDairy = () =>{
+const DairyMovie = () =>{
     return(
         <div>
-            <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
+            <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                <img className="page-image" src={TerrorDairyImg} />
+                <img className="page-image" src={DairyMovieImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> Terror on the Dairy </h1>
+                    <h1> Dairy Movie </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
@@ -39,4 +39,4 @@ const TerrorDairy = () =>{
     );
 };
 
-export default TerrorDairy;
+export default DairyMovie;

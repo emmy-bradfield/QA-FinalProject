@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom';
-import CalftimeImg from '../assets/calftime.png';
+import TheCowsImg from '../../assets/movie-posters/thecows.png';
 
-const Calftime = () =>{
+const TheCows = () =>{
     return(
         <div>
             <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
-                <img className="page-image" src={CalftimeImg} />
+                <img className="page-image" src={TheCowsImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> Calftime </h1>
+                    <h1> The Cows </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
@@ -39,4 +39,4 @@ const Calftime = () =>{
     );
 };
 
-export default Calftime;
+export default TheCows;

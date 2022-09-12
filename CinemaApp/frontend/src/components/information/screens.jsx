@@ -1,7 +1,7 @@
-import StandardSeats from '../assets/standard-seats.png';
-import StandardScreen from '../assets/standard-screen.jpg';
-import DeluxeSeats from '../assets/deluxe-seats.png';
-import DeluxeScreen from '../assets/deluxe-screen.jpg';
+import StandardSeats from '../../assets/standard-seats.png';
+import StandardScreen from '../../assets/standard-screen.jpg';
+import DeluxeSeats from '../../assets/deluxe-seats.png';
+import DeluxeScreen from '../../assets/deluxe-screen.jpg';
 
 const Screens = () => {
     return (

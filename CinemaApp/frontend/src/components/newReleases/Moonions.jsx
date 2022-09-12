@@ -1,28 +1,27 @@
 import {Link} from 'react-router-dom';
-import MoonstersImg from '../assets/moo-nsters-inc.png';
+import MoonionsImg from '../../assets/movie-posters/moonions.png';
 
-const MoonsterInc = () => {
-    return (
+const Moonions = () =>{
+    return(
         <div>
-            <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
+            <Link to="/new-releases"><p className="classy-link"><i className="fa-solid fa-chevron-left in5"/>Back</p></Link>
             <div className="slide-left">
-                <img className="page-image" src={MoonstersImg} />
+                <img className="page-image" src={MoonionsImg} />
                 <div className="movie-details drop5 page-text">
-                    <h1> Moonsters Inc </h1>
+                    <h1> The Moonions: The Rise of Gru </h1>
                     <ul>
                         <li className="no-bullet">
                             <h3> Starring: </h3>
                             <ul>
-                                <li><h5>Mike Cowzowski</h5></li>
-                                <li><h5>Terry Crews</h5></li>
-                                <li><h5>Dame Judi Dench</h5></li>
-                                <li><h5>...and many more!</h5></li>
+                                <li><h5>Daisy</h5></li>
+                                <li><h5>Betty</h5></li>
+                                <li><h5>John Cena</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
                             <h3> Director: </h3>
                             <ul>
-                                <li><h5>Shahmeen Shaihk</h5></li>
+                                <li><h5>Madeha Rawshon</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
@@ -37,7 +36,7 @@ const MoonsterInc = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default MoonsterInc;
+export default Moonions;
