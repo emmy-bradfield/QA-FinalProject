@@ -3,7 +3,7 @@ import "./App.css";
 
 import Navbar from "./components/navbar.jsx";
 import Home from "./components/home.jsx";
-import Footer from './components/Footer.jsx';
+import Footer from './components/footer.jsx';
 
 import Listings from "./components/listings";
 import BeautyBeast from "./components/listings/beautyBeef.jsx";
