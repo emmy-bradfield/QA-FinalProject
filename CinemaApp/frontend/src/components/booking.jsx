@@ -134,6 +134,90 @@ class Bookings extends Component {
                 let thisTime = e.time;
                 let timeArrayPos = 0;
 
+                switch (thisMovie) {
+                    case "Beauty and the Beef":
+                        movieArrayPos = 0;
+                        break;
+                    case "Moonsters Inc":
+                        movieArrayPos = 1;
+                        break;
+                    case "Dairy Movie":
+                        movieArrayPos = 2;
+                        break;
+                    case "Cowsablanca":
+                        movieArrayPos = 3;
+                        break;
+                    case "Terror on the Dairy":
+                        movieArrayPos = 4;
+                        break;
+                    case "The Moonions: Rise of Gru":
+                        movieArrayPos = 5;
+                        break;
+                    case "Calftime":
+                        movieArrayPos = 6;
+                        break;
+                    case "The Cows":
+                        movieArrayPos = 7;
+                        break;
+                }
+                switch (thisDay) {
+                    case "10-Sep":
+                        dayArrayPos = 0;
+                        break;
+                    case "11-Sep":
+                        dayArrayPos = 1;
+                        break;
+                    case "12-Sep":
+                        dayArrayPos = 2;
+                        break;
+                    case "13-Sep":
+                        dayArrayPos = 3;
+                        break;
+                    case "14-Sep":
+                        dayArrayPos = 4;
+                        break;
+                    case "15-Sep":
+                        dayArrayPos = 5;
+                        break;
+                    case "16-Sep":
+                        dayArrayPos = 6;
+                        break;
+                    case "17-Sep":
+                        dayArrayPos = 7;
+                        break;
+                    case "18-Sep":
+                        dayArrayPos = 8;
+                        break;
+                    case "19-Sep":
+                        dayArrayPos = 9;
+                        break;
+                    case "20-Sep":
+                        dayArrayPos = 10;
+                        break;
+                }
+                switch (thisTime) {
+                    case "12:00":
+                        timeArrayPos = 0;
+                        break;
+                    case "14:00":
+                        timeArrayPos = 1;
+                        break;
+                    case "17:00":
+                        timeArrayPos = 2;
+                        break;
+                    case "19:00":
+                        timeArrayPos = 3;
+                        break;
+                    case "20:30":
+                        timeArrayPos = 4;
+                        break;
+                    case "22:00":
+                        timeArrayPos = 5;
+                        break;
+                    case "23:45":
+                        timeArrayPos = 6;
+                        break;
+                }
                 bookingArray.forEach(e => {
                     Object.keys(e).forEach(key => {
                         let totalTerrorTickets = 0;
@@ -144,92 +228,7 @@ class Bookings extends Component {
                         let totalMoonionsTickets = 0;
                         let totalCalftimeTickets = 0;
                         let totalCowsTickets = 0;
-
-
-                        switch (thisMovie) {
-                            case "Beauty and the Beef":
-                                movieArrayPos = 0;
-                                break;
-                            case "Moonsters Inc":
-                                movieArrayPos = 1;
-                                break;
-                            case "Dairy Movie":
-                                movieArrayPos = 2;
-                                break;
-                            case "Cowsablanca":
-                                movieArrayPos = 3;
-                                break;
-                            case "Terror on the Dairy":
-                                movieArrayPos = 4;
-                                break;
-                            case "The Moonions: Rise of Gru":
-                                movieArrayPos = 5;
-                                break;
-                            case "Calftime":
-                                movieArrayPos = 6;
-                                break;
-                            case "The Cows":
-                                movieArrayPos = 7;
-                                break;
-                        }
-                        switch (thisDay) {
-                            case "10-Sep":
-                                dayArrayPos = 0;
-                                break;
-                            case "11-Sep":
-                                dayArrayPos = 1;
-                                break;
-                            case "12-Sep":
-                                dayArrayPos = 2;
-                                break;
-                            case "13-Sep":
-                                dayArrayPos = 3;
-                                break;
-                            case "14-Sep":
-                                dayArrayPos = 4;
-                                break;
-                            case "15-Sep":
-                                dayArrayPos = 5;
-                                break;
-                            case "16-Sep":
-                                dayArrayPos = 6;
-                                break;
-                            case "17-Sep":
-                                dayArrayPos = 7;
-                                break;
-                            case "18-Sep":
-                                dayArrayPos = 8;
-                                break;
-                            case "19-Sep":
-                                dayArrayPos = 9;
-                                break;
-                            case "20-Sep":
-                                dayArrayPos = 10;
-                                break;
-                        }
-                        switch (thisTime) {
-                            case "12:00":
-                                timeArrayPos = 0;
-                                break;
-                            case "14:00":
-                                timeArrayPos = 1;
-                                break;
-                            case "17:00":
-                                timeArrayPos = 2;
-                                break;
-                            case "19:00":
-                                timeArrayPos = 3;
-                                break;
-                            case "20:30":
-                                timeArrayPos = 4;
-                                break;
-                            case "22:00":
-                                timeArrayPos = 5;
-                                break;
-                            case "23:45":
-                                timeArrayPos = 6;
-                                break;
-                        }
+                        
                         if (key === "tickets") {
                             let ticketKey = e[key];
                             Object.keys(ticketKey).forEach(key => {
@@ -286,12 +285,35 @@ class Bookings extends Component {
                     }
                     )
                 })
-                if ((movieArray[movieArrayPos][dayArrayPos][timeArrayPos]) > 100) {
-                    this.setState({ valid: false });
-                } else {
-                    this.setState({ valid: true });
-                    console.log("there are tickets available")
-                }
+                const checkMovieArray = [
+                    "Beauty and the Beef", "Moonsters Inc", "Dairy Movie", "Cowsablanca", "Terror on the Dairy",
+                    "The Moonions: The Rise of Gru", "Calftime", "The Cows"
+                ]
+                const checkDateArray = [
+                    "10-Sep","11-Sep","12-Sep","13-Sep","14-Sep","15-Sep","16-Sep","17-Sep","18-Sep","19-Sep","20-Sep"
+                ]
+                const checkTimeArray = [
+                    "12:00","14:00","17:00","19:00","20:30","22:00","23:45"
+                ]
+                movieArray.forEach(movie => {
+                    movie.forEach(day => {
+                        day.forEach(time => {
+                            if ((time + Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 100) {
+                                if (this.state.movie == checkMovieArray[movieArrayPos] && this.state.day == checkDateArray[dayArrayPos] && this.state.time == checkTimeArray[timeArrayPos]){
+                                    console.log(`These Match! ${e.movie}`);
+                                    console.log(`movie: ${movie} day: ${day} time: ${time}`)
+                                    console.log(`movie ${movieArrayPos} day ${dayArrayPos} time ${timeArrayPos}`)
+                                    console.log(`arraypos ${checkMovieArray[movieArrayPos]}`)
+                                    this.setState({ valid: "false" });
+                                } else {
+                                    console.log(`These dont match! ${e.movie}`);
+                                    this.setState({ valid: "true" });
+                                }
+                            }
+                        });
+                    });
+                });
+                console.log(movieArray)
             })
             .catch((err) => console.log(err));
     }
@@ -325,7 +347,7 @@ class Bookings extends Component {
                 .then(this.checkTickets(e))
                 .then(res => {
                     localStorage.setItem("REF", res.data._id);
-                    if (this.state.valid === true) {
+                    if (this.state.valid == "true") {
                         window.location.replace("/authorise-payment")
                     } else {
                         axios.delete(`http://localhost:4000/bookings/delete/${res.data._id}`);
