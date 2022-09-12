@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import logoImg from '../assets/logo.png';
-
+import Search from './search.jsx';
 
 const Navbar = () => {
     return (
@@ -31,6 +31,9 @@ const Navbar = () => {
                         </li>
                         <li className="navi">
                             <Link to="/contact">Contact</Link>
+                        </li>
+                        <li className="navi">
+                            <Search />
                         </li>
                     </ul>
                 </nav>
