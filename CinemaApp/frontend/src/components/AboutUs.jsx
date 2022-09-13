@@ -52,7 +52,7 @@ const AboutUs = () =>{
           </div>
           <div className="back back3">
           <p>As the lead backend developer, I overlooked all backend development and ensured Ibraheem and I maintained agile approach.</p>
-            <a href='' target='_blank'>GitHub</a>
+            <a href='https://github.com/MichaelKing674' target='_blank'>GitHub</a>
             <br/>
             <a href='https://www.linkedin.com/in/michaelking01/' target='_blank'>Linkedin</a>
           </div>
@@ -89,7 +89,7 @@ const AboutUs = () =>{
           <div className="back back5">
           <p>As a backend developer, I had to help Michael develop all backend processes and incoporate them into the site to add functionality.
             </p>
-            <a href='' target='_blank'>GitHub</a>
+            <a href='https://github.com/ibraheem-latif' target='_blank'>GitHub</a>
             <br/>
             <a href='https://www.linkedin.com/in/ibraheem-latif/' target='_blank'>Linkedin</a>
           </div>
@@ -105,7 +105,7 @@ const AboutUs = () =>{
           <div className="back back6">
           <p>As frontend developer my main responsibility was creating some of the pages on the site with the direction of the Madeha, ensuring the pages were responsive and reactive. 
             </p>
-            <a href='' target='_blank'>GitHub</a>
+            <a href='https://github.com/Jib-Yusuf' target='_blank'>GitHub</a>
             <br/>
             <a href='https://www.linkedin.com/in/jabril-yusuf-ba6707246/' target='_blank'>Linkedin</a>
           </div>
