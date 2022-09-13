@@ -35,8 +35,6 @@ import DiscussionBoard from "./components/discussionBoard";
 import Moovies from './components/moovies.jsx'
 
 
-
-
 function App() {
     return (
         <>
