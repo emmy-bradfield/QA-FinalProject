@@ -32,3 +32,5 @@ app.use("/", router);
 const server = app.listen(PORT, function () {
     console.log("Server is running on Port: " + PORT);
 });
+
+module.exports = server;
