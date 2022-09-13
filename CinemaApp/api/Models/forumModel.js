@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const {Schema, model} = mongoose;
+const {Schema} = mongoose;
 
 const forumSchema = new Schema({
     name: String,
@@ -9,7 +9,4 @@ const forumSchema = new Schema({
     message: String
     });
 
-const Forum = model('Forum', forumSchema);
-module.exports = {
-    "Forum": Forum
-}
+module.exports = mongoose.models.Forum || mongoose.model("Forum", forumSchema);

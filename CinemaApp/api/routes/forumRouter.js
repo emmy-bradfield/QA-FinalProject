@@ -1,7 +1,7 @@
 const express = require('express');
 const forumRoute = express.Router();
 
-const {Forum} = require('../models/forumModel');
+const Forum = require('../models/forumModel');
 
 forumRoute.route("/post").post((req, res) => {
     const name = req.body.name;
@@ -20,7 +20,7 @@ forumRoute.route("/post").post((req, res) => {
     .catch((err) => res.status(400).json('Error: ' + err))
 })
 forumRoute.route('/getAll').get((req, res) => {
-    Forum.find().then(posts => res.json(posts)).catch((err) => res.status(400).json('Error: ' + err))
+    Forum.find().then(posts => res.json(posts)).catch((err) => res.status(400).json(err))
 })
 
 module.exports = forumRoute;

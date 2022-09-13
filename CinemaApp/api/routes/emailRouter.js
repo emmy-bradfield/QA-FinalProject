@@ -1,7 +1,7 @@
 const express = require('express');
 const emailRoute = express.Router();
 
-const {Email} = require('../models/emailModel');
+const Email = require('../models/emailModel');
 
 emailRoute.route("/post").post((req, res) => {
     const name = req.body.name;

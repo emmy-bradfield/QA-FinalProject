@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const {Schema, model} = mongoose;
+const {Schema} = mongoose;
 
 const emailSchema = new Schema({
     name: String,
@@ -9,7 +9,4 @@ const emailSchema = new Schema({
     message: String
     });
 
-const Email = model('Email', emailSchema);
-module.exports = {
-    "Email": Email
-}
+module.exports = mongoose.models.Email || mongoose.model("Email", emailSchema);

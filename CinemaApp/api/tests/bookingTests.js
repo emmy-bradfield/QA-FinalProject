@@ -169,7 +169,7 @@ describe("CRUD testing", () => {
     it("Should find all movies", function () {
         chai.request(server).get("/bookings/getAll").end((err, res) => {
             chai.expect(err).to.be.null;
-            chai.expect(res.body).to.have.lengthOf(3);
+            chai.expect(res.body).to.have.lengthOf(4);
             chai.expect(res.body[0]).to.eql(TEST);
         });
     });
