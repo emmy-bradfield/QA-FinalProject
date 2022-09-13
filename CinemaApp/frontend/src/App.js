@@ -18,28 +18,19 @@ import Calftime from "./components/newReleases/calftime";
 import TheCows from "./components/newReleases/theCows";
 
 import Information from "./components/information";
-import Screens from "./components/screens";
-import Directions from "./components/directions";
-import Nearby from "./components/nearby";
+import Screens from "./components/information/screens";
+import Directions from "./components/information/directions";
+import Nearby from "./components/information/nearby";
 
-import Tickets from './components/tickets.jsx';
-import Bookings from "./components/booking";
-import Payment from "./components/payment";
-import Orders from './components/orders.jsx';
-import OrderEdit from './components/orderEdit.jsx';
-
-import ContactPage from './components/Contactpage.jsx';
-import SoldOut from "./components/SoldOut";
-import AboutUs from "./components/aboutUs";
-
-
-import Tickets from "./components/tickets";
+import Tickets from './components/tickets';
 import Bookings from "./components/tickets/booking";
 import Payment from "./components/tickets/payment";
-import Orders from "./components/tickets/orders.jsx";
-import OrderEdit from "./components/tickets/orderEdit.jsx";
+import Orders from './components/tickets/orders.jsx';
+import OrderEdit from './components/tickets/orderEdit.jsx';
+
+import ContactPage from './components/information/contact.jsx';
 import SoldOut from "./components/tickets/soldOut";
-import ContactPage from "./components/information/contact.jsx";
+import AboutUs from "./components/aboutUs";
 
 import DiscussionBoard from "./components/discussionBoard";
 import Moovies from "./components/moovies.jsx";
@@ -71,7 +62,7 @@ function App() {
             <Route path="/new-releases/moonions" element={<Moonions />} />
             <Route path="/new-releases/calftime" element={<Calftime />} />
             <Route path="/new-releases/thecows" element={<TheCows />} />
-            <Route path="/openings" element={<Opening />} />
+            <Route path="/openings" element={<opening />} />
             <Route path="/discuss" element={<DiscussionBoard />} />
             <Route path="/information" element={<Information />}>
               <Route path="/information/screens" element={<Screens />} />

@@ -16,7 +16,7 @@ const Footer = () => {
             </Link>
           </li>
           <li className="navi-f">
-            <Link to="/">
+            <Link to="/aboutus">
               About Us
             </Link>
           </li>
