@@ -30,12 +30,6 @@ const Navbar = () => {
                         <li className="navi">
                             <Link to="/contact">Contact</Link>
                         </li>
-                        <li className="navi">
-                        <div class="search-box">
-    <button class="btn-search"><i class="fas fa-search"></i></button>
-    <input type="text" class="input-search" placeholder="Type to Search..."/>
-  </div>
-                        </li>
                     </ul>
                 </nav>
                 <Outlet />
