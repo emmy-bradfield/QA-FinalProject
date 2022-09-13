@@ -14,7 +14,7 @@ const ListTwo = ({ list }) => {
                             </div>
                             <div>
                                 {item.rating}
-                                <i class="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
                                 <br />
                                 <h6>{item.reviews} reviews</h6>
                             </div>
