@@ -30,7 +30,7 @@ const createdBooking = {
 }
 
 describe("CRUD Tests", () => {
-    mocha.beforeEach((done) => {
+    beforeEach((done) => {
         Booking.deleteMany({}).then(() => {
             Booking.create({
                 _id: "MOCHA-TEST-1",
@@ -64,7 +64,7 @@ describe("CRUD Tests", () => {
         }).catch((err) => console.error(err));
     });
 
-    mocha.it("Should create a movie", (done) => {
+    it("Should create a movie", (done) => {
         const requestBody = {
             __v: 0,
             _id: "MOCHA-TEST-2",
@@ -85,7 +85,7 @@ describe("CRUD Tests", () => {
         });
     });
 
-    mocha.it("Should find all movies", (done) => {
+    it("Should find all movies", (done) => {
         chai.request(server).get("/bookings/getAll").end((err, res) => {
             chai.expect(err).to.be.null;
             chai.expect(res.body).to.have.lengthOf(1);
