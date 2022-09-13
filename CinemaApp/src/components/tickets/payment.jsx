@@ -78,7 +78,6 @@ class Payment extends Component {
                     cardCVC: ''
                 });
                 window.alert("Thank you for your purchase. Press OK to continue");
-                window.open("https://www.github.com/emmy-bradfield")
             })
     };
 

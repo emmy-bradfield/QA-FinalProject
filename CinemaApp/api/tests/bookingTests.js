@@ -1,123 +1,152 @@
-const mocha = require('mocha');
 const chai = require('chai');
 const chaiHTTP = require("chai-http");
 chai.use(chaiHTTP);
-
 const server = require("../server");
-const Booking = require("../Models/bookingModel")
+const expect = chai.expect;
+const Booking = require("../Models/bookingModel");
+const {response} = require('express');
+
+const readBooking = {
+    __v: 0,
+    _id: "TEST",
+    firstName: "John",
+    lastName: "Doe",
+    movie: "Cowsablanca",
+    day: "16-Sep",
+    time: "12:00",
+    price: "10",
+    tickets: [
+        {
+            noOfAdult: "3",
+            noOfChild: "1",
+            noOfConcession: "0"
+        }
+    ],
+    payment: [
+        {
+            cardName: "Mr John Doe",
+            cardNumber: "4921889745651322",
+            cardDate: "0526",
+            cardCVC: "707"
+        }
+    ]
+};
 
 const createdBooking = {
     __v: 0,
-    _id: "MOCHA-TEST-2",
+    _id: "CREATED",
     day: "15-Sep",
     firstName: "Jane",
     lastName: "Doe",
     movie: "Beauty and the Beef",
+    tickets: [
+        {
+            _id: "CREATED"
+        }
+    ],
     payment: [
         {
-            _id: "MOCHA-TEST-2"
+            _id: "CREATED"
+        }
+    ],
+    time: "17:00"
+};
+
+const checkoutBooking = {
+    __v: 0,
+    _id: "PAY",
+    firstName: "John",
+    lastName: "Doe",
+    movie: "Cowsablanca",
+    day: "16-Sep",
+    time: "12:00",
+    price: "10",
+    payment: [
+        {
+            cardName: "Mr John Doe",
+            cardNumber: "4921889745651322",
+            cardDate: "0526",
+            cardCVC: "707"
         }
     ],
     tickets: [
         {
-            _id: "MOCHA-TEST-2",
-            noOfAdult: "2",
-            noOfChild: "0",
-            noOfConcession: "0",
+            noOfAdult: "3",
+            noOfChild: "1",
+            noOfConcession: "0"
         }
-    ],
-    time: "17:00"
+    ]
+
 }
 
-describe("CRUD Tests", () => {
-    beforeEach((done) => {
-        Booking.deleteMany({}).then(() => {
-            Booking.create({
-                _id: "MOCHA-TEST-1",
-                firstName: "John",
-                lastName: "Doe",
-                movie: "Cowsablanca",
-                day: "16-Sep",
-                time: "12:00",
-                price: "10",
-                tickets: [
-                    {
-                        _id: "MOCHA-TEST-1",
-                        noOfAdult: "1",
-                        noOfChild: "0",
-                        noOfConcession: "0"
-                    }
-                ],
-                payment: [
-                    {
-                        _id: "MOCHA-TEST-1",
-                        cardName: "Mr John Doe",
-                        cardNumber: "4921492149211234",
-                        cardDate: "0510",
-                        cardCVC: "123",
-                        dateTime: "2022-09-13"
-                    }
-                ]
-            }).then((result) => {
-                done();
-            }).catch((err) => console.error(err));
-        }).catch((err) => console.error(err));
-    });
-
-    it("Should create a movie", (done) => {
-        const requestBody = {
-            __v: 0,
-            _id: "MOCHA-TEST-2",
-            day: "15-Sep",
-            firstName: "Jane",
-            lastName: "Doe",
-            movie: "Beauty and the Beef",
+const ticketBooking = {
+    _id: "EDIT",
+    firstName: "John",
+    lastName: "Doe",
+    movie: "Cowsablanca",
+    day: "16-Sep",
+    time: "12:00",
+    price: "10",
+    tickets: [
+        {
             noOfAdult: "2",
             noOfChild: "0",
-            noOfConcession: "0",
-            time: "17:00"
+            noOfConcession: "1"
 
-        };
-        chai.request(server).post("/bookings/post").send(requestBody).end((err, res) => {
+        }
+    ],
+    payment: [
+        {
+            cardName: "Mr John Doe",
+            cardNumber: "4921889745651322",
+            cardDate: "0526",
+            cardCVC: "707"
+        }
+    ],
+    __v: 0
+}
+
+describe("CRUD testing", () => {
+
+    it("Should create a movie", function () {
+        chai.request(server).post("/bookings/post").send(createdBooking).end((err, res) => {
             chai.expect(err).to.be.null;
             chai.expect(res.body).to.eql(createdBooking);
-            done();
         });
     });
 
-    it("Should find all movies", (done) => {
+    it("Should find all movies", function () {
         chai.request(server).get("/bookings/getAll").end((err, res) => {
             chai.expect(err).to.be.null;
-            chai.expect(res.body).to.have.lengthOf(1);
-            chai.expect(res.body[0]).to.eql({
-                __v: 0,
-                _id: "MOCHA-TEST-1",
-                firstName: "John",
-                lastName: "Doe",
-                movie: "Cowsablanca",
-                day: "16-Sep",
-                time: "12:00",
-                price: "10",
-                tickets: [
-                    {
-                        _id: "MOCHA-TEST-1",
-                        noOfAdult: "1",
-                        noOfChild: "0",
-                        noOfConcession: "0"
-                    }
-                ],
-                payment: [
-                    {
-                        _id: "MOCHA-TEST-1",
-                        cardName: "Mr John Doe",
-                        cardNumber: "4921492149211234",
-                        cardDate: "0510",
-                        cardCVC: "123",
-                        dateTime: "2022-09-13"
-                    }
-                ]
-            });
-            return done();
+            chai.expect(res.body).to.have.lengthOf(4);
+            chai.expect(res.body[0]).to.eql(readBooking);
         });
     });
+
+    it("Should find a specific movie", function () {
+        chai.request(server).get("/bookings/get/TEST").end(function (err, res) {
+            expect(err).to.be.null;
+            expect(res.body).to.eql(readBooking);
+        })
+    });
+
+    it("Should add payment details to a booking", function () {
+        chai.request(server).post("/bookings/checkout/PAY").query("PAY").send({cardName: 'Mr John Doe', cardNumber: '4921889745651322', cardDate: '0526', cardCVC: '707'}).end((err, res) => {
+            chai.expect(err).to.be.null;
+            expect(res.body).to.eql(checkoutBooking);
+        })
+    });
+
+    it("Should update tickets for a booking", function () {
+        chai.request(server).post("/bookings/update/EDIT").query("EDIT").send({noOfAdult: "2", noOfChild: "0", noOfConcession: "1"}).end((err, res) => {
+            expect(res.body).to.eql(ticketBooking);
+        });
+    });
+
+    it("Should delete a booking", function () {
+        chai.request(server).delete("/bookings/delete/CREATED").query("CREATED").end((err, res) => {
+            expect(res).to.have.status(404);
+        })
+    });
+
 });

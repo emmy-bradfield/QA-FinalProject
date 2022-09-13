@@ -53,23 +53,23 @@ bookingRoute.route('/post').post((req, res) => {
         payment
     });
 
-    newBooking.save().
-    then(() => res.status(201).json(newBooking))
-    .catch((err) => res.status(400).json('Error: ' + err))
+    newBooking.save()
+    .then(() => res.status(201).json(newBooking))
+    .catch((err) => res.status(400).json(err))
 })
 
 
 bookingRoute.route('/getAll').get((req, res) => {
     Booking.find()
     .then(bookings => res.status(200).json(bookings))
-    .catch((err) => res.status(400).json('Error: ' + err))
+    .catch((err) => res.status(400).json(err))
 })
 
 
 bookingRoute.route('/get/:_id').get((req, res) => {
-    Booking.findById({"_id": req.params._id})
-    .then(booking => res.st5atus(200).json(booking))
-    .catch((err) => res.status(400).json('Error: ' + err))
+    Booking.findById(req.params._id)
+    .then((booking) => res.status(200).json(booking))
+    .catch((err) => res.status(400).json(err))
 })
 
 
@@ -81,13 +81,9 @@ bookingRoute.route('/update/:_id').post((req, res) => {
     };
     Booking.findByIdAndUpdate(req.params._id, {
         tickets: ticketDetails
-    }, function (err, result) {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Updated Booking: " + result);
-        }
     })
+    .then((booking) => res.status(200).send(booking))
+    .catch((err) => res.status(400).json(err))
 });
 
 bookingRoute.route('/checkout/:_id').post((req, res) => {
@@ -100,17 +96,15 @@ bookingRoute.route('/checkout/:_id').post((req, res) => {
     }
     Booking.findByIdAndUpdate(req.params._id, {
         payment: paymentDetails
-    }, function (err, result) {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Updated Booking: " + result)
-        }
     })
+    .then((booking) => res.status(200).json(booking))
+    .catch((err) => res.status(400).json(err))
 })
 
 bookingRoute.route('/delete/:_id').delete((req, res) => {
-    Booking.findByIdAndDelete(req.params._id).then(() => console.log("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
+    Booking.findByIdAndDelete(req.params._id)
+    .then(() => res.status(404))
+    .catch((err) => res.status(400).json(err))
 })
 
 module.exports = bookingRoute;
