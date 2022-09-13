@@ -18,12 +18,12 @@ const AboutUs = () =>{
             <p>Scrum Master</p>
           </div>
           <div className="back back1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
+            <p> As Scrum Master, my role was to direct the team and lead them through their daily tasks with a approach called <a href='https://www.atlassian.com/agile#:~:text=Agile%20is%20an%20iterative%20approach,small%2C%20but%20consumable%2C%20increments.' target="_blank">Agile. </a> 
+             Click to learn more.
             </p>
-            <a>GitHub</a>
+            <a href='https://github.com/emmy-bradfield' target="_blank">GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/emilyjanebradfield/' target='_blank'>Linkedin</a>
 
           </div>
         </div>
@@ -36,12 +36,10 @@ const AboutUs = () =>{
             <p>Product Owner</p>
           </div>
           <div className="back back2">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
-            </p>
-            <a>GitHub</a>
+          <p>As Product Owner, I was in charge of the products outcome, what you are seeing and interacting with right now! Design processes were all done through me to ensure a consistent theme throughout the site.    </p>
+            <a href='https://github.com/shahmeen-shaikh' target='_blank'>GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/shahmeen-shaikh-a181a1192/' target='_blank'>Linkedin</a>
           </div>
         </div>
       </div>
@@ -53,12 +51,10 @@ const AboutUs = () =>{
             <p>Lead Backend Developer</p>
           </div>
           <div className="back back3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
-            </p>
-            <a>GitHub</a>
+          <p>As the lead backend developer, I overlooked all backend development and ensured Ibraheem and I maintained agile approach.</p>
+            <a href='' target='_blank'>GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/michaelking01/' target='_blank'>Linkedin</a>
           </div>
         </div>
       </div>
@@ -75,12 +71,11 @@ const AboutUs = () =>{
             <p>Lead Frontend Developer</p>
           </div>
           <div className="back back4">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
+          <p>As Lead frontend developer, my job was to create pages and add styling to them. As well as implementing the Product Owners design requirements into each page. 
             </p>
-            <a>GitHub</a>
+            <a href='https://github.com/Madeha98' target='_blank'>GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/madeha-rawshon/' target='_blank'>Linkedin</a>
           </div>
         </div>
       </div>
@@ -92,12 +87,11 @@ const AboutUs = () =>{
             <p>Backend Developer</p>
           </div>
           <div className="back back5">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
+          <p>As a backend developer, I had to help Michael develop all backend processes and incoporate them into the site to add functionality.
             </p>
-            <a>GitHub</a>
+            <a href='' target='_blank'>GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/ibraheem-latif/' target='_blank'>Linkedin</a>
           </div>
         </div>
       </div>
@@ -109,23 +103,24 @@ const AboutUs = () =>{
             <p>Frontend Developer</p>
           </div>
           <div className="back back6">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-               incididunt ut labore et
+          <p>As frontend developer my main responsibility was creating some of the pages on the site with the direction of the Madeha, ensuring the pages were responsive and reactive. 
             </p>
-            <a>GitHub</a>
+            <a href='' target='_blank'>GitHub</a>
             <br/>
-            <a>Linkedin</a>
+            <a href='https://www.linkedin.com/in/jabril-yusuf-ba6707246/' target='_blank'>Linkedin</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div className='scrumtext'>
 <h2>
   Got no idea what a scrum is?
 </h2>
 
   <p>click here to learn more</p>
-
+  </div>
        </div>
     );
 };
