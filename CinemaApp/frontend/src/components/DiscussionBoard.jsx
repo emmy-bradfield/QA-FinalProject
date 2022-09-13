@@ -1,6 +1,6 @@
-import { Component } from 'react';
+import { Component} from 'react';
 import axios from 'axios';
-import { WrapItem } from '@chakra-ui/react';
+
 
 class DiscussionBoard extends Component {
     constructor(props) {
@@ -10,7 +10,8 @@ class DiscussionBoard extends Component {
             name: '',
             movieName: '',
             rating: '',
-            message: ''
+            message: '',
+            postArray: []
         };
 
         this.onChangeName = this.onChangeName.bind(this);
@@ -18,9 +19,8 @@ class DiscussionBoard extends Component {
         this.onChangeRating = this.onChangeRating.bind(this);
         this.onChangeMessage = this.onChangeMessage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
-        this.postArray = [];
     }
+
 
     onChangeName(e) {
         this.setState({
@@ -48,36 +48,26 @@ class DiscussionBoard extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.movieName)
-        if (this.state.movieName == "") {
-            axios.get(`http://localhost:4000/forum/getAll`)
-                .then((res) => {
-                    this.postArray = res.data;
-                    this.forceUpdate();
-                    console.log(this.postArray)
+        axios.get(`http://localhost:4000/forum/getAll`)
+            .then((res) => {
+                this.setState({
+                    postArray: res.data
                 })
-                .catch((err) => console.log(err))
-        } else {
+            })
+            .catch((err) => console.log(err))
+
+    }
+    componentDidUpdate() {
+        if (this.state.movieName !== ""){
             axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
                 .then((res) => {
-                    this.postArray = res.data;
-                    this.forceUpdate();
-                    console.log(this.postArray)
+                    this.setState({
+                        postArray: res.data
+                    })
                 })
                 .catch((err) => console.log(err))
         }
-        console.log(this.state.movieName);
     }
-    componentDidUpdate() {
-        axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
-            .then((res) => {
-                this.postArray = res.data;
-                this.forceUpdate();
-                console.log(this.postArray)
-            })
-            .catch((err) => console.log(err))
-    }
-
 
     onSubmit(e) {
         e.preventDefault();
@@ -116,14 +106,14 @@ class DiscussionBoard extends Component {
                         <option>Calftime</option>
                         <option>The Cows</option>
                     </select>
-                    <ul class="list-group">
-                        {this.postArray.map((post) => (
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">{post.movieName}</div>
+                    <ul className="list-group">
+                        {this.state.postArray.map((post) => (
+                            <li key={post._id} className="list-group-item d-flex justify-content-between align-items-start">
+                                <div className="ms-2 me-auto">
+                                    <div className="fw-bold">{post.movieName}</div>
                                     {post.message}
                                 </div>
-                                <span class="badge bg-primary rounded-pill">{post.rating}/10</span>
+                                <span className="badge bg-primary rounded-pill">{post.rating}/10</span>
                             </li>
                         ))}
                     </ul>
