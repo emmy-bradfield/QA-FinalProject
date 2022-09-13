@@ -832,3 +832,33 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.places {
+  font-size: medium;
+  margin-left: 10%;
+  margin-right: 10%;
+display: inline-flex;
+text-align: center;
+
+}
+
+.places h3 {
+  padding: 0.7em;
+  vertical-align: text-bottom;
+}
+
+.burger {
+  height: 13em;
+}
+
+.arcade {
+  height: 13em;
+}
+
+.shopping {
+  height: 13em;
+}
+
+.escape {
+  height: 13em;
+}
