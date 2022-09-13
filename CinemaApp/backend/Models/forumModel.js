@@ -6,7 +6,8 @@ const forumSchema = new Schema({
     name: String,
     movieName: String,
     rating: String,
-    message: String
+    message: String,
+    replies: Array
     });
 
 const Forum = model('Forum', forumSchema);

@@ -1,4 +1,4 @@
-import CinemaShot from "../assets/cinema-external.jpg";
+import CinemaShot from "../../assets/cinema-external.jpg";
 
 const Directions = () => {
   return (

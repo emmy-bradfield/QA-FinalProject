@@ -842,12 +842,31 @@ body {
   color: black;
   background-color:  whitesmoke;
   margin-left: 0;
+  width: fit-content;
 }
 .list-group-item {
   background-color: whitesmoke;
   opacity: 80%;
   margin-top: .5%;
   border-radius: 8px;
+}
+#replyBtn {
+  background-color: #287a93;
+  width: auto;
+  height: auto;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#outer_div {
+  width: 100%;
+}
+#replyBox {
+  width: 100%;
+}
+#replyDiv {
+  width: 100%;
+  max-height: 2% !important;
 }
 #forum_entry {
   display: flex;
@@ -856,6 +875,16 @@ body {
   margin-right: 5%;
   width: 90%;
   max-height: 30em;
+}
+#rating {
+  display: flex;
+  background-color: #287a93;
+  color: white;
+  font-weight: bold;
+  width: 5%;
+  justify-content: center;
+  padding: .5%
+  
 }
 #forum_form {
   display: flex;
@@ -882,6 +911,6 @@ body {
   width: fit-content;
 }
 #entry_right_col button {
-  background-color: rgb(32, 54, 72);
+  background-color: #287a93;
   margin: 2%;
 }

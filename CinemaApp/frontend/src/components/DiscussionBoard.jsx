@@ -1,4 +1,4 @@
-import { Component} from 'react';
+import { Component } from 'react';
 import axios from 'axios';
 
 
@@ -7,10 +7,12 @@ class DiscussionBoard extends Component {
         super(props);
 
         this.state = {
+            _id: '',
             name: '',
             movieName: '',
             rating: '',
             message: '',
+            replies: [],
             postArray: []
         };
 
@@ -18,6 +20,9 @@ class DiscussionBoard extends Component {
         this.onChangeMovieName = this.onChangeMovieName.bind(this);
         this.onChangeRating = this.onChangeRating.bind(this);
         this.onChangeMessage = this.onChangeMessage.bind(this);
+        this.onChangeReplies = this.onChangeReplies.bind(this);
+        this.addReply = this.addReply.bind(this);
+
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -46,6 +51,12 @@ class DiscussionBoard extends Component {
             message: e.target.value
         })
     }
+    
+    onChangeReplies(e) {
+        this.setState({
+            replies: e.target.value
+        })
+    }
 
     componentDidMount() {
         axios.get(`http://localhost:4000/forum/getAll`)
@@ -58,7 +69,7 @@ class DiscussionBoard extends Component {
 
     }
     componentDidUpdate() {
-        if (this.state.movieName !== ""){
+        if (this.state.movieName !== "") {
             axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
                 .then((res) => {
                     this.setState({
@@ -67,6 +78,25 @@ class DiscussionBoard extends Component {
                 })
                 .catch((err) => console.log(err))
         }
+    }
+    addReply(e) {
+        console.log(e)
+        e.target.parentNode.previousSibling.previousElementSibling.previousElementSibling.hidden = false;
+        console.log(e.target.parentNode.previousSibling.previousElementSibling.previousElementSibling.text)
+        const thisMessage = {
+            
+        }
+        // axios.post(`http://localhost:4000/forum/update/${this.state._id}`)
+        //     .then(res => {
+        //         console.log("Response from backend")
+        //         this.componentDidMount()
+        //     })
+    }
+
+    replySetup(e) {
+        e.target.hidden = true;
+        e.target.nextSibling.hidden = false;
+        e.target.parentNode.nextSibling.hidden = false;
     }
 
     onSubmit(e) {
@@ -87,7 +117,8 @@ class DiscussionBoard extends Component {
             name: '',
             movieName: '',
             rating: '',
-            message: ''
+            message: '',
+            replies: ''
         })
     }
 
@@ -107,13 +138,22 @@ class DiscussionBoard extends Component {
                         <option>The Cows</option>
                     </select>
                     <ul className="list-group">
-                        {this.state.postArray.map((post) => (
+                        {this.state.postArray.map((post,index) => (
                             <li key={post._id} className="list-group-item d-flex justify-content-between align-items-start">
-                                <div className="ms-2 me-auto">
+                                <div id='outer_div' className="ms-2 me-auto">
+                                    <div id='hideThis' hidden>{index}</div>
                                     <div className="fw-bold">{post.movieName}</div>
                                     {post.message}
+                                    <div id='replyDiv'>
+                                        <button id='replyBtn' onClick={this.replySetup} className='btn btn-dark'>Reply</button>
+                                        <textarea id='replyBox' hidden className="form-control form-control2 message-txt" value={this.state.replies} required />
+                                    </div>
+                                    <div id='sendReply' hidden>
+                                        <button id='replyBtn' onClick={this.addReply} className='btn btn-dark'>Send reply</button>
+                                    </div>
+                                    
                                 </div>
-                                <span className="badge bg-primary rounded-pill">{post.rating}/10</span>
+                                <span id='rating' className="rounded-pill">{post.rating}/10</span>
                             </li>
                         ))}
                     </ul>
