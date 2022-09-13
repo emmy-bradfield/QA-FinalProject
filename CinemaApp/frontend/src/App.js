@@ -70,10 +70,10 @@ function App() {
               <Route path="/information/nearby" element={<Nearby />} />
             </Route>
             <Route path="/contact" element={<ContactPage />} />
-          </Route>
-          <Route>
             <Route path="/aboutus" element={<AboutUs />}/>
+
           </Route>
+          
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -5,7 +5,7 @@ import "../about.css"
 const AboutUs = () =>{
     return(
        <div>
-        <h2>Meet the Team</h2>
+        <h2 className='meet'>Meet the Team</h2>
 
   <hr className="hr8" />
   <div className="allcards">
