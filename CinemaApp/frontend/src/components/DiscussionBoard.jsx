@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import axios from 'axios';
+import { WrapItem } from '@chakra-ui/react';
 
-class discussionBoard extends Component {
+class DiscussionBoard extends Component {
     constructor(props) {
         super(props);
 
@@ -47,7 +48,28 @@ class discussionBoard extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/forum/getAll')
+        console.log(this.state.movieName)
+        if (this.state.movieName == "") {
+            axios.get(`http://localhost:4000/forum/getAll`)
+                .then((res) => {
+                    this.postArray = res.data;
+                    this.forceUpdate();
+                    console.log(this.postArray)
+                })
+                .catch((err) => console.log(err))
+        } else {
+            axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
+                .then((res) => {
+                    this.postArray = res.data;
+                    this.forceUpdate();
+                    console.log(this.postArray)
+                })
+                .catch((err) => console.log(err))
+        }
+        console.log(this.state.movieName);
+    }
+    componentDidUpdate() {
+        axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
             .then((res) => {
                 this.postArray = res.data;
                 this.forceUpdate();
@@ -67,7 +89,10 @@ class discussionBoard extends Component {
         }
         console.log("New Post Made")
         axios.post("http://localhost:4000/forum/post", newPost)
-            .then(res => console.log("Response from backend"));
+            .then(res => {
+                console.log("Response from backend")
+                this.componentDidMount()
+            })
         this.setState({
             name: '',
             movieName: '',
@@ -80,14 +105,26 @@ class discussionBoard extends Component {
         return (
             <>
                 <div id='forum_messages'>
-                    <ul>
+                    <select id='sort_by_message' className="form-control form-control4" onChange={this.onChangeMovieName}>
+                        <option selected disabled hidden value="">Sort By</option>
+                        <option>Beauty and the Beef</option>
+                        <option>Moonsters Inc</option>
+                        <option>Dairy Movie</option>
+                        <option>Cowsablanca</option>
+                        <option>Terror on the Dairy</option>
+                        <option>The Moonions: The Rise of Gru</option>
+                        <option>Calftime</option>
+                        <option>The Cows</option>
+                    </select>
+                    <ul class="list-group">
                         {this.postArray.map((post) => (
-                            <>
-                            <li key={post._id}>{post.name}</li>
-                            <li>{post.movieName}</li>
-                            <li>{post.rating}</li>
-                            <li>{post.message}</li>
-                            </>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">{post.movieName}</div>
+                                    {post.message}
+                                </div>
+                                <span class="badge bg-primary rounded-pill">{post.rating}/10</span>
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -113,4 +150,4 @@ class discussionBoard extends Component {
     }
 }
 
-export default discussionBoard;
+export default DiscussionBoard;
