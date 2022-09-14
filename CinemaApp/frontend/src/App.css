@@ -521,15 +521,13 @@ a:hover {
   flex-wrap: nowrap;
   align-items: stretch;
   flex-direction: row;
-<<<<<<< HEAD
   margin: 0px;
   padding: 0px;
-=======
   width: 100%;
   border-bottom: 1px solid whitesmoke;
   background-color: rgba(0, 0, 0, 0.356);
   margin-bottom: 2em;
->>>>>>> 296b26e5e556c087334f971cfa562d41d0c685d1
+
 }
 
 .secondary-nav {

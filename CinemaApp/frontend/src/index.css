@@ -97,7 +97,7 @@ body {
   background-image: url(https://cdn.pixabay.com/photo/2021/08/24/10/22/empty-seats-6570233_960_720.jpg);
 }
 
-.card2 {
+.cardz2 {
   background-image: url(https://cdn.pixabay.com/photo/2020/06/20/04/33/space-5319624_960_720.jpg);
 }
 
@@ -145,11 +145,10 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   font-size: small;
-<<<<<<< HEAD
   padding: 0px;
   margin: 0px;
 
-=======
+
   padding:0.5em;
   padding-top: 1em;
   width: fit-content;
@@ -157,7 +156,6 @@ body {
 
 .nav a{
   padding:0;
->>>>>>> 296b26e5e556c087334f971cfa562d41d0c685d1
 }
 
 /* .soon{

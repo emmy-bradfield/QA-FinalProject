@@ -21,12 +21,10 @@ import Information from "./components/information";
 import Screens from "./components/information/screens";
 import Directions from "./components/information/directions";
 import Nearby from "./components/information/nearby";
-<<<<<<< HEAD
 import Scrum from "./components/information/scrum";
-=======
 import ContactPage from './components/information/contact.jsx';
 import Opening from './components/information/opening'
->>>>>>> 296b26e5e556c087334f971cfa562d41d0c685d1
+
 
 import Tickets from './components/tickets';
 import Bookings from "./components/tickets/booking";

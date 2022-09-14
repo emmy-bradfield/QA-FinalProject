@@ -14,7 +14,7 @@ const Home = () => {
                     <h4>Enjoy</h4>
                     <p>Relax yourself to the fullest</p>
                 </div>
-                <div className="card-img card2">
+                <div className="card-img cardz2">
                     <h4>Escape</h4>
                     <p>Get lost in the excitment</p>
                 </div>
