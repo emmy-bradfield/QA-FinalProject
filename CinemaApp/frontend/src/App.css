@@ -520,6 +520,8 @@ a:hover {
   flex-wrap: nowrap;
   align-items: center;
   flex-direction: row;
+  margin: 0px;
+  padding: 0px;
 }
 
 .secondary-nav {
@@ -541,6 +543,11 @@ a:hover {
   font-size: large;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.navi{
+  padding: 0px;
+  margin: 0px;
 }
 
 .minor-header {

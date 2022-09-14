@@ -119,7 +119,8 @@ const AboutUs = () =>{
   Got no idea what a scrum is?
 </h2>
 
-  <p>click here to learn more</p>
+  
+  <Link to="/scrum">Click here to learn more</Link>
   </div>
        </div>
     );

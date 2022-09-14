@@ -21,6 +21,7 @@ import Information from "./components/information";
 import Screens from "./components/information/screens";
 import Directions from "./components/information/directions";
 import Nearby from "./components/information/nearby";
+import Scrum from "./components/information/scrum";
 
 import Tickets from './components/tickets';
 import Bookings from "./components/tickets/booking";
@@ -69,6 +70,7 @@ function App() {
               <Route path="/information/directions" element={<Directions />} />
               <Route path="/information/nearby" element={<Nearby />} />
             </Route>
+            <Route path="/scrum" element={<Scrum />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/aboutus" element={<AboutUs />}/>
 

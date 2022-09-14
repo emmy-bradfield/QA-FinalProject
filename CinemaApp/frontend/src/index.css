@@ -72,7 +72,7 @@ body {
   color: whitesmoke;
   text-shadow: 0.125em;
   display: inline-block;
-  transition: transform;
+  transition: 0.5s;
   transform: translateY(-0.6250em);
   cursor: pointer;
 }
@@ -125,6 +125,7 @@ body {
 .nav a:hover {
   color: #00b4b4;
   text-shadow: 1em;
+  transition: 0.5s;
 }
 
 .navi{
@@ -133,6 +134,9 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   font-size: small;
+  padding: 0px;
+  margin: 0px;
+
 }
 
 /* .soon{
