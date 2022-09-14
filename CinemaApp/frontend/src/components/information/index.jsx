@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Information = () => {
     return (
-        <main className="center lift3">
+        <main className="center lift1">
             <div className="minor-header">
                 <Link to="/information"><h1 className="light-text"> What to Expect </h1></Link>
                 <hr />
