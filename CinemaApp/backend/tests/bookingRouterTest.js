@@ -11,7 +11,7 @@ describe(`Booking`, () => {
 
 
     //test data
-    let bookingID;
+   // let bookingID;
  
 
     let testBooking = {
@@ -35,26 +35,26 @@ describe(`Booking`, () => {
         }
     };
 
-    const updateBooking = {
-        firstName: "Joe",
-        lastName: "Mama",
-        movie: "cowsablanca",
-        day: "Tuesday",
-        time: "20:00",
-        price: "10",
-        tickets: {
-            noOfAdult: 1,
-            noOfChild: 0,
-            noOfConcession: 0
-        },
-        payment: {
-            cardName: "teri",
-            cardNumber: "42069",
-            cardDate: "12/27",
-            cardCVC: "123",
-            dateTime: "12/12/12"
-        }
-    }
+    // const updateBooking = {
+    //     firstName: "Joe",
+    //     lastName: "Mama",
+    //     movie: "cowsablanca",
+    //     day: "Tuesday",
+    //     time: "20:00",
+    //     price: "10",
+    //     tickets: {
+    //         noOfAdult: 1,
+    //         noOfChild: 0,
+    //         noOfConcession: 0
+    //     },
+    //     payment: {
+    //         cardName: "teri",
+    //         cardNumber: "42069",
+    //         cardDate: "12/27",
+    //         cardCVC: "123",
+    //         dateTime: "12/12/12"
+    //     }
+    // }
 
     it(`Should return posted booking when /booking is posted`, (done) => {
         
