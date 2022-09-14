@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha tests",
-    "start": "node server.js"
+    "start": "node server.js",
+    "coverage": "nyc npm test"
   },
   "keywords": [],
   "author": "",
