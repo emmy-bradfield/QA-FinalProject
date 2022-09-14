@@ -24,7 +24,7 @@
     "react": "react-scripts start",
     "start": "npm-run-all -p -r server react",
     "build": "react-scripts build",
-    "test": "mocha api/tests",
+    "test": "nyc --reporter=text --reporter=html mocha api/tests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

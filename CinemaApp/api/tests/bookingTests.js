@@ -182,7 +182,7 @@ describe("CRUD testing", () => {
     });
 
     it("Should add payment details to a booking", function () {
-        chai.request(server).post("/bookings/checkout/PAY").query("PAY").send({cardName: 'Mr John Doe', cardNumber: '4921889745651322', cardDate: '0526', cardCVC: '707'}).end((err, res) => {
+        chai.request(server).post("/bookings/checkout/PAY").query("PAY").send(exPAY).end((err, res) => {
             chai.expect(err).to.be.null;
             expect(res.body).to.eql(exPAY);
 
