@@ -5,7 +5,20 @@ const {Email} = require('../models/emailModel');
 chai.use(chaiHttp);
 const app = require("../index");
 
-describe("Email Tests", () => { // TEST DATA
+describe("Email Tests", () => { 
+    // SETUP
+    before((done) => {
+        Email.deleteMany({}, (err, res) => {
+            done();
+        })
+    });
+    after((done) => {
+        Email.deleteMany({}, (err, res) => {
+            done();
+        })
+    });
+    
+    // TEST DATA
     let id;
 
     let testEmail = {

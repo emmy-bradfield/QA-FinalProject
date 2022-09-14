@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const {Schema, model} = mongoose;
 
 const forumSchema = new Schema({
+    _id: Number,
     name: String,
     movieName: String,
     rating: String,

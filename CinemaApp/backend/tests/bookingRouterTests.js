@@ -8,12 +8,16 @@ const app = require("../index");
 
 describe(`Booking Tests`, () => {
     //SETUP
-    beforeEach((done) => {
-        Booking.deleteMany({"_id":"test"}),
-        Booking.deleteMany({"_id": "test2"})
-        .then(done())
-        .catch((err) => console.log(`Something went wrong: ${err}`));
-    })
+    before((done) => {
+        Booking.deleteMany({}, (err, res) => {
+            done();
+        })
+    });
+    after((done) => {
+        Booking.deleteMany({}, (err, res) => {
+            done();
+        })
+    });
     
     // TEST DATA
     let bookingID;
@@ -147,7 +151,7 @@ describe(`Booking Tests`, () => {
 
     // READ
     it('Should return all bookings, including the one posted', (done) => {
-        chai.request(app).post("/bookings/post").send(newBooking).end((err, res)=> {
+        chai.request(app).get("/bookings/getAll").end((err, res)=> {
             if(err) {
                 console.log(`Something went wrong: ${err}`);
                 done(err);
@@ -155,15 +159,15 @@ describe(`Booking Tests`, () => {
             expect(res).to.have.status(200);
             expect(res).to.not.be.null;
             Booking.find().then(bookings => {
-                expect(bookings).not.to.have.lengthOf(0);
-                expect(bookings).to.include(newBooking);
+                expect(bookings).to.have.lengthOf(1);
+                expect(bookings).to.include(testBooking);
             });
             done();
         });
     });
 
     it("Should return the specific forum requested", (done) => {
-        chai.request(app).get(`/forum/get/${bookingID}`).query(bookingID).end((err, res) => {
+        chai.request(app).get(`/forum/get/test2`).query("test2").end((err, res) => {
             if(err) {
                 console.log(`Something went wrong: ${err}`);
                 done(err);
@@ -171,7 +175,7 @@ describe(`Booking Tests`, () => {
             expect(res).to.have.status(200);
             expect(res).to.not.be.null;
             Booking.findById({"_id":res.body}).then(booking => {
-                expect(booking).to.equal(newBooking);
+                expect(booking).to.equal(testBooking);
             });
             done();
         });
@@ -184,7 +188,6 @@ describe(`Booking Tests`, () => {
                 console.log(`Something went wrong: ${err}`);
                 done(err);
             }
-            // expect(res).to.have.status(200);
             expect(res).to.not.be.null;
             Booking.findById({"_id":res.body}).then(booking => {
                 expect(booking).to.equal(updatedBooking);

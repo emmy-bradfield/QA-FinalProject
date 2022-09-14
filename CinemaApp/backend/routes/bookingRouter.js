@@ -97,7 +97,7 @@ bookingRoute.route('/checkout/:_id').post((req, res) => {
     Booking.findById(req.params_id).then(res => {
         const checkoutBooking = {
             _id: req.params._id,
-            firstName: req.params.firstName,
+            firstName: res.body.firstName,
             lastName: res.body.lastName,
             movie: res.body.movie,
             day: res.body.day,
