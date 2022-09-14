@@ -1,7 +1,8 @@
-import { Component } from 'react';
+import { Component} from 'react';
 import axios from 'axios';
 
-class discussionBoard extends Component {
+
+class DiscussionBoard extends Component {
     constructor(props) {
         super(props);
 
@@ -9,7 +10,8 @@ class discussionBoard extends Component {
             name: '',
             movieName: '',
             rating: '',
-            message: ''
+            message: '',
+            postArray: []
         };
 
         this.onChangeName = this.onChangeName.bind(this);
@@ -17,9 +19,8 @@ class discussionBoard extends Component {
         this.onChangeRating = this.onChangeRating.bind(this);
         this.onChangeMessage = this.onChangeMessage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
-        this.postArray = [];
     }
+
 
     onChangeName(e) {
         this.setState({
@@ -47,15 +48,26 @@ class discussionBoard extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/forum/getAll')
+        axios.get(`http://localhost:4000/forum/getAll`)
             .then((res) => {
-                this.postArray = res.data;
-                this.forceUpdate();
-                console.log(this.postArray)
+                this.setState({
+                    postArray: res.data
+                })
             })
             .catch((err) => console.log(err))
-    }
 
+    }
+    componentDidUpdate() {
+        if (this.state.movieName !== ""){
+            axios.get(`http://localhost:4000/forum/get/${this.state.movieName}`)
+                .then((res) => {
+                    this.setState({
+                        postArray: res.data
+                    })
+                })
+                .catch((err) => console.log(err))
+        }
+    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -67,7 +79,10 @@ class discussionBoard extends Component {
         }
         console.log("New Post Made")
         axios.post("http://localhost:4000/forum/post", newPost)
-            .then(res => console.log("Response from backend"));
+            .then(res => {
+                console.log("Response from backend")
+                this.componentDidMount()
+            })
         this.setState({
             name: '',
             movieName: '',
@@ -80,14 +95,26 @@ class discussionBoard extends Component {
         return (
             <>
                 <div id='forum_messages'>
-                    <ul>
-                        {this.postArray.map((post) => (
-                            <>
-                            <li key={post._id}>{post.name}</li>
-                            <li>{post.movieName}</li>
-                            <li>{post.rating}</li>
-                            <li>{post.message}</li>
-                            </>
+                    <select id='sort_by_message' className="form-control form-control4" onChange={this.onChangeMovieName}>
+                        <option selected disabled hidden value="">Sort By</option>
+                        <option>Beauty and the Beef</option>
+                        <option>Moonsters Inc</option>
+                        <option>Dairy Movie</option>
+                        <option>Cowsablanca</option>
+                        <option>Terror on the Dairy</option>
+                        <option>The Moonions: The Rise of Gru</option>
+                        <option>Calftime</option>
+                        <option>The Cows</option>
+                    </select>
+                    <ul className="list-group">
+                        {this.state.postArray.map((post) => (
+                            <li key={post._id} className="list-group-item d-flex justify-content-between align-items-start">
+                                <div className="ms-2 me-auto">
+                                    <div className="fw-bold">{post.movieName}</div>
+                                    {post.message}
+                                </div>
+                                <span className="badge bg-primary rounded-pill">{post.rating}/10</span>
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -113,4 +140,4 @@ class discussionBoard extends Component {
     }
 }
 
-export default discussionBoard;
+export default DiscussionBoard;

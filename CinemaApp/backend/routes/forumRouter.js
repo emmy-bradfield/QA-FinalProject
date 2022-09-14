@@ -22,5 +22,10 @@ forumRoute.route("/post").post((req, res) => {
 forumRoute.route('/getAll').get((req, res) => {
     Forum.find().then(posts => res.json(posts)).catch((err) => res.status(400).json('Error: ' + err))
 })
+forumRoute.route('/get/:movieName').get((req, res) => {
+    Forum.find({"movieName": req.params.movieName})
+    .then(post => res.json(post))
+    .catch((err) => res.status(400).json('Error: ' + err))
+})
 
 module.exports = forumRoute;

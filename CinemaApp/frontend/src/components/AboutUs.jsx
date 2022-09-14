@@ -12,7 +12,7 @@ const AboutUs = () =>{
     <div className="cards">
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front1">
             <h3>Emily</h3>
             <p>Scrum Master</p>
@@ -30,7 +30,7 @@ const AboutUs = () =>{
       </div>
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front2">
             <h3>Shahmeen</h3>
             <p>Product Owner</p>
@@ -45,7 +45,7 @@ const AboutUs = () =>{
       </div>
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front3">
             <h3>Michael</h3>
             <p>Lead Backend Developer</p>
@@ -65,7 +65,7 @@ const AboutUs = () =>{
     <div className="cards">
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front4">
             <h3>Madeha</h3>
             <p>Lead Frontend Developer</p>
@@ -81,7 +81,7 @@ const AboutUs = () =>{
       </div>
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front5">
             <h3>Ibraheem</h3>
             <p>Backend Developer</p>
@@ -97,7 +97,7 @@ const AboutUs = () =>{
       </div>
 
       <div className="main">
-        <div className="card">
+        <div className="card2">
           <div className="front front6">
             <h3>Jibril</h3>
             <p>Frontend Developer</p>

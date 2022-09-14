@@ -21,18 +21,21 @@ import Information from "./components/information";
 import Screens from "./components/information/screens";
 import Directions from "./components/information/directions";
 import Nearby from "./components/information/nearby";
+<<<<<<< HEAD
 import Scrum from "./components/information/scrum";
+=======
+import ContactPage from './components/information/contact.jsx';
+import Opening from './components/information/opening'
+>>>>>>> 296b26e5e556c087334f971cfa562d41d0c685d1
 
 import Tickets from './components/tickets';
 import Bookings from "./components/tickets/booking";
 import Payment from "./components/tickets/payment";
 import Orders from './components/tickets/orders.jsx';
 import OrderEdit from './components/tickets/orderEdit.jsx';
-
-import ContactPage from './components/information/contact.jsx';
 import SoldOut from "./components/tickets/SoldOut";
-import AboutUs from "./components/AboutUs";
 
+import AboutUs from "./components/AboutUs";
 import DiscussionBoard from "./components/DiscussionBoard";
 import Moovies from "./components/moovies.jsx";
 
@@ -63,7 +66,7 @@ function App() {
             <Route path="/new-releases/moonions" element={<Moonions />} />
             <Route path="/new-releases/calftime" element={<Calftime />} />
             <Route path="/new-releases/thecows" element={<TheCows />} />
-            <Route path="/openings" element={<opening />} />
+            <Route path="/openings" element={<Opening />} />
             <Route path="/discuss" element={<DiscussionBoard />} />
             <Route path="/information" element={<Information />}>
               <Route path="/information/screens" element={<Screens />} />

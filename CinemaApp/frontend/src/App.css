@@ -489,6 +489,7 @@ a:hover {
 
 .card {
   background-color: rgba(245, 245, 245, 0.267);
+  transform: none !important;
 }
 
 .card-body {
@@ -518,10 +519,17 @@ a:hover {
   display: inline-flex;
   justify-content: space-evenly;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: stretch;
   flex-direction: row;
+<<<<<<< HEAD
   margin: 0px;
   padding: 0px;
+=======
+  width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  background-color: rgba(0, 0, 0, 0.356);
+  margin-bottom: 2em;
+>>>>>>> 296b26e5e556c087334f971cfa562d41d0c685d1
 }
 
 .secondary-nav {
@@ -804,12 +812,6 @@ button:hover {
   font-size: 1.5em;
 }
 
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 .times-card {
   width: 40%;
   background-color: var(--bs-card-bg);
@@ -838,4 +840,57 @@ body {
 #sold_out {
   display: flex;
   justify-content: center;
+}
+
+/* Forum Page */
+#forum_messages {
+  margin: 5%;
+}
+#sort_by_message {
+  font-weight: bold;
+  color: black;
+  background-color:  whitesmoke;
+  margin-left: 0;
+}
+.list-group-item {
+  background-color: whitesmoke;
+  opacity: 80%;
+  margin-top: .5%;
+  border-radius: 8px;
+}
+#forum_entry {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  max-height: 30em;
+}
+#forum_form {
+  display: flex;
+  width: 100%;
+}
+#entry_left_col {
+  display: flex;
+  width: 100%;
+}
+#entry_left_col label {
+  margin-right: 3%;
+  margin-left:1%;
+  width: fit-content;
+}
+#entry_right_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#entry_right_col label {
+  margin-right: 3%;
+  margin-left:1%;
+  width: fit-content;
+}
+#entry_right_col button {
+  background-color: rgb(32, 54, 72);
+  margin: 2%;
 }
