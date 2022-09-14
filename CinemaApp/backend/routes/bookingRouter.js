@@ -1,4 +1,4 @@
-const axios  = require('axios');
+const axios = require('axios');
 const express = require('express');
 const bookingRoute = express.Router();
 
@@ -50,59 +50,82 @@ bookingRoute.route('/post').post((req, res) => {
     });
 
     newBooking.save().then(() => res.json(newBooking)).catch((err) => res.status(400).json('Error: ' + err))
-})
+});
 
 
 bookingRoute.route('/getAll').get((req, res) => {
     Booking.find().then(bookings => res.json(bookings)).catch((err) => res.status(400).json('Error: ' + err))
-})
+});
 
 
 bookingRoute.route('/get/:_id').get((req, res) => {
-    Booking.findById({"_id": req.params._id})
-    .then(() => res.json(booking))
-    .catch((err) => res.status(400).json('Error: ' + err))
-})
+    Booking.findById({"_id": req.params._id}).then((booking) => res.json(booking)).catch((err) => res.status(400).json('Error: ' + err))
+});
 
 
 bookingRoute.route('/update/:_id').post((req, res) => {
-    const ticketDetails = {
-        noOfAdult: req.body.noOfAdult,
-        noOfChild: req.body.noOfChild,
-        noOfConcession: req.body.noOfConcession
-    };
-    Booking.findByIdAndUpdate(req.params._id, {
-        tickets: ticketDetails
-    }, function (err, result) {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Updated Booking: " + result);
-        }
-    })
+    Booking.findById(req.params_id).then(res => {
+        const updatedBooking = {
+            _id: req.params._id,
+            firstName: res.body.firstName,
+            lastName: res.body.lastName,
+            movie: res.body.movie,
+            day: res.body.day,
+            time: res.body.time,
+            tickets: {
+                _id: req.params._id,
+                noOfAdult: req.body.noOfAdult,
+                noOfChild: req.body.noOfChild,
+                noOfConcession: req.body.noOfConcession
+            },
+            payment: {
+                _id: req.params._id,
+                cardName: res.body.cardName,
+                cardNumber: res.body.cardNumber,
+                cardDate: res.body.cardDate,
+                cardCVC: res.body.cardCVC
+            }
+
+        };
+        Booking.findByIdAndDelete(req.params._id);
+        updatedBooking.save().then(() => res.json(updatedBooking)).catch((err) => res.status(400).json('Error: ' + err))
+    }).catch((err) => res.json('Error: ' + err));
 });
 
+
 bookingRoute.route('/checkout/:_id').post((req, res) => {
-    const paymentDetails = {
-        cardName: req.body.cardName,
-        cardNumber: req.body.cardNumber,
-        cardDate: req.body.cardDate,
-        cardCVC: req.body.cardCVC,
-        dateTime: req.body.dateTime
-    }
-    Booking.findByIdAndUpdate(req.params._id, {
-        payment: paymentDetails
-    }, function (err, result) {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Updated Booking: " + result)
-        }
-    })
-})
+    Booking.findById(req.params_id).then(res => {
+        const checkoutBooking = {
+            _id: req.params._id,
+            firstName: req.params.firstName,
+            lastName: res.body.lastName,
+            movie: res.body.movie,
+            day: res.body.day,
+            time: res.body.time,
+            tickets: {
+                _id: req.params._id,
+                noOfAdult: res.body.noOfAdult,
+                noOfChild: res.body.noOfChild,
+                noOfConcession: res.body.noOfConcession
+            },
+            payment: {
+                _id: req.params._id,
+                cardName: req.body.cardName,
+                cardNumber: req.body.cardNumber,
+                cardDate: req.body.cardDate,
+                cardCVC: req.body.cardCVC
+            }
+        };
+        Booking.findByIdAndDelete(req.params._id);
+        checkoutBooking.save().then(() => res.json(checkoutBooking)).catch((err) => res.status(400).json('Error: ' + err))
+    }).catch((err) => res.json('Error: ' + err));
+});
+
 
 bookingRoute.route('/delete/:_id').delete((req, res) => {
-    Booking.findByIdAndDelete(req.params._id).then(() => console.log("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
-})
+    Booking.findByIdAndDelete(req.params._id)
+    .then(() => res.json(null))
+    .catch((err) => res.status(400).json('Error: ' + err))
+});
 
 module.exports = bookingRoute;

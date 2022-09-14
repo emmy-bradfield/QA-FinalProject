@@ -40,6 +40,7 @@ forumRoute.route('/update/:_id').post((req, res) => {
             console.log(err)
         } else {
             console.log("Updated Booking: " + result);
+            res.json(post);
         }
     })
 });
