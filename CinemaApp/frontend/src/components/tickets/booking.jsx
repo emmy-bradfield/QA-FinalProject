@@ -29,7 +29,7 @@ class Bookings extends Component {
             noOfChild: 0,
             noOfConcession: 0,
             dateTime: '',
-            valid: ''
+            valid: 'true'
         }
     }
 
@@ -125,99 +125,12 @@ class Bookings extends Component {
                         [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]
                     ]
                 ]
-
+                
                 let bookingArray = res.data;
-                let thisMovie = e.movie;
                 let movieArrayPos = 0;
-                let thisDay = e.day;
                 let dayArrayPos = 0;
-                let thisTime = e.time;
                 let timeArrayPos = 0;
 
-                switch (thisMovie) {
-                    case "Beauty and the Beef":
-                        movieArrayPos = 0;
-                        break;
-                    case "Moonsters Inc":
-                        movieArrayPos = 1;
-                        break;
-                    case "Dairy Movie":
-                        movieArrayPos = 2;
-                        break;
-                    case "Cowsablanca":
-                        movieArrayPos = 3;
-                        break;
-                    case "Terror on the Dairy":
-                        movieArrayPos = 4;
-                        break;
-                    case "The Moonions: Rise of Gru":
-                        movieArrayPos = 5;
-                        break;
-                    case "Calftime":
-                        movieArrayPos = 6;
-                        break;
-                    case "The Cows":
-                        movieArrayPos = 7;
-                        break;
-                }
-                switch (thisDay) {
-                    case "10-Sep":
-                        dayArrayPos = 0;
-                        break;
-                    case "11-Sep":
-                        dayArrayPos = 1;
-                        break;
-                    case "12-Sep":
-                        dayArrayPos = 2;
-                        break;
-                    case "13-Sep":
-                        dayArrayPos = 3;
-                        break;
-                    case "14-Sep":
-                        dayArrayPos = 4;
-                        break;
-                    case "15-Sep":
-                        dayArrayPos = 5;
-                        break;
-                    case "16-Sep":
-                        dayArrayPos = 6;
-                        break;
-                    case "17-Sep":
-                        dayArrayPos = 7;
-                        break;
-                    case "18-Sep":
-                        dayArrayPos = 8;
-                        break;
-                    case "19-Sep":
-                        dayArrayPos = 9;
-                        break;
-                    case "20-Sep":
-                        dayArrayPos = 10;
-                        break;
-                }
-                switch (thisTime) {
-                    case "12:00":
-                        timeArrayPos = 0;
-                        break;
-                    case "14:00":
-                        timeArrayPos = 1;
-                        break;
-                    case "17:00":
-                        timeArrayPos = 2;
-                        break;
-                    case "19:00":
-                        timeArrayPos = 3;
-                        break;
-                    case "20:30":
-                        timeArrayPos = 4;
-                        break;
-                    case "22:00":
-                        timeArrayPos = 5;
-                        break;
-                    case "23:45":
-                        timeArrayPos = 6;
-                        break;
-                }
                 bookingArray.forEach(e => {
                     Object.keys(e).forEach(key => {
                         let totalTerrorTickets = 0;
@@ -228,6 +141,95 @@ class Bookings extends Component {
                         let totalMoonionsTickets = 0;
                         let totalCalftimeTickets = 0;
                         let totalCowsTickets = 0;
+                        
+                        let thisMovie = e.movie;
+                        let thisDay = e.day;
+                        let thisTime = e.time;
+        
+                        switch (thisMovie) {
+                            case "Beauty and the Beef":
+                                movieArrayPos = 0;
+                                break;
+                            case "Moonsters Inc":
+                                movieArrayPos = 1;
+                                break;
+                            case "Dairy Movie":
+                                movieArrayPos = 2;
+                                break;
+                            case "Cowsablanca":
+                                movieArrayPos = 3;
+                                break;
+                            case "Terror on the Dairy":
+                                movieArrayPos = 4;
+                                break;
+                            case "The Moonions: Rise of Gru":
+                                movieArrayPos = 5;
+                                break;
+                            case "Calftime":
+                                movieArrayPos = 6;
+                                break;
+                            case "The Cows":
+                                movieArrayPos = 7;
+                                break;
+                        }
+                        switch (thisDay) {
+                            case "10-Sep":
+                                dayArrayPos = 0;
+                                break;
+                            case "11-Sep":
+                                dayArrayPos = 1;
+                                break;
+                            case "12-Sep":
+                                dayArrayPos = 2;
+                                break;
+                            case "13-Sep":
+                                dayArrayPos = 3;
+                                break;
+                            case "14-Sep":
+                                dayArrayPos = 4;
+                                break;
+                            case "15-Sep":
+                                dayArrayPos = 5;
+                                break;
+                            case "16-Sep":
+                                dayArrayPos = 6;
+                                break;
+                            case "17-Sep":
+                                dayArrayPos = 7;
+                                break;
+                            case "18-Sep":
+                                dayArrayPos = 8;
+                                break;
+                            case "19-Sep":
+                                dayArrayPos = 9;
+                                break;
+                            case "20-Sep":
+                                dayArrayPos = 10;
+                                break;
+                        }
+                        switch (thisTime) {
+                            case "12:00":
+                                timeArrayPos = 0;
+                                break;
+                            case "14:00":
+                                timeArrayPos = 1;
+                                break;
+                            case "17:00":
+                                timeArrayPos = 2;
+                                break;
+                            case "19:00":
+                                timeArrayPos = 3;
+                                break;
+                            case "20:30":
+                                timeArrayPos = 4;
+                                break;
+                            case "22:00":
+                                timeArrayPos = 5;
+                                break;
+                            case "23:45":
+                                timeArrayPos = 6;
+                                break;
+                        }
                         
                         if (key === "tickets") {
                             let ticketKey = e[key];
@@ -295,16 +297,18 @@ class Bookings extends Component {
                 const checkTimeArray = [
                     "12:00","14:00","17:00","19:00","20:30","22:00","23:45"
                 ]
-                movieArray.forEach(movie => {
-                    movie.forEach(day => {
-                        day.forEach(time => {
+                movieArray.every(movie => {
+                    movie.every(day => {
+                        day.every(time => {
                             if ((time + Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 100) {
                                 if (this.state.movie == checkMovieArray[movieArrayPos] && this.state.day == checkDateArray[dayArrayPos] && this.state.time == checkTimeArray[timeArrayPos]){
                                     this.setState({ valid: "false" });
+                                    return;
                                 } else {
-                                    console.log(`These dont match! ${e.movie}`);
                                     this.setState({ valid: "true" });
                                 }
+                            } else {
+                                this.setState({ valid: "true" });
                             }
                         });
                     });
@@ -333,7 +337,7 @@ class Bookings extends Component {
         }
         localStorage.setItem("day", this.state.day);
         localStorage.setItem("time", this.state.time);
-        if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 10) {
+        if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 100) {
             window.alert("That is over our 10-ticket limit")
             return;
         } else {
@@ -438,6 +442,7 @@ class Bookings extends Component {
                                         <option>8</option>
                                         <option>9</option>
                                         <option>10</option>
+                                        <option>99</option>
                                     </select>
                                     <label>Children </label>
                                     <select className="form-control form-control4" onChange={this.onChangeChild}>

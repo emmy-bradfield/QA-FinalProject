@@ -8,12 +8,14 @@ forumRoute.route("/post").post((req, res) => {
     const movieName = req.body.movieName;
     const rating = req.body.rating;
     const message = req.body.message;
+    const replies = req.body.replies
 
     const newPost = new Forum({
         name,
         movieName,
         rating,
-        message
+        message,
+        replies
     });
     newPost.save()
     .then(newPost => res.json(newPost))
@@ -22,10 +24,24 @@ forumRoute.route("/post").post((req, res) => {
 forumRoute.route('/getAll').get((req, res) => {
     Forum.find().then(posts => res.json(posts)).catch((err) => res.status(400).json('Error: ' + err))
 })
+
 forumRoute.route('/get/:movieName').get((req, res) => {
     Forum.find({"movieName": req.params.movieName})
     .then(post => res.json(post))
     .catch((err) => res.status(400).json('Error: ' + err))
 })
+
+forumRoute.route('/update/:_id').post((req, res) => {
+    const newReply = req.body.reply;
+    Forum.findByIdAndUpdate(req.params._id, {
+        $push: {"replies": newReply}
+    }, function (err, result) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("Updated Booking: " + result);
+        }
+    })
+});
 
 module.exports = forumRoute;
