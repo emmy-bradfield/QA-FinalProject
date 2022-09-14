@@ -46,8 +46,6 @@ class Payment extends Component {
         e.preventDefault();
 
         axios.get(`http://localhost:4000/bookings/get/${this.state._id}`)
-            .then(res => console.log(res.data))
-            .then(res => console.log(res))
 
         const bookingPaid = {
             cardName: this.state.cardName,
@@ -58,28 +56,24 @@ class Payment extends Component {
         }
 
         axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
-            .then(res => {
-                console.log(res.data);
-
-                this.setState({
-                    firstName: '',
-                    lastName: '',
-                    movie: '',
-                    day: '',
-                    time: '',
-                    price: '',
-                    noOfAdult: 0,
-                    noOfChild: 0,
-                    noOfConcession: 0,
-                    dateTime: '',
-                    cardName: '',
-                    cardNumber: '',
-                    cardDate: '',
-                    cardCVC: ''
-                });
-                window.alert("Thank you for your purchase. Press OK to continue");
-                window.open("https://www.github.com/emmy-bradfield")
-            })
+        this.setState({
+            firstName: '',
+            lastName: '',
+            movie: '',
+            day: '',
+            time: '',
+            price: '',
+            noOfAdult: 0,
+            noOfChild: 0,
+            noOfConcession: 0,
+            dateTime: '',
+            cardName: '',
+            cardNumber: '',
+            cardDate: '',
+            cardCVC: ''
+        });
+        window.alert("Thank you for your purchase. Press OK to continue");
+        window.location.replace("/tickets")
     };
 
     render() {

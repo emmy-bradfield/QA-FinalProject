@@ -23,6 +23,7 @@ import Directions from "./components/information/directions";
 import Nearby from "./components/information/nearby";
 import ContactPage from './components/information/contact.jsx';
 import Opening from './components/information/opening'
+import Offers from './components/information/cinemaOffer';
 
 import Tickets from './components/tickets';
 import Bookings from "./components/tickets/booking";
@@ -68,10 +69,10 @@ function App() {
               <Route path="/information/screens" element={<Screens />} />
               <Route path="/information/directions" element={<Directions />} />
               <Route path="/information/nearby" element={<Nearby />} />
+              <Route path="/information/offers" element={<Offers/>}/>
             </Route>
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/aboutus" element={<AboutUs />}/>
-
           </Route>
           
         </Routes>
