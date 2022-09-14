@@ -93,11 +93,11 @@ class Orders extends Component {
                     localStorage.setItem("cost", "transaction has not been processed - check again later")
                 };
                 localStorage.setItem("results", true);
-                window.location.reload()
+                // window.location.reload()
             })
             .catch((err) => {
                 localStorage.clear()
-                window.location.reload()
+                // window.location.reload()
             })
     };
 
@@ -112,7 +112,7 @@ class Orders extends Component {
                         <button type="submit" className='btn btn-dark btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
                     </form>
 
-                    <div className="card">
+                    <div className="card-subtle">
                         <div className="card-body stack">
                             <ul className="no-bullet cleanup">
                                 <li><em>Enter your booking reference to view your order</em></li>

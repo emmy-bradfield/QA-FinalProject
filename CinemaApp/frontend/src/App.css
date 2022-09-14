@@ -489,6 +489,7 @@ a:hover {
 
 .card {
   background-color: rgba(245, 245, 245, 0.267);
+  transform: none !important;
 }
 
 .card-body {
@@ -518,8 +519,12 @@ a:hover {
   display: inline-flex;
   justify-content: space-evenly;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: stretch;
   flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  background-color: rgba(0, 0, 0, 0.356);
+  margin-bottom: 2em;
 }
 
 .secondary-nav {
@@ -795,12 +800,6 @@ button:hover {
   margin-top: 1em;
   text-align: center;
   font-size: 1.5em;
-}
-
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .times-card {
