@@ -17,6 +17,9 @@ const Information = () => {
                         <li className="navi2">
                             <Link to="/information/nearby">Places to go</Link>
                         </li>
+                        <li className="navi2">
+                            <Link to="/information/cinemaOffer">Offers</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

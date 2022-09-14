@@ -839,16 +839,19 @@ body {
   margin-right: 10%;
 display: inline-flex;
 text-align: center;
+vertical-align: bottom;
 
 }
 
 .places h3 {
   padding: 0.7em;
-  vertical-align: text-bottom;
+  
 }
 
 .burger {
   height: 13em;
+  
+  
 }
 
 .arcade {
@@ -857,8 +860,11 @@ text-align: center;
 
 .shopping {
   height: 13em;
+  width: 13em;
 }
 
 .escape {
   height: 13em;
+  width: 13em;
 }
+
