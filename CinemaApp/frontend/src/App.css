@@ -834,18 +834,37 @@ button:hover {
 
 /* Forum Page */
 #forum_messages {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
   margin: 5%;
 }
 #sort_by_message {
   font-weight: bold;
   color: black;
   background-color:  whitesmoke;
-  margin-left: 0;
+  margin: 0;
+  width: 20%;
+}
+#two-buttons {
+  display: inline-flex;
+  flex-direction: row;
+}
+#two_buttons button {
+  display: flex;
   width: fit-content;
+  justify-content: center;
+  width: 20%;
+  margin: 1% 0 1% 0;
+  padding: .2%;
+}
+.list-group {
+  width: 100%;
 }
 .list-group-item {
   background-color: whitesmoke;
   opacity: 80%;
+  width: 100%;
   margin-top: .5%;
   border-radius: 8px;
 }
