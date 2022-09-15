@@ -23,7 +23,8 @@ import Directions from "./components/information/directions";
 import Nearby from "./components/information/nearby";
 import Scrum from "./components/information/scrum";
 import ContactPage from './components/information/contact.jsx';
-import Opening from './components/information/opening'
+import Opening from './components/information/opening';
+import AgeRating from "./components/information/ageRatings";
 
 
 import Tickets from './components/tickets';
@@ -70,6 +71,7 @@ function App() {
               <Route path="/information/screens" element={<Screens />} />
               <Route path="/information/directions" element={<Directions />} />
               <Route path="/information/nearby" element={<Nearby />} />
+              <Route path="/information/age-ratings" element={<AgeRating />} />
             </Route>
             <Route path="/scrum" element={<Scrum />} />
             <Route path="/contact" element={<ContactPage />} />
