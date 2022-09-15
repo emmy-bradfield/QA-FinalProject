@@ -6,7 +6,7 @@
 
 A MERN stack web application developed for QA Cinemas to showcase their listings, venue information, to book tickets, and provide further information.
 
-### Visit our website @ [qa-cinemas.herokuapp.com](qa-cinemas.herokuapp.com)
+### Visit our website @ [qa-cinemas.herokuapp.com](https://qa-cinemas.herokuapp.com/)
 
 ---
 ## $Getting$ $Started$
