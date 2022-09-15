@@ -82,7 +82,7 @@ body {
   color: whitesmoke;
   text-shadow: 0.125em;
   display: inline-block;
-  transition: transform;
+  transition: 0.5s;
   transform: translateY(-0.6250em);
   cursor: pointer;
 }
@@ -97,7 +97,7 @@ body {
   background-image: url(https://cdn.pixabay.com/photo/2021/08/24/10/22/empty-seats-6570233_960_720.jpg);
 }
 
-.card2 {
+.cardz2 {
   background-image: url(https://cdn.pixabay.com/photo/2020/06/20/04/33/space-5319624_960_720.jpg);
 }
 
@@ -136,6 +136,7 @@ body {
 .nav a:hover {
   color: #00b4b4;
   text-shadow: 1em;
+  transition: 0.5s;
 }
 
 .navi{
@@ -144,6 +145,10 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   font-size: small;
+  padding: 0px;
+  margin: 0px;
+
+
   padding:0.5em;
   padding-top: 1em;
   width: fit-content;
