@@ -18,6 +18,9 @@ const Information = () => {
                         <li className='navi2'>
                             <Link to="/information/opening"><h5>Opening Times</h5></Link>
                         </li>
+                        <li className="navi2">
+                            <Link to="/information/age-ratings">Age Ratings</Link>
+                        </li>
                     </ul>
                 </nav>
             <hr />

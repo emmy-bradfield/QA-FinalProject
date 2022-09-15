@@ -102,6 +102,7 @@ class DiscussionBoard extends Component {
     }
 
     replySetup(e) {
+        console.log((this.state.postArray[1].replies))
         e.target.hidden = true;
         e.target.nextSibling.hidden = false;
         e.target.parentNode.nextSibling.hidden = false;

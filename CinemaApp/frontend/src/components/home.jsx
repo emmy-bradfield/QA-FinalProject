@@ -16,11 +16,17 @@ const Home = () => {
                         <p>Relax yourself to the fullest knowing you made the right choice</p>
                     </Link>
                 </div>
+<<<<<<< HEAD
                 <div className="card-img card2">
                     <Link to="/listings">
                         <h4>Escape</h4>
                         <p>Get lost in the excitment with a world of moovies to choose from</p>
                     </Link>
+=======
+                <div className="card-img cardz2">
+                    <h4>Escape</h4>
+                    <p>Get lost in the excitment</p>
+>>>>>>> cabf70f2ace81d8dd5e2807727bd03befb9bd541
                 </div>
                 <div className="card-img card3">
                     <Link to="/moovies">

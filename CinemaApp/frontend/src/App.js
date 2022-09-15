@@ -88,7 +88,7 @@ function App() {
               <Route path="/tickets/soldOut" element={<SoldOut />} />
               <Route path="/tickets/confirmed" element={<Confirmed />} />
             </Route>
-
+            
             <Route path="/moovies" element={<Moovies />} >
               <Route path="/moovies/directory" element={<Directory />} />
               <Route path="/moovies/forum" element={<DiscussionBoard />} />

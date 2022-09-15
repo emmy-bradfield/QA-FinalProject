@@ -11,12 +11,12 @@ const Footer = () => {
             </Link>
           </li>
           <li className="navi-f">
-            <Link to="/contact">
+            <Link to="/information/contact">
               Contact
             </Link>
           </li>
           <li className="navi-f">
-            <Link to="/aboutus">
+            <Link to="/information">
               About Us
             </Link>
           </li>

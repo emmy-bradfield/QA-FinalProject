@@ -528,7 +528,6 @@ a:hover {
   padding-bottom: 0em;
   height: fit-content;
   width: 90%;
-
 }
 
 .secondary-nav {
@@ -550,6 +549,11 @@ a:hover {
   font-size: large;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.navi{
+  padding: 0px;
+  margin: 0px;
 }
 
 .minor-header {
@@ -1081,6 +1085,13 @@ body {
 #replyDiv {
   width: 100%;
   max-height: 2% !important;
+}
+#content {
+  font-weight: bold;
+  font-size: large;
+}
+#replies {
+  font-size: small;
 }
 #forum_entry {
   display: flex;
