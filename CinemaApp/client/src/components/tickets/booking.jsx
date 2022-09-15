@@ -408,17 +408,17 @@ class Bookings extends Component {
                                         <div className="slide center2">
                                             <select className="form-control form-control4" onChange={this.onChangeDay}>
                                                 <option selected disabled hidden value=""></option>
-                                                <option>10-Sep</option>
-                                                <option>11-Sep</option>
-                                                <option>12-Sep</option>
-                                                <option>13-Sep</option>
-                                                <option>14-Sep</option>
-                                                <option>15-Sep</option>
                                                 <option>16-Sep</option>
                                                 <option>17-Sep</option>
                                                 <option>18-Sep</option>
                                                 <option>19-Sep</option>
                                                 <option>20-Sep</option>
+                                                <option>21-Sep</option>
+                                                <option>22-Sep</option>
+                                                <option>23-Sep</option>
+                                                <option>24-Sep</option>
+                                                <option>25-Sep</option>
+                                                <option>26-Sep</option>
                                             </select>
                                             @
                                             <select className="form-control form-control4" onChange={this.onChangeTime}>
