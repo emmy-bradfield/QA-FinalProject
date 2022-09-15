@@ -13,11 +13,11 @@ describe(`Booking Tests`, () => {
             done();
         })
     });
-    // after((done) => {
-    //     Booking.deleteMany({}, (err, res) => {
-    //         done();
-    //     })
-    // });
+    after((done) => {
+        Booking.deleteMany({}, (err, res) => {
+            done();
+        })
+    });
     
     // TEST DATA
     let bookingID;
@@ -141,7 +141,7 @@ describe(`Booking Tests`, () => {
             }
             expect(res).to.have.status(200);
             expect(res).to.not.be.null;
-            Booking.findById({"_id": res.body}).then(booking => {
+            Booking.findById({"_id": "test2"}).then(booking => {
                 expect(booking).to.equal(testBooking);
 
             });
