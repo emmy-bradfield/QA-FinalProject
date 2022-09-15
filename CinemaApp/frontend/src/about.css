@@ -33,7 +33,7 @@
     border-radius: 10%;
   }
   
-  .card:hover{
+  .card2:hover{
     transform: rotateY(180deg);
     
   }
@@ -110,4 +110,44 @@
     text-align: center;
     padding: 3%;
     font-size: 1.4em;
+  }
+
+  .scrumpage{
+    background-color: #bbcde5ef ;
+    background-size:cover ;
+    text-align: center;
+  }
+
+  .scrumtitle{
+    font-size: 3.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.6em;
+    color: #1C5D99;
+
+  }
+
+  .scrum-main{
+    display: inline-flex;
+  }
+
+  .scrumpara{
+    font-size: 1.4em;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #1C5D99;
+  }
+
+  .scrumlink{
+    font-size: 1.3em;
+    color: #1C5D99;
+    padding-bottom: 2em;
+  }
+
+  .scrumlink a {
+    color: rgb(17, 91, 156);
+  }
+
+  .scrumlink a:hover{
+    color: rgb(5, 30, 34);
+    transition: 0.5s;
   }
