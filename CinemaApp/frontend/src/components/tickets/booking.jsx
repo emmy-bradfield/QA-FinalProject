@@ -356,7 +356,7 @@ class Bookings extends Component {
                     let ticketString = adult + child + concession;
                     localStorage.setItem("Tickets", ticketString);
                     if (this.state.valid == "true") {
-                        window.location.replace("/authorise-payment")
+                        window.location.replace("/tickets/authorise-payment")
                     } else {
                         axios.delete(`http://localhost:4000/bookings/delete/${res.data._id}`);
                         window.location.replace("/SoldOut")

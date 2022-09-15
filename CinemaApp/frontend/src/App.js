@@ -56,12 +56,11 @@ function App() {
 
             <Route index element={<Home />} />
 
-            <Route path="/listings" element={<Listings />}>
+            <Route path="/listings" element={<Listings />}/>
               <Route path="/listings/beautybeef" element={<BeautyBeast />} />
               <Route path="/listings/moonstersinc" element={<MoonstersInc />} />
               <Route path="/listings/dairymovie" element={<DairyMovie />} />
               <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
-            </Route>
 
             <Route path="/new-releases" element={<NewReleases />} >
               <Route path="/new-releases/terrordairy" element={<TerrorDairy />} />

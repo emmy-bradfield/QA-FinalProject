@@ -45,9 +45,7 @@ class Payment extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        axios.get(`http://localhost:4000/bookings/get/${this.state._id}`)
-
-        const bookingPaid = {
+        const cardDeets = {
             cardName: this.state.cardName,
             cardNumber: this.state.cardNumber,
             cardDate: this.state.cardDate,
@@ -55,27 +53,30 @@ class Payment extends Component {
             dateTime: new Date()
         }
 
-        axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
-        localStorage.setItem("Payment", String("Card ending: ****" + this.state.cardNumber.substring(12, 16)));
-        localStorage.setItem("Date", new Date());
-        this.setState({
-            firstName: '',
-            lastName: '',
-            movie: '',
-            day: '',
-            time: '',
-            price: '',
-            noOfAdult: 0,
-            noOfChild: 0,
-            noOfConcession: 0,
-            dateTime: '',
-            cardName: '',
-            cardNumber: '',
-            cardDate: '',
-            cardCVC: ''
-        });
-        window.alert("Thank you for your purchase. Press okay to download your receipt");
-        window.location.replace("/tickets/confirmed")
+        axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, cardDeets)
+            .then((res) => {
+                console.log(res.data)
+                localStorage.setItem("Payment", String("Card ending: ****" + this.state.cardNumber.substring(12, 16)));
+                localStorage.setItem("Date", new Date());
+                this.setState({
+                    firstName: '',
+                    lastName: '',
+                    movie: '',
+                    day: '',
+                    time: '',
+                    price: '',
+                    noOfAdult: 0,
+                    noOfChild: 0,
+                    noOfConcession: 0,
+                    dateTime: '',
+                    cardName: '',
+                    cardNumber: '',
+                    cardDate: '',
+                    cardCVC: ''
+                });
+                window.alert("Thank you for your purchase. Press okay to download your receipt");
+                // window.location.replace("/tickets/confirmed")
+            }).catch((err) => console.log(err))
     };
 
 
