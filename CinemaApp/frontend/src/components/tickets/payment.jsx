@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import axios from 'axios';
 
 class Payment extends Component {
@@ -19,6 +19,7 @@ class Payment extends Component {
             cardDate: '',
             cardCVC: ''
         }
+
     }
 
     onChangeCardName(e) {
@@ -44,7 +45,6 @@ class Payment extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-
         axios.get(`http://localhost:4000/bookings/get/${this.state._id}`)
 
         const bookingPaid = {
@@ -56,6 +56,8 @@ class Payment extends Component {
         }
 
         axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
+        localStorage.setItem("Payment", String("Card ending: ****" + this.state.cardNumber.substring(12, 16)));
+        localStorage.setItem("Date", new Date());
         this.setState({
             firstName: '',
             lastName: '',
@@ -72,9 +74,11 @@ class Payment extends Component {
             cardDate: '',
             cardCVC: ''
         });
-        window.alert("Thank you for your purchase. Press OK to continue");
-        window.location.replace("/tickets")
+        window.alert("Thank you for your purchase. Press okay to download your receipt");
+        window.location.replace("/tickets/confirmed")
     };
+
+
 
     render() {
         return (

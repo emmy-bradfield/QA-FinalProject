@@ -119,10 +119,12 @@ body {
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 2em;
   list-style: none;
   justify-content: space-evenly;
   width: 100% !important;
+  background-color: #0000004d;
+  height: fit-content;
 }
 
 .nav a {
@@ -144,9 +146,11 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   font-size: small;
-  padding:0.5em;
+  padding-bottom: 0;
   padding-top: 1em;
   width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .nav a{

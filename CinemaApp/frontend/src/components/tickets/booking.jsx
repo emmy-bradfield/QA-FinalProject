@@ -345,6 +345,16 @@ class Bookings extends Component {
                 .then(this.checkTickets(e))
                 .then(res => {
                     localStorage.setItem("REF", res.data._id);
+                    localStorage.setItem("Customer", String(this.state.firstName + " " + this.state.lastName));
+                    localStorage.setItem("Screening", String(res.data.movie + " on " + this.state.day + " at " + this.state.time));
+                    let adult = '';
+                    let child = '';
+                    let concession = '';
+                    (this.state.noOfAdult > 0) ? adult = String(this.state.noOfAdult + " x adult") : adult = '';
+                    (this.state.noOfChild > 0) ? adult = String(this.state.noOfChild + " x child") : child = '';
+                    (this.state.noOfConcession > 0) ? adult = String(this.state.noOfConcession + " x concession") : concession = '';
+                    let ticketString = adult + child + concession;
+                    localStorage.setItem("Tickets", ticketString);
                     if (this.state.valid == "true") {
                         window.location.replace("/authorise-payment")
                     } else {

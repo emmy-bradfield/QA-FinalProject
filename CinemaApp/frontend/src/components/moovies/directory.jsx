@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ListByName from './searchList/searchListByName.jsx';
-import ListByDirector from './searchList/searchListByDir.jsx';
+import ListByName from './searchListByName.jsx';
+import ListByDirector from './searchListByDir.jsx';
 
 const Moovies = () => {
     const [byName, setByName] = useState(true);

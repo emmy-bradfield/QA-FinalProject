@@ -10,22 +10,20 @@ const Navbar = () => {
                         <Link to="/"><img className="logo" src={logoImg} />  </Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/listings">Listings</Link>
+                        <Link to="/listings"><h3>Screenings</h3></Link>
+                    </li>
+
+                    <li className='navi'>
+                        <Link to="/new-releases"><h3>*NEW*</h3></Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/openings">Opening</Link>
+                        <Link to="/information"><h3>Information</h3></Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/new-releases">New</Link>
-                    </li>
-                    <li className='navi'>
-                        <Link to="/information"> What to Expect</Link>
-                    </li>
-                    <li className='navi'>
-                        <Link to="/tickets">Tickets</Link>
+                        <Link to="/tickets"><h3>Tickets</h3></Link>
                     </li>
                     <li className="navi">
-                        <Link to="/moovies"><button className="btn btn-primary btn-box">Search</button> </Link>
+                        <Link to="/moovies"><h3>MoovieBarn</h3></Link>
                     </li>
                 </ul>
             </nav>

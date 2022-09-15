@@ -7,13 +7,13 @@ class Tickets extends Component {
     render() {
         return (
             <div className="stack spread">
-                <nav className="spread">
-                    <ul className="slide spread">
-                        <li className='navi navi-xl'>
-                            <Link to="/tickets/bookings">Book Tickets</Link>
+                <nav className="secondary-nav">
+                    <ul className="secondary-nav">
+                        <li className='navi2'>
+                            <Link to="/tickets/bookings"><h5>Book Tickets</h5></Link>
                         </li>
-                        <li className='navi navi-xl out3'>
-                            <Link to="/tickets/orders">My Orders</Link>
+                        <li className='navi2'>
+                            <Link to="/tickets/orders"><h5>My Orders</h5></Link>
                         </li>
                     </ul>
                 </nav>

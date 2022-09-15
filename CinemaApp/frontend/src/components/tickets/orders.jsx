@@ -103,7 +103,7 @@ class Orders extends Component {
 
     render() {
         return (
-            <main className="center2 slide spread" >
+            <main className="center2 slide spread">
                 <div className="stack center">
                     <hr />
                     <h2> My Orders </h2>
