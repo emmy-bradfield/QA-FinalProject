@@ -7,7 +7,7 @@ const Opening = () => {
         Opening times may vary during holiday periods.
       </p>
 
-      <div className="times times-card card-inner-text">
+      <div className="times times-card card-inner-text wide-div">
         <div>
           <ul className="no-bullet">
             <li>Monday</li>

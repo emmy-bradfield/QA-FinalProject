@@ -1188,3 +1188,7 @@ body {
 .getting-here h2 {
   margin-bottom: 1.2em;
 }
+
+.wide-div{
+  width: 90%;
+}
