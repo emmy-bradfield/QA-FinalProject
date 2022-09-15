@@ -157,8 +157,8 @@ class DiscussionBoard extends Component {
                                     <div id='content'>
                                         {post.message}
                                         {(this.state.postArray[index].replies).map((eachreply, index) => (
-                                            <li className='no-bullet'>
-                                                {eachreply}
+                                            <li id='replies' className='no-bullet'>
+                                                - {eachreply}
                                             </li>
                                         ))}
                                     </div>
