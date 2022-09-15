@@ -19,10 +19,11 @@ describe("Forum Tests", () => {
     });
     
     // TEST DATA
+    let testID;
+
     let testForum = {
-        _id: 1,
         name: "Joe M",
-        movieName: "Moonsters Inc",
+        movieName: "Cowsablanca",
         rating: "4",
         message: "Good movie, very funny, just a shame the kid was so ugly",
         replies: ['']
@@ -31,9 +32,8 @@ describe("Forum Tests", () => {
     let reply = "How utterly rude! You should think long and hard about what a nastly little boy you are! Love, aunty j x"
 
     let newForum = {
-        _id: 1,
         name: "Joe M",
-        movieName: "Moonsters Inc",
+        movieName: "Cowsablanca",
         rating: "4",
         message: "Good movie, very funny, just a shame the kid was so ugly",
         replies: [reply]
@@ -74,7 +74,7 @@ describe("Forum Tests", () => {
     });
 
     it("Should return the specific forum requested", (done) => {
-        chai.request(app).get(`/forum/get/1`).query(1).end((err, res) => {
+        chai.request(app).get(`/forum/get/Cowsablanca`).query("Cowsablanca").end((err, res) => {
             if(err) {
                 console.log(`Something went wrong: ${err}`);
                 done(err);
@@ -83,6 +83,7 @@ describe("Forum Tests", () => {
             expect(res).to.not.be.null;
             Forum.findById({"_id":res.body}).then(forum => {
                 expect(forum).to.equal(testForum);
+                testID = forum._id;
             });
             done();
         });
@@ -90,7 +91,7 @@ describe("Forum Tests", () => {
 
     // UPDATE - incomplete: forum update function still unfinished
     it("Should return the updated version of the posted forum", (done) => {
-        chai.request(app).post(`/forum/reply/1`).query(1).send(reply).end((err, res) => {
+        chai.request(app).post(`/forum/update/1`).query(1).send(reply).end((err, res) => {
             if(err){
                 console.log(`Something went wrong: ${err}`);
                 done(err);
