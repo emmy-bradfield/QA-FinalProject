@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0 !important;
   font-family: 'Anek Telugu';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,6 +7,16 @@ body {
   background-size: cover;
   background-repeat: repeat;
   color: whitesmoke !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100% !important;
+}
+
+#root{
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +82,7 @@ body {
   color: whitesmoke;
   text-shadow: 0.125em;
   display: inline-block;
-  transition: transform;
+  transition: 0.5s;
   transform: translateY(-0.6250em);
   cursor: pointer;
 }
@@ -87,7 +97,7 @@ body {
   background-image: url(https://cdn.pixabay.com/photo/2021/08/24/10/22/empty-seats-6570233_960_720.jpg);
 }
 
-.card2 {
+.cardz2 {
   background-image: url(https://cdn.pixabay.com/photo/2020/06/20/04/33/space-5319624_960_720.jpg);
 }
 
@@ -109,9 +119,12 @@ body {
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 2em;
   list-style: none;
   justify-content: space-evenly;
+  width: 100% !important;
+  background-color: #0000004d;
+  height: fit-content;
 }
 
 .nav a {
@@ -125,6 +138,13 @@ body {
 .nav a:hover {
   color: #00b4b4;
   text-shadow: 1em;
+  transition: 0.5s;
+}
+
+.footer a:hover{
+  color: #00b4b4;
+  text-shadow: 1em;
+  transition: 0.5s;
 }
 
 .navi{
@@ -133,6 +153,15 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   font-size: small;
+  padding-bottom: 0;
+  padding-top: 1em;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.nav a{
+  padding:0;
 }
 
 /* .soon{

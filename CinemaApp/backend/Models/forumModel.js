@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const {Schema, model} = mongoose;
 
 const forumSchema = new Schema({
+    _id: String,
     name: String,
     movieName: String,
     rating: String,
-    message: String
+    message: String,
+    replies: Array
     });
 
 const Forum = model('Forum', forumSchema);

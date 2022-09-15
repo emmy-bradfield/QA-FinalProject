@@ -21,26 +21,12 @@ const bookingSchema = new Schema({
     payment: [
         {
             _id: String,
-            cardName: {
-                type: String,
-                default: null
-            },
-            cardNumber: {
-                type: String,
-                default: null
-            },
-            cardDate: {
-                type: String,
-                default: null
-            },
-            cardCVC: {
-                type: String,
-                default: null
-            },
-            dateTime: {
-                type: String,
-                default: null
-            },
+            cardName: String,
+            cardNumber: String,
+            cardDate: String,
+            cardCVC: String,
+            dateTime: String,
+
         }
     ]
 });

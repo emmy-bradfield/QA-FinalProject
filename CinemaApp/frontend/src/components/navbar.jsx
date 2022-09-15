@@ -4,40 +4,30 @@ import logoImg from '../assets/logo.png';
 const Navbar = () => {
     return (
         <>
-            <div>
-                <nav className='nav'>
-                    <ul className="main-nav">
+            <nav className='nav'>
+                <ul className="main-nav">
                     <li className='navi'>
-                        <img className="logo" src={logoImg}/>    
-                        </li>
-                        <li className='navi'>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li className='navi'>
-                            <Link to="/listings">Listings</Link>
-                        </li>
-                        <li className='navi'>
-                            <Link to="/openings">Opening times</Link>
-                        </li>
-                        <li className='navi'>
-                            <Link to="/new-releases">New Releases</Link>
-                        </li>
-                        <li className='navi'>
-                            <Link to="/information"> What to Expect</Link>
-                        </li>
-                        <li className='navi'>
-                            <Link to="/tickets">Tickets</Link>
-                        </li>
-                        <li className="navi">
-                            <Link to="/contact">Contact</Link>
-                        </li>
-                        <li className="navi">
-                            <Link to="/moovies"><button className="btn btn-primary btn-box">Search</button> </Link>
-                        </li>
-                    </ul>
-                </nav>
-                <Outlet />
-            </div>
+                        <Link to="/"><img className="logo" src={logoImg} />  </Link>
+                    </li>
+                    <li className='navi'>
+                        <Link to="/listings"><h3>Screenings</h3></Link>
+                    </li>
+
+                    <li className='navi'>
+                        <Link to="/new-releases"><h3>*NEW*</h3></Link>
+                    </li>
+                    <li className='navi'>
+                        <Link to="/information"><h3>Information</h3></Link>
+                    </li>
+                    <li className='navi'>
+                        <Link to="/tickets"><h3>Tickets</h3></Link>
+                    </li>
+                    <li className="navi">
+                        <Link to="/moovies"><h3>MoovieBarn</h3></Link>
+                    </li>
+                </ul>
+            </nav>
+            <Outlet />
         </>
     )
 }

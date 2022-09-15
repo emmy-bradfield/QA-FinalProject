@@ -25,7 +25,6 @@ const Listings = () => {
                         </li>
                     </ul>
                 </nav>
-                <Outlet />
             </div>
         </div>
     );

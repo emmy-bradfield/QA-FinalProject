@@ -1,4 +1,4 @@
-//import demo from "../assets/moo-nsters-inc.png";
+import {Link} from 'react-router-dom';
 const Home = () => {
 
    return(
@@ -7,24 +7,38 @@ const Home = () => {
             <div className="main-text">
                <h1 className="title">QA Cinemas<hr className="hr1"/></h1>
           
-               <p className="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo voluptas esse aut, tenetur ducimus aspernatur impedit enim exercitationem optio aliquid dignissimos. Magni voluptatibus quod veritatis! Quod ipsam dolor assumenda similique.</p>
+               <p className="text">An Udderly Unbeefable Moovie Experience</p>
             </div>
             <div className="col">
                 <div className="card-img card1">
-                    <h4>Enjoy</h4>
-                    <p>Relax yourself to the fullest</p>
+                    <Link to="/information">
+                        <h4>Enjoy</h4>
+                        <p>Relax yourself to the fullest knowing you made the right choice</p>
+                    </Link>
                 </div>
+<<<<<<< HEAD
                 <div className="card-img card2">
+                    <Link to="/listings">
+                        <h4>Escape</h4>
+                        <p>Get lost in the excitment with a world of moovies to choose from</p>
+                    </Link>
+=======
+                <div className="card-img cardz2">
                     <h4>Escape</h4>
                     <p>Get lost in the excitment</p>
+>>>>>>> cabf70f2ace81d8dd5e2807727bd03befb9bd541
                 </div>
                 <div className="card-img card3">
-                    <h4>Explore</h4>
-                    <p>Discover riveting stories</p>
+                    <Link to="/moovies">
+                        <h4>Explore</h4>
+                        <p>Discover riveting stories and share in them with others</p>
+                    </Link>
                 </div>
                 <div className="card-img card4">
-                    <h4>Experience</h4>
-                    <p>Experience new adventures</p>
+                    <Link to ="/new-releases">
+                        <h4>Experience</h4>
+                        <p>Experience new adventures with new releases </p>
+                    </Link>
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import CinemaShot from '../../assets/cinema-external.jpg';
-import EmailForm from "./emailForm";
+import EmailForm from "./email";
 
 const ContactPage = () => {
     return (

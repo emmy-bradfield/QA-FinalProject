@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import axios from 'axios';
 
 class Payment extends Component {
@@ -19,6 +19,7 @@ class Payment extends Component {
             cardDate: '',
             cardCVC: ''
         }
+
     }
 
     onChangeCardName(e) {
@@ -44,12 +45,7 @@ class Payment extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-
-        axios.get(`http://localhost:4000/bookings/get/${this.state._id}`)
-            .then(res => console.log(res.data))
-            .then(res => console.log(res))
-
-        const bookingPaid = {
+        const cardDeets = {
             cardName: this.state.cardName,
             cardNumber: this.state.cardNumber,
             cardDate: this.state.cardDate,
@@ -57,10 +53,11 @@ class Payment extends Component {
             dateTime: new Date()
         }
 
-        axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, bookingPaid)
-            .then(res => {
-                console.log(res.data);
-
+        axios.post(`http://localhost:4000/bookings/checkout/${this.state._id}`, cardDeets)
+            .then((res) => {
+                console.log(res.data)
+                localStorage.setItem("Payment", String("Card ending: ****" + this.state.cardNumber.substring(12, 16)));
+                localStorage.setItem("Date", new Date());
                 this.setState({
                     firstName: '',
                     lastName: '',
@@ -77,10 +74,12 @@ class Payment extends Component {
                     cardDate: '',
                     cardCVC: ''
                 });
-                window.alert("Thank you for your purchase. Press OK to continue");
-                window.open("https://www.github.com/emmy-bradfield")
-            })
+                window.alert("Thank you for your purchase. Press okay to download your receipt");
+                // window.location.replace("/tickets/confirmed")
+            }).catch((err) => console.log(err))
     };
+
+
 
     render() {
         return (
@@ -110,7 +109,7 @@ class Payment extends Component {
                                 </div>
                             </li>
                             <br />
-                            <button type="submit" className="btn btn-dark btn-control">Complete Purchase</button>
+                            <button type="submit" className="btn btn-control btn-primary">Complete Purchase</button>
                         </ul>
                     </form>
                 </div>

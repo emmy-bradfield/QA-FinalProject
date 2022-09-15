@@ -103,16 +103,16 @@ class Orders extends Component {
 
     render() {
         return (
-            <main className="center2 slide spread" >
+            <main className="center2 slide spread">
                 <div className="stack center">
                     <hr />
                     <h2> My Orders </h2>
                     <form className="slide center2" onSubmit={this.onSubmit}>
                         <input type="text" className="form-control form-control5" value={this.reference} onChange={this.onChangeReference} />
-                        <button type="submit" className='btn btn-dark btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
+                        <button type="submit" className='btn btn-primary btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
                     </form>
 
-                    <div className="card">
+                    <div className="card-subtle">
                         <div className="card-body stack">
                             <ul className="no-bullet cleanup">
                                 <li><em>Enter your booking reference to view your order</em></li>

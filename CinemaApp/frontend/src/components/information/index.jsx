@@ -2,25 +2,28 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Information = () => {
     return (
-        <main className="center lift3">
-            <div className="minor-header">
-                <Link to="/information"><h1 className="light-text"> What to Expect </h1></Link>
+        <main className="center lift1">
                 <hr />
                 <nav className="secondary-nav">
                     <ul className="secondary-nav">
                         <li className="navi2">
-                            <Link to="/information/screens">Screens</Link>
+                            <Link to="/information/screens"><h5>Screens</h5></Link>
                         </li>
                         <li className="navi2">
-                            <Link to="/information/directions">Find Us</Link>
+                            <Link to="/information/directions"><h5>Directions</h5></Link>
                         </li>
                         <li className="navi2">
-                            <Link to="/information/nearby">Places to go</Link>
+                            <Link to="/information/nearby"><h5>Nearby Venues</h5></Link>
+                        </li>
+                        <li className='navi2'>
+                            <Link to="/information/opening"><h5>Opening Times</h5></Link>
+                        </li>
+                        <li className="navi2">
+                            <Link to="/information/age-ratings">Age Ratings</Link>
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <br/>
+            <hr />
             <Outlet />
         </main>
     );

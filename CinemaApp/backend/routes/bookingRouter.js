@@ -20,8 +20,8 @@ bookingRoute.route('/post').post((req, res) => {
     const cardDate = req.body.cardDate;
     const cardCVC = req.body.cardCVC;
     const dateTime = req.body.dateTime;
-
-    const _id = (lastName.substring(0, 4).toUpperCase() + String(Math.floor(Math.random() * 9999) + 1000) + movie.substring(0, 2).toUpperCase())
+    const _id = req.body._id;
+    // const _id = (lastName.substring(0, 4).toUpperCase() + String(Math.floor(Math.random() * 9999) + 1000) + movie.substring(0, 2).toUpperCase())
     const tickets = {
         _id,
         noOfAdult,
@@ -60,7 +60,7 @@ bookingRoute.route('/getAll').get((req, res) => {
 
 bookingRoute.route('/get/:_id').get((req, res) => {
     Booking.findById({"_id": req.params._id})
-    .then(booking => res.json(booking))
+    .then(() => res.json(booking))
     .catch((err) => res.status(400).json('Error: ' + err))
 })
 
@@ -77,7 +77,7 @@ bookingRoute.route('/update/:_id').post((req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log("Updated Booking: " + result);
+           res.send(result);
         }
     })
 });
@@ -96,13 +96,13 @@ bookingRoute.route('/checkout/:_id').post((req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log("Updated Booking: " + result)
+            res.send(result)
         }
     })
 })
 
 bookingRoute.route('/delete/:_id').delete((req, res) => {
-    Booking.findByIdAndDelete(req.params._id).then(() => console.log("Booking successfully cancelled")).catch((err) => res.status(400).json('Error: ' + err))
+    Booking.findByIdAndDelete(req.params._id).then(() => res.send(null)).catch((err) => res.status(400).json('Error: ' + err))
 })
 
 module.exports = bookingRoute;
