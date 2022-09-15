@@ -35,7 +35,7 @@ forumRoute.route('/update/:_id').post((req, res) => {
     const newReply = req.body.reply;
     console.log(newReply)
     console.log("hi")
-    console.log(req.params.id)
+    console.log(req.params._id)
     Forum.findByIdAndUpdate(
         req.params._id,
         {
