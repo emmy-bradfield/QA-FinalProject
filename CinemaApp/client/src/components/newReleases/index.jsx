@@ -25,7 +25,6 @@ const NewReleases = () => {
                         </li>
                     </ul>
                 </nav>
-                <Outlet />
             </div>
         </div>
     );

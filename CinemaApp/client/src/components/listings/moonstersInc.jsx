@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MoonstersImg from '../../assets/movie-posters/moo-nsters-inc.png';
 
 const MoonsterInc = () => {
@@ -22,15 +22,15 @@ const MoonsterInc = () => {
                         <li className="no-bullet">
                             <h3> Director: </h3>
                             <ul>
-                                <li><h5>Shahmeen Shaihk</h5></li>
+                                <li><h5>Shahmeen Shaikh</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
                             <h3> Upcoming Showings: </h3>
                             <ul>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
+                                <li><h5> 17:00 on 16-Sep </h5></li>
+                                <li><h5> 19:00 on 16-Sep </h5></li>
+                                <li><h5> 20:30 on 16-Sep </h5></li>
                             </ul>
                         </li>
                     </ul>

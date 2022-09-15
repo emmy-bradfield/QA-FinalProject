@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BeautyBeefImg from '../../assets/movie-posters/beauty-and-beef.jpg';
 
 const BeautyBeast = () => {
@@ -28,9 +28,9 @@ const BeautyBeast = () => {
                         <li className="no-bullet">
                             <h3> Upcoming Showings: </h3>
                             <ul>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
+                                <li><h5> 17:00 on 16-Sep </h5></li>
+                                <li><h5> 19:00 on 16-Sep </h5></li>
+                                <li><h5> 20:30 on 16-Sep </h5></li>>
                             </ul>
                         </li>
                     </ul>

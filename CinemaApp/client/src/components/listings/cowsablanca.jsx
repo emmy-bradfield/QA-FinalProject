@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CowsablancaImg from '../../assets/movie-posters/cowsablanca.png';
 
-const Cowsablanca = () =>{
-    return(
+const Cowsablanca = () => {
+    return (
         <div>
             <Link to="/listings"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
@@ -27,9 +27,9 @@ const Cowsablanca = () =>{
                         <li className="no-bullet">
                             <h3> Upcoming Showings: </h3>
                             <ul>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
+                                <li><h5> 17:00 on 16-Sep </h5></li>
+                                <li><h5> 19:00 on 16-Sep </h5></li>
+                                <li><h5> 20:30 on 16-Sep </h5></li>
                             </ul>
                         </li>
                     </ul>

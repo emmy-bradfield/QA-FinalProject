@@ -4,9 +4,7 @@ const Opening = () => {
       <h1 className="center opening-title">Opening times</h1>
       <hr className="hr3" />
       <p className="opening-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste
-        nesciunt natus nam? Officiis odio aspernatur aliquid mollitia omnis
-        sequi?
+        Opening times may vary during holiday periods.
       </p>
 
       <div className="times times-card card-inner-text">

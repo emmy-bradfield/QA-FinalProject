@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TerrorDairyImg from '../../assets/movie-posters/terrordairy.png';
 
-const TerrorDairy = () =>{
-    return(
+const TerrorDairy = () => {
+    return (
         <div>
             <Link to="/new-releases"><i className="fa-solid fa-chevron-left in5"></i> Back</Link>
             <div className="slide-left">
@@ -13,9 +13,9 @@ const TerrorDairy = () =>{
                         <li className="no-bullet">
                             <h3> Starring: </h3>
                             <ul>
-                                <li><h5>Daisy</h5></li>
-                                <li><h5>Betty</h5></li>
-                                <li><h5>John Cena</h5></li>
+                                <li><h5>Mr Barry Scott</h5></li>
+                                <li><h5>Ibraheem Latif</h5></li>
+                                <li><h5>Michael McIntire</h5></li>
                             </ul>
                         </li>
                         <li className="no-bullet">
@@ -27,9 +27,9 @@ const TerrorDairy = () =>{
                         <li className="no-bullet">
                             <h3> Upcoming Showings: </h3>
                             <ul>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
-                                <li><h5> hh:mm on dd-mmm </h5></li>
+                                <li><h5> 17:00 on 16-Sep </h5></li>
+                                <li><h5> 19:00 on 16-Sep </h5></li>
+                                <li><h5> 20:30 on 16-Sep </h5></li>
                             </ul>
                         </li>
                     </ul>

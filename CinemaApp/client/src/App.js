@@ -62,12 +62,11 @@ function App() {
               <Route path="/listings/dairymovie" element={<DairyMovie />} />
               <Route path="/listings/cowsablanca" element={<Cowsablanca />} />
 
-            <Route path="/new-releases" element={<NewReleases />} >
-              <Route path="/new-releases/terrordairy" element={<TerrorDairy />} />
-              <Route path="/new-releases/moonions" element={<Moonions />} />
-              <Route path="/new-releases/calftime" element={<Calftime />} />
-              <Route path="/new-releases/thecows" element={<TheCows />} />
-            </Route>
+            <Route path="/new-releases" element={<NewReleases />} />
+            <Route path="/new-releases/terrordairy" element={<TerrorDairy />} />
+            <Route path="/new-releases/moonions" element={<Moonions />} />
+            <Route path="/new-releases/calftime" element={<Calftime />} />
+            <Route path="/new-releases/thecows" element={<TheCows />} />
 
             <Route path="/information" element={<Information />}>
               <Route index element={<AboutUs />}/>

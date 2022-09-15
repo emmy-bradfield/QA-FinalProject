@@ -2,73 +2,73 @@
 {
     "_id": "Beauty and the Beef",
     "name": "Beauty and the Beef",
-    "director": "name here",
+    "director": "Michael King",
     "page": "/listings/beautybeef",
-    "rating": 0,
-    "reviews": 0
+    "rating": 7.28,
+    "reviews": 10472
   },
 
   {
     "_id": "Moo-nster Inc",
     "name": "Moo-nster Inc",
-    "director": "name here",
+    "director": "Shahmeen Shaikh",
     "page": "/listings/moonstersinc",
-    "rating": 0,
-    "reviews": 0
+    "rating":8.60,
+    "reviews": 6521
   },
 
   {
     "_id": "Dairy Movie",
     "name": "Dairy Movie",
-    "director": "name here",
+    "director": "Madeha Rawshon",
     "page": "/listings/dairymovie",
-    "rating": 0,
-    "reviews": 0
+    "rating": 9.64,
+    "reviews": 85445
   },
 
   {
     "_id": "Cows-ablanca",
     "name": "Cows-ablanca",
-    "director": "name here",
+    "director": "Ibraheem Latif",
     "page": "/listings/cowsablanca",
-    "rating": 0,
-    "reviews": 0
+    "rating": 7.46,
+    "reviews": 12665
   },
 
   {
     "_id": "Terror on the Dairy",
     "name": "Terror on the Dairy",
-    "director": "name here",
+    "director": "Madeha Rawshon",
     "page": "/new-releases/terrordairy",
-    "rating": 0,
-    "reviews": 0
+    "rating": 6.18,
+    "reviews": 5430
   },
 
   {
     "_id": "The Moo-nions: Rise of Gru",
     "name": "The Moo-nions: Rise of Gru",
-    "director": "name here",
+    "director": "Emily Bradfield",
     "page": "/new-releases/moonions",
-    "rating": 0,
-    "reviews": 0
+    "rating": 4.96,
+    "reviews": 9
   },
 
   {
     "_id": "Calftime",
     "name": "Calftime",
-    "director": "name here",
+    "director": "Madeha Rawshon",
     "page": "/new-releases/calftime",
-    "rating": 0,
-    "reviews": 0
+    "rating": 9.48,
+    "reviews": 54832
   },
 
   {
     "_id": "The Cows",
     "name": "The Cows",
-    "director": "name here",
+    "director": "Shahmeen Shaikh",
     "page": "/new-releases/thecows",
-    "rating": 0,
-    "reviews": 0
+    "rating": 6.63,
+    "reviews": 5205
   }
 
 ]
