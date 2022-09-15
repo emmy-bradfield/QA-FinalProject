@@ -13,11 +13,11 @@ describe(`Booking Tests`, () => {
             done();
         })
     });
-    after((done) => {
-        Booking.deleteMany({}, (err, res) => {
-            done();
-        })
-    });
+    // after((done) => {
+    //     Booking.deleteMany({}, (err, res) => {
+    //         done();
+    //     })
+    // });
     
     // TEST DATA
     let bookingID;

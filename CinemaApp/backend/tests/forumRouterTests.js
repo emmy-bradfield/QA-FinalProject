@@ -22,6 +22,7 @@ describe("Forum Tests", () => {
     let testID;
 
     let testForum = {
+        _id: "JOECOWS4",
         name: "Joe M",
         movieName: "Cowsablanca",
         rating: "4",
@@ -32,6 +33,7 @@ describe("Forum Tests", () => {
     let reply = "How utterly rude! You should think long and hard about what a nastly little boy you are! Love, aunty j x"
 
     let newForum = {
+        _id: "JOECOWS4",
         name: "Joe M",
         movieName: "Cowsablanca",
         rating: "4",
@@ -91,7 +93,7 @@ describe("Forum Tests", () => {
 
     // UPDATE - incomplete: forum update function still unfinished
     it("Should return the updated version of the posted forum", (done) => {
-        chai.request(app).post(`/forum/update/1`).query(1).send(reply).end((err, res) => {
+        chai.request(app).post(`/forum/reply/JOECOWS4`).query("JOECOWS5").send(reply).end((err, res) => {
             if(err){
                 console.log(`Something went wrong: ${err}`);
                 done(err);
