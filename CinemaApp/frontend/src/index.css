@@ -141,6 +141,12 @@ body {
   transition: 0.5s;
 }
 
+.footer a:hover{
+  color: #00b4b4;
+  text-shadow: 1em;
+  transition: 0.5s;
+}
+
 .navi{
   display: inline-flex;
   justify-content: center;

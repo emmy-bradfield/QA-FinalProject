@@ -109,7 +109,7 @@ class Payment extends Component {
                                 </div>
                             </li>
                             <br />
-                            <button type="submit" className="btn btn-dark btn-control">Complete Purchase</button>
+                            <button type="submit" className="btn btn-control btn-primary">Complete Purchase</button>
                         </ul>
                     </form>
                 </div>

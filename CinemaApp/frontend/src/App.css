@@ -190,7 +190,7 @@
 .card-poster:hover {
   height: fit-content;
   width: fit-content;
-  transition: transform;
+  transition: 0.5s;
   transform: translateY(-0.5em);
 }
 
@@ -296,6 +296,7 @@ a {
 a:hover {
   color: lightgrey;
   text-decoration: inherit;
+  transition: 0.5s;
 }
 
 .no-bullet {
@@ -423,6 +424,7 @@ a:hover {
   border: 1px solid rgb(153, 23, 23);
   margin-top: -4em;
   margin-bottom: -3em;
+  transition: 0.5s;
 }
 
 .btn-delete:active {
@@ -821,7 +823,9 @@ button {
 }
 
 button:hover {
-  background-color: #097777;
+  color: #00b4b4;
+  text-shadow: 1em;
+  transition: 0.5s;
 }
 
 .hr2 {
@@ -901,6 +905,7 @@ button:hover {
   padding: 1em;
   border-radius: 40px;
   box-shadow: 5px 10px 20px 5px rgb(173, 173, 173) inset;
+  transition: 0.5s;
 }
 
 .navi-xl:active {

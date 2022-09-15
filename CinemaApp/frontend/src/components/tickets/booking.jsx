@@ -489,7 +489,7 @@ class Bookings extends Component {
                             <br />
                             <hr />
                         </ul >
-                        <button type="submit" className="btn btn-dark btn-control"> <h3>Buy Now</h3></button>
+                        <button type="submit" className="btn btn-control btn-primary"> <h3>Buy Now</h3></button>
                     </form >
                 </div >
             </main >

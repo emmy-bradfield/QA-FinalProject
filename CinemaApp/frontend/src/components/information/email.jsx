@@ -92,7 +92,7 @@ class EmailForm extends Component {
                 <input className="form-control form-control2" type="text" value={this.state.subject} required onChange={this.onChangeSubject} />
                 <label className="form-text">Message:</label>
                 <textarea className="form-control form-control2 message-txt" value={this.state.message} required onChange={this.onChangeMessage} />
-                <button className="btn btn-dark" type="submit">Submit Enquirey</button>
+                <button className="btn btn-primary" type="submit">Submit Enquirey</button>
             </form>
         );
     }

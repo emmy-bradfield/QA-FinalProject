@@ -93,11 +93,11 @@ class Orders extends Component {
                     localStorage.setItem("cost", "transaction has not been processed - check again later")
                 };
                 localStorage.setItem("results", true);
-                // window.location.reload()
+                window.location.reload()
             })
             .catch((err) => {
                 localStorage.clear()
-                // window.location.reload()
+                window.location.reload()
             })
     };
 
@@ -109,7 +109,7 @@ class Orders extends Component {
                     <h2> My Orders </h2>
                     <form className="slide center2" onSubmit={this.onSubmit}>
                         <input type="text" className="form-control form-control5" value={this.reference} onChange={this.onChangeReference} />
-                        <button type="submit" className='btn btn-dark btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
+                        <button type="submit" className='btn btn-primary btn-box'><i className="fa-solid fa-magnifying-glass" /></button>
                     </form>
 
                     <div className="card-subtle">
