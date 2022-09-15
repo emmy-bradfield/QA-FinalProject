@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-
 class DiscussionBoard extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +12,8 @@ class DiscussionBoard extends Component {
             rating: '',
             message: '',
             replies: [],
-            postArray: []
+            postArray: [],
+            reply: ''
         };
 
         this.onChangeName = this.onChangeName.bind(this);
@@ -22,6 +22,8 @@ class DiscussionBoard extends Component {
         this.onChangeMessage = this.onChangeMessage.bind(this);
         this.onChangeReplies = this.onChangeReplies.bind(this);
         this.addReply = this.addReply.bind(this);
+        this.onChangeReply = this.onChangeReply.bind(this);
+        this.replySetup = this.replySetup.bind(this);
 
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -34,9 +36,13 @@ class DiscussionBoard extends Component {
     }
 
     onChangeMovieName(e) {
-        this.setState({
-            movieName: e.target.value,
-        })
+        if (e.target.value == "") {
+            this.componentDidMount();
+        } else {
+            this.setState({
+                movieName: e.target.value,
+            })
+        }
     }
 
 
@@ -51,7 +57,13 @@ class DiscussionBoard extends Component {
             message: e.target.value
         })
     }
-    
+
+    onChangeReply(e) {
+        this.setState({
+            reply: e.target.value
+        })
+    }
+
     onChangeReplies(e) {
         this.setState({
             replies: e.target.value
@@ -80,23 +92,27 @@ class DiscussionBoard extends Component {
         }
     }
     addReply(e) {
-        console.log(e)
-        e.target.parentNode.previousSibling.previousElementSibling.previousElementSibling.hidden = false;
-        console.log(e.target.parentNode.previousSibling.previousElementSibling.previousElementSibling.text)
+        const thisID = e.target.parentNode.previousSibling.previousSibling.previousSibling.
+            previousElementSibling.innerText
+        const thisObjectId = this.state.postArray[thisID]._id
         const thisMessage = {
-            
+            reply: this.state.reply
         }
-        // axios.post(`http://localhost:4000/forum/update/${this.state._id}`)
-        //     .then(res => {
-        //         console.log("Response from backend")
-        //         this.componentDidMount()
-        //     })
+        console.log(thisObjectId)
+        axios.post(`http://localhost:4000/forum/update/${thisObjectId}`, thisMessage)
+            .then(res => {
+                console.log("Response from backend")
+            })
     }
 
     replySetup(e) {
+        console.log((this.state.postArray[1].replies))
         e.target.hidden = true;
         e.target.nextSibling.hidden = false;
         e.target.parentNode.nextSibling.hidden = false;
+    }
+    refreshPage() {
+        window.location.reload(false);
     }
 
     onSubmit(e) {
@@ -111,47 +127,48 @@ class DiscussionBoard extends Component {
         axios.post("http://localhost:4000/forum/post", newPost)
             .then(res => {
                 console.log("Response from backend")
-                this.componentDidMount()
             })
-        this.setState({
-            name: '',
-            movieName: '',
-            rating: '',
-            message: '',
-            replies: ''
-        })
     }
 
     render() {
         return (
             <>
                 <div id='forum_messages'>
-                    <select id='sort_by_message' className="form-control form-control4" onChange={this.onChangeMovieName}>
-                        <option selected disabled hidden value="">Sort By</option>
-                        <option>Beauty and the Beef</option>
-                        <option>Moonsters Inc</option>
-                        <option>Dairy Movie</option>
-                        <option>Cowsablanca</option>
-                        <option>Terror on the Dairy</option>
-                        <option>The Moonions: The Rise of Gru</option>
-                        <option>Calftime</option>
-                        <option>The Cows</option>
-                    </select>
+                    <div id='two_buttons'>
+                        <select id='sort_by_message' className="form-control form-control4" onChange={this.onChangeMovieName}>
+                            <option selected value="">Sort By</option>
+                            <option>Beauty and the Beef</option>
+                            <option>Moonsters Inc</option>
+                            <option>Dairy Movie</option>
+                            <option>Cowsablanca</option>
+                            <option>Terror on the Dairy</option>
+                            <option>The Moonions: The Rise of Gru</option>
+                            <option>Calftime</option>
+                            <option>The Cows</option>
+                        </select>
+                        <button className='btn btn-dark' onClick={this.refreshPage}>Remove Filter</button>
+                    </div>
                     <ul className="list-group">
-                        {this.state.postArray.map((post,index) => (
+                        {this.state.postArray.map((post, index) => (
                             <li key={post._id} className="list-group-item d-flex justify-content-between align-items-start">
                                 <div id='outer_div' className="ms-2 me-auto">
                                     <div id='hideThis' hidden>{index}</div>
                                     <div className="fw-bold">{post.movieName}</div>
-                                    {post.message}
+                                    <div id='content'>
+                                        {post.message}
+                                        {(this.state.postArray[index].replies).map((eachreply, index) => (
+                                            <li className='no-bullet'>
+                                                {eachreply}
+                                            </li>
+                                        ))}
+                                    </div>
                                     <div id='replyDiv'>
                                         <button id='replyBtn' onClick={this.replySetup} className='btn btn-dark'>Reply</button>
-                                        <textarea id='replyBox' hidden className="form-control form-control2 message-txt" value={this.state.replies} required />
+                                        <textarea id='replyBox' hidden className="form-control form-control2 message-txt" value={this.state.reply} required onChange={this.onChangeReply} />
                                     </div>
                                     <div id='sendReply' hidden>
                                         <button id='replyBtn' onClick={this.addReply} className='btn btn-dark'>Send reply</button>
                                     </div>
-                                    
                                 </div>
                                 <span id='rating' className="rounded-pill">{post.rating}/10</span>
                             </li>
@@ -170,7 +187,7 @@ class DiscussionBoard extends Component {
                         </div>
                         <div id='entry_right_col'>
                             <label className="form-text">Message:</label>
-                            <textarea className="form-control form-control2 message-txt" value={this.state.message} required onChange={this.onChangeMessage} />
+                            <textarea className="form-control form-control2 message-txt" onChange={this.onChangeMessage} value={this.state.message} required />
                             <button className="btn btn-dark" type="submit">Submit Message</button>
                         </div>
                     </form>

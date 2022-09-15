@@ -337,7 +337,7 @@ class Bookings extends Component {
         }
         localStorage.setItem("day", this.state.day);
         localStorage.setItem("time", this.state.time);
-        if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 100) {
+        if ((Number(this.state.noOfAdult) + Number(this.state.noOfChild) + Number(this.state.noOfConcession)) > 10) {
             window.alert("That is over our 10-ticket limit")
             return;
         } else {
@@ -442,12 +442,10 @@ class Bookings extends Component {
                                         <option>8</option>
                                         <option>9</option>
                                         <option>10</option>
-                                        <option>99</option>
                                     </select>
                                     <label>Children </label>
                                     <select className="form-control form-control4" onChange={this.onChangeChild}>
                                         <option selected value="0">0</option>
-                                        <option>0</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -462,7 +460,6 @@ class Bookings extends Component {
                                     <label>Concessions </label>
                                     <select className="form-control form-control4" onChange={this.onChangeConcession}>
                                         <option selected value="0">0</option>
-                                        <option>0</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>

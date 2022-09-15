@@ -33,11 +33,21 @@ forumRoute.route('/get/:movieName').get((req, res) => {
 
 forumRoute.route('/update/:_id').post((req, res) => {
     const newReply = req.body.reply;
-    Forum.findByIdAndUpdate(req.params._id, {
-        $push: {"replies": newReply}
-    }, function (err, result) {
+    console.log(newReply)
+    console.log("hi")
+    console.log(req.params.id)
+    Forum.findByIdAndUpdate(
+        req.params._id,
+        {
+            $push: {
+                "replies": newReply
+            }
+        },
+        {new: true},
+        function (err, result) {
         if (err) {
             console.log(err)
+            console.log("wah")
         } else {
             console.log("Updated Booking: " + result);
         }
