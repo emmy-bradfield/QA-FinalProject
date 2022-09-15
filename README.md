@@ -160,7 +160,7 @@ and be able to access the complete build locally!
 Alternatively, you can host the site on Heroku rather than locally. Firstly, you will need an account with Heroku which can be created for free. Heroku will then prompt you to create a new app; simply choose the name a deployment region.
 Once set up, start in the root directory and install heroku and, once it has finished installing, login to your account from the CLI:
 ```
-npm i -g heroki
+npm i -g heroku
 heroku login
 ```
 
