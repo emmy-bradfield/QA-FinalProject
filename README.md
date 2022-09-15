@@ -203,7 +203,7 @@ That's it! You now have the app deployed and hosted either locally, or through h
 * **Jabril Yusuf** - *initial work* - [Jib-Yusuf](https://github.com/Jib-Yusuf)
 * **Madeha Rawshon** - *initial work* - [Madeha98](https://github.com/Madeha98)
 * **Michael King** - *initial work* - [MichaelKing674](https://github.com/MichaelKing674)
-* **Shahmeen Shaihk** - *initial work* - [shahmeen-shaikh](https://github.com/shahmeen-shaikh/)
+* **Shahmeen Shaikh** - *initial work* - [shahmeen-shaikh](https://github.com/shahmeen-shaikh/)
 
 ## $Acknowledgements$
 Thanks to our trainers at QA over the past few weeks for the continual support and guidance with developing this project.
