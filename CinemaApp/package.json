@@ -1,0 +1,15 @@
+{
+  "name": "cinemaapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server/index.js",
+    "react": "cd client && npm start",
+    "start": "npm-run-all -p -r server react",
+    "test": "cd server && npm run coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
