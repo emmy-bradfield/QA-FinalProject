@@ -50,22 +50,4 @@ describe("Email Tests", () => {
             done();
         });
     });
-
-    // READ
-    it("Should return all bookings, including the one posted", (done) => {
-        chai.request(app).post("/emails/post").send(newEmail).end((err, res) => {
-            if (err) {
-                console.log(`Something went wrong: ${err}`);
-                done(err);
-            };
-            expect(res).to.have.status(200);
-            expect(res).to.not.be.null;
-            Email.find().then(emails => {
-                expect(emails).not.to.have.lengthOf(0);
-                expect(emails).to.include(newEmail);
-            });
-            done();
-        });
-    });
-
 });
