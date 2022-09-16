@@ -20,8 +20,8 @@ bookingRoute.route('/post').post((req, res) => {
     const cardDate = req.body.cardDate;
     const cardCVC = req.body.cardCVC;
     const dateTime = req.body.dateTime;
-    const _id = req.body._id;
-    // const _id = (lastName.substring(0, 4).toUpperCase() + String(Math.floor(Math.random() * 9999) + 1000) + movie.substring(0, 2).toUpperCase())
+
+    const _id = (lastName.substring(0, 4).toUpperCase() + String(Math.floor(Math.random() * 9999) + 1000) + movie.substring(0, 2).toUpperCase())
     const tickets = {
         _id,
         noOfAdult,

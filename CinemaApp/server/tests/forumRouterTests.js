@@ -67,7 +67,7 @@ describe("Forum Tests", () => {
             expect(res).to.have.status(200);
             expect(res).not.to.be.null;
             Forum.find().then(forums => {
-                expect(forums).not.to.have.lengthOf(0);
+                expect(forums).to.have.lengthOf(1);
                 expect(forums).to.include(testForum);
                 forumID = forum._id;
             });
@@ -91,7 +91,7 @@ describe("Forum Tests", () => {
         });
     });
 
-    // UPDATE - incomplete: forum update function still unfinished
+    // UPDATE
     it("Should return the updated version of the posted forum", (done) => {
         chai.request(app).post(`/forum/reply/JOECOWS4`).query("JOECOWS5").send(reply).end((err, res) => {
             if(err){

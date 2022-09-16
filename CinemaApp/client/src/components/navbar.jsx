@@ -10,20 +10,20 @@ const Navbar = () => {
                         <Link to="/"><img className="logo" src={logoImg} />  </Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/listings"><h3>Screenings</h3></Link>
+                        <Link to="/listings"><h5>Screenings</h5></Link>
                     </li>
 
                     <li className='navi'>
-                        <Link to="/new-releases"><h3>*NEW*</h3></Link>
+                        <Link to="/new-releases"><h5>*NEW*</h5></Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/information"><h3>Information</h3></Link>
+                        <Link to="/information"><h5>Information</h5></Link>
                     </li>
                     <li className='navi'>
-                        <Link to="/tickets"><h3>Tickets</h3></Link>
+                        <Link to="/tickets"><h5>Tickets</h5></Link>
                     </li>
                     <li className="navi">
-                        <Link to="/moovies"><h3>MoovieBarn</h3></Link>
+                        <Link to="/moovies"><h5>MoovieBarn</h5></Link>
                     </li>
                 </ul>
             </nav>

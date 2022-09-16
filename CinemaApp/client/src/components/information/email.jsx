@@ -76,6 +76,7 @@ class EmailForm extends Component {
             message: ''
         })
         console.log("State reset")
+        window.alert("Email successfully sent")
     } else{
         window.alert("Please enter a valid email")
     }
