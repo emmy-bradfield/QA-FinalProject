@@ -75,7 +75,7 @@ class Payment extends Component {
                     cardCVC: ''
                 });
                 window.alert("Thank you for your purchase. Press okay to download your receipt");
-                // window.location.replace("/tickets/confirmed")
+                window.location.replace("/tickets/confirmed")
             }).catch((err) => console.log(err))
     };
 

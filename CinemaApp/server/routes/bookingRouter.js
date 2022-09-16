@@ -60,7 +60,7 @@ bookingRoute.route('/getAll').get((req, res) => {
 
 bookingRoute.route('/get/:_id').get((req, res) => {
     Booking.findById(req.params._id)
-    .then(() => res.json(booking))
+    .then((booking) => res.json(booking))
     .catch((err) => res.status(400).json('Error: ' + err))
 })
 

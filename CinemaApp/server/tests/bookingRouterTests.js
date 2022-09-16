@@ -74,7 +74,7 @@ describe(`Booking Tests`, () => {
     }
 
     const paidBooking ={
-        _id: "test2",
+        _id: "test",
         firstName: "Joe",
         lastName: "M",
         movie: "Cowsablanca",
@@ -104,7 +104,7 @@ describe(`Booking Tests`, () => {
             }
             expect(res).to.have.status(200);
             expect(res).to.not.be.null;
-            Booking.findById({"_id": "test2"}).then(booking => {
+            Booking.findById({"_id": "test"}).then(booking => {
                 expect(booking).to.equal(newBooking);
 
             });
@@ -129,15 +129,15 @@ describe(`Booking Tests`, () => {
         });
     });
 
-    it("Should return the specific forum requested", (done) => {
-        chai.request(app).get(`/forum/get/test`).query("test").end((err, res) => {
+    it("Should return the specific booking requested", (done) => {
+        chai.request(app).get(`/bookings/get/test`).query("test").end((err, res) => {
             if(err) {
                 console.log(`Something went wrong: ${err}`);
                 done(err);
             }
             expect(res).to.have.status(200);
             expect(res).to.not.be.null;
-            Booking.findById(req.params._id).then(booking => {
+            Booking.findById("test").then(booking => {
                 expect(booking).to.equal(newBooking);
             });
             done();

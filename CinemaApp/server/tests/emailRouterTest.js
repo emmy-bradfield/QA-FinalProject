@@ -28,13 +28,6 @@ describe("Email Tests", () => {
         message: "Dear sir/madam\n\rI was recently appalled to learn of the lack of sexy bees on your website. Please amend imediately.\nTepid Regards,\n\rMr Joseph Mama"
     };
 
-    let newEmail = {
-        name: "Joseph M",
-        email: "joseph.mama@gmail.com",
-        subject: "RE: Sexy Bees",
-        message: "Dear sir/madam\n\rI would like to apologise for my earlier email; on further inspection, your bees are sufficiently sexy.\n\rHot Regards,\n\rMr Joseph Mama"
-    };
-
     // CREATE
     it("Should return posted email when /email is posted", (done) => {
         chai.request(app).post("/emails/post").send(testEmail).end((err, res) => {

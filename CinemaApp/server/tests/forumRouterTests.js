@@ -67,7 +67,7 @@ describe("Forum Tests", () => {
             expect(res).to.have.status(200);
             expect(res).not.to.be.null;
             Forum.find().then(forums => {
-                expect(forums).not.to.have.lengthOf(1);
+                expect(forums).to.have.lengthOf(1);
                 expect(forums).to.include(testForum);
                 forumID = forum._id;
             });
